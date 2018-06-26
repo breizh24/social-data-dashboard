@@ -118,7 +118,6 @@ class Logo extends Component {
         blocco.blocco.style.transitionDelay =
           ind * transizione.transitionDelay + 'ms'
       })
-      console.log(colorSorted)
     }
 
     function colora(blocchi) {
@@ -247,8 +246,8 @@ class Logo extends Component {
           style={{
             fill: '#585858',
             stroke: '#585858',
-            'stroke-miterlimit': '10',
-            'stroke-width': '0.65px',
+            strokeMiterlimit: '10',
+            strokeWidth: '0.65px',
           }}
         >
           <g id="nbianchi-2">

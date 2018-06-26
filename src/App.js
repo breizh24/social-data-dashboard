@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Widget from './components/Widget'
+import Main from './components/Main'
 import Grafico from './components/Grafico'
 import Logo from './components/Logo'
 import './css/style.css'
@@ -7,10 +7,10 @@ import './css/style.css'
 class App extends Component {
   render() {
     return (
-      <Widget title="Prova">
+      <Main>
         <Logo />
         <Grafico />
-      </Widget>
+      </Main>
     )
   }
 }
