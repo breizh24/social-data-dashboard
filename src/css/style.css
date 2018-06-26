@@ -7,3 +7,7 @@
 svg {
   overflow: visible;
 }
+
+.main__container {
+  width: 80%;
+}
