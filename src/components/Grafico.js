@@ -5,14 +5,14 @@ import {
   XAxis,
   YAxis,
   Bar,
-  ResponsiveContainer
+  ResponsiveContainer,
 } from 'recharts'
 
 class Grafico extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      apiData: []
+      apiData: [],
     }
   }
 
@@ -22,7 +22,7 @@ class Grafico extends Component {
       .then(response => {
         let apiData = response.apiData.data
         this.setState({
-          apiData: apiData
+          apiData: apiData,
         })
         console.log(this.state.apiData)
       })
