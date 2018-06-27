@@ -101,3 +101,11 @@ svg {
   font-size: 100px;
   line-height: 80px;
 }
+
+a {
+  color: #FFF;
+  text-decoration: currentColor;
+}
+a :visited { 
+  color: #00F8FF;
+}
