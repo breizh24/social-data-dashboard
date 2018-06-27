@@ -4,7 +4,9 @@ import Grafico from './components/Grafico'
 import './css/style.css'
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
-import Logo from './components/Logo'
+import 'primereact/resources/themes/omega/theme.css'
+import 'primereact/resources/primereact.min.css'
+import 'primeicons/primeicons.css'
 
 class App extends Component {
   render() {
