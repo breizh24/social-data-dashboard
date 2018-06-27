@@ -8,8 +8,26 @@ svg {
   overflow: visible;
 }
 
+.app__container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 60px auto;
+}
+
+.header__container {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+}
+
+.sidebar__container {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
 .main__container {
-  width: 80%;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
 }
 
 .sidebar__container {
