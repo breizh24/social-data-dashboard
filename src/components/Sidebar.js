@@ -5,11 +5,10 @@ class Sidebar extends Component {
     return (
       <div className="sidebar__container">
         <ul>
-          <li>Competitors </li>
-          <li>nwjcweuihf </li>
-          <li>nwjcweuihf </li>
-          <li>nwjcweuihf </li>
-          <li>nwjcweuihf </li>
+          <li>HASHTAGS</li>
+          <li>ACCOUNTS</li>
+          <li>PERSONALITÀ</li>
+          <li>COMPETITORS</li>
         </ul>
       </div>
     )
