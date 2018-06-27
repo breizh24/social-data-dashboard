@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-import Main from './components/Main'
-import Grafico from './components/Grafico'
 import './css/style.css'
+import Main from './components/Main'
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
-import Logo from './components/Logo'
+import Footer from './components/Footer'
 
 class App extends Component {
   render() {
@@ -13,8 +12,8 @@ class App extends Component {
         <Header />
         <Sidebar />
         <Main>
-          <Grafico />
         </Main>
+        <Footer />
       </div>
     )
   }
