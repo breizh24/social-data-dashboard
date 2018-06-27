@@ -77,3 +77,27 @@ svg {
 .sidebar__container li:onclick {
   background-color: #e6b041;
 }
+
+.img__404 {
+  width: 250px;
+  margin-top: 30px;
+}
+
+.e__404__container {
+  color: var(--darkGrey);
+  text-align: center;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.e__404__container h1 {
+  font-size: 100px;
+  line-height: 80px;
+}

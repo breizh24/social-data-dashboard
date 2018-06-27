@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom"
 import Logo from '../components/Logo'
+
 
 class Sidebar extends Component {
   render() {
@@ -9,10 +11,26 @@ class Sidebar extends Component {
           <Logo />
         </div>
         <ul>
-          <li>Hashtags</li>
-          <li>Accounts</li>
-          <li>Personalità</li>
-          <li>Competitors</li>
+          <li>
+            <Link to="/hashtags">
+              HASHTAGS
+            </Link>
+          </li>
+          <li>
+            <Link to="/acconuts">
+              ACCOUNTS
+            </Link>
+          </li>
+          <li>
+            <Link to="/personalità">
+              PERSONALITÀ
+            </Link>
+          </li>
+          <li>
+            <Link to="/competitors">
+              COMPETITORS
+            </Link>
+          </li>
         </ul>
       </div>
     )
