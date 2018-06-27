@@ -3,8 +3,8 @@ import Hashtags from "./Hashtags.js"
 import Personalità from "./Personalità.js"
 import Competitors from "./Competitors.js"
 import Accounts from "./Accounts.js"
-import Grafico from "./Grafico.js"
-import { Link, Route, Switch, } from 'react-router-dom';
+// import Grafico from "./Grafico.js"
+import { Route, Switch, } from 'react-router-dom';
 import NotFound from "./NotFound.js";
 import Landing from "./Landing"
 

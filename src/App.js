@@ -3,7 +3,6 @@ import './css/style.css'
 import Main from './components/Main'
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
-import Footer from './components/Footer'
 
 class App extends Component {
   render() {
@@ -13,7 +12,6 @@ class App extends Component {
         <Sidebar />
         <Main>
         </Main>
-        <Footer />
       </div>
     )
   }
