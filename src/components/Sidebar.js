@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { NavLink } from "react-router-dom"
 import Logo from '../components/Logo'
 
-
 class Sidebar extends Component {
   render() {
     return (

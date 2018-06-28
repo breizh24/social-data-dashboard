@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
-import Hashtags from "./Hashtags.js"
-import Personalità from "./Personalità.js"
-import Competitors from "./Competitors.js"
-import Accounts from "./Accounts.js"
+import Hashtags from './Hashtags.js'
+import Personalita from './Personalita.js'
+import Competitors from './Competitors.js'
+import Accounts from './Accounts.js'
 // import Grafico from "./Grafico.js"
-import { Route, Switch, } from 'react-router-dom';
-import NotFound from "./NotFound.js";
-import Landing from "./Landing"
-
+import { Route, Switch } from 'react-router-dom'
+import NotFound from './NotFound.js'
+import Landing from './Landing'
+import Grafico from './Grafico'
+import Widget from './Widget.js'
 class Main extends Component {
   render() {
     return (
@@ -17,40 +18,35 @@ class Main extends Component {
             exact
             path="/"
             render={() => (
-              <Landing />
-
+              <Widget>
+                <Landing />
+              </Widget>
             )}
           />
           <Route
             path="/hashtags"
-            render={props => (
+            render={props =>
               <Hashtags />
-            )}
+            }
           />
 
           <Route
             path="/acconuts"
-            render={props => (
+            render={props =>
               <Accounts />
-            )}
+            }
           />
 
           <Route
-            path="/personalità"
-            render={props => (
-              <Personalità />
-            )}
+            path="/personalita"
+            render={props =>
+              <Personalita />
+            }
           />
 
-          <Route
-            path="/competitors"
-            render={props => (
-              <Competitors />
-            )}
-          />
-          <Route component={NotFound} />
+          <Route path="/competitors" render={props => <Competitors />} />
+          <Route render={props => <NotFound />} />
         </Switch>
-        {this.props.children}
       </div>
     )
   }

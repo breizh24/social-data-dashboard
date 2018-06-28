@@ -57,7 +57,7 @@ svg {
 }
 
 .sidebar__container ul {
-  width: 90%;
+  width: 100%;
 }
 
 .sidebar__container li {
@@ -85,12 +85,9 @@ svg {
 
 .e__404__container {
   color: var(--darkGrey);
+  width: 100%;
+  height: 100%;
   text-align: center;
-  position: absolute;
-  top: 60px;
-  left: 0;
-  right: 0;
-  bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -107,7 +104,8 @@ svg {
   text-Decoration: none;
 }
 
-.active {
+.active li {
   color: #000;
   background: #fff;
+  display: block;
 }
