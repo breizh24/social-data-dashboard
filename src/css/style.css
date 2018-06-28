@@ -104,5 +104,10 @@ svg {
 
 .linkSide {
   color: #FFF;
-  text-decoration: currentColor;
+  text-Decoration: none;
+}
+
+.active {
+  color: #000;
+  background: #fff;
 }

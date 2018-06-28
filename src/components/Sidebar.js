@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import Logo from '../components/Logo'
 
 
@@ -8,29 +8,45 @@ class Sidebar extends Component {
     return (
       <div className="sidebar__container">
         <div className="header__logo">
-          <Logo />
+          <NavLink
+            className="LinkSide"
+            to="/">
+            <Logo />
+          </NavLink>
         </div>
         <ul>
-          <Link className="linkSide" to="/hashtags">
+          <NavLink
+            className="LinkSide"
+            activeClassName="active"
+            to="/hashtags">
             <li>
               HASHTAGS
             </li>
-          </Link>
-          <Link className="linkSide" to="/acconuts">
+          </NavLink>
+          <NavLink
+            className="LinkSide"
+            activeClassName="active"
+            to="/accounts">
             <li>
               ACCOUNTS
             </li>
-          </Link>
-          <Link className="linkSide" to="/personalità">
+          </NavLink>
+          <NavLink
+            className="LinkSide"
+            activeClassName="active"
+            to="/personalità">
             <li>
               PERSONALITÀ
             </li>
-          </Link>
-          <Link className="linkSide" to="/competitors">
+          </NavLink>
+          <NavLink
+            className="LinkSide"
+            activeClassName="active"
+            to="/competitors">
             <li>
               COMPETITORS
             </li>
-          </Link>
+          </NavLink>
         </ul>
       </div>
     )
