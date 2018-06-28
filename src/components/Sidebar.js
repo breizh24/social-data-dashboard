@@ -17,7 +17,7 @@ class Sidebar extends Component {
             <Link to="/acconuts">ACCOUNTS</Link>
           </li>
           <li>
-            <Link to="/personalità">PERSONALITÀ</Link>
+            <Link to="/personalita">PERSONALITÀ</Link>
           </li>
           <li>
             <Link to="/competitors">COMPETITORS</Link>
