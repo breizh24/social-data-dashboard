@@ -9,6 +9,7 @@
 
 svg {
   overflow: visible;
+  padding-bottom: 100px;
 }
 
 .app__container {
@@ -42,6 +43,7 @@ svg {
 .main__container {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
+  padding: 20px
 }
 
 .sidebar__container {
