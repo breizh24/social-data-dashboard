@@ -9,7 +9,7 @@
 
 svg {
   overflow: visible;
-  padding-bottom: 100px;
+  padding-bottom: 40px;
 }
 
 .app__container {
@@ -20,11 +20,11 @@ svg {
 }
 
 .header__container {
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  display: flex;
-  align-items: center;
-  box-shadow: 0px 7px 8px -7px rgba(0, 0, 0, 0.75);
+
+  /* display: flex;
+  align-items: center; */
+  /* box-shadow: 0px 7px 8px -7px rgba(0, 0, 0, 0.75); */
+
   padding-top: 15px;
   padding-bottom: 10px;
 }
@@ -32,10 +32,17 @@ svg {
 .sidebar__logo__container {
   background-color: white;
   width: 100%;
-  padding: 10px;
+  padding: 30px;
   display: grid;
+
   grid-template: auto / auto;
   align-content: center;
+}
+
+.hr__logo {
+  color: #a09e99;
+  width: 80%;
+  margin-top: -40px;
 }
 
 .sidebar__container {
@@ -46,7 +53,7 @@ svg {
 .main__container {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
-  padding: 20px
+  padding: 20px;
 }
 
 .sidebar__container {
@@ -57,6 +64,7 @@ svg {
   align-items: center;
   color: white;
   background: #605e5e;
+  box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.555);
 }
 
 .sidebar__container ul {
@@ -82,16 +90,16 @@ svg {
   line-height: 50px;
   text-align: center;
   transition: 0.5s;
-  /* margin-bottom: 10px;
-  border-radius: 5px; */
+  margin-bottom: 10px;
+  border-radius: 5px;
 }
 
 .sidebar__container li:hover {
   background-color: #ffffff64;
 }
 
-hr {
-  color: #ffffff9e;
+.hr__sidebar {
+  background-color: #ffffff9e;
   width: 100%;
   margin-bottom: 10px;
 }
@@ -134,28 +142,51 @@ hr {
   text-decoration: none;
 }
 
-
 .recharts-wrapper {
   display: flex;
 }
 
 .container__home__element {
   display: flex;
-  align-content: center;
-  justify-content: space-evenly;
+
+  justify-content: space-around;
+  font-size: 14px;
+}
+
+.widget__graphs {
+  border-style: solid;
+  border-color: #a09e99;
+  border-width: 2px;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
+  margin-top: 70px;
+
 }
 
 .titleMain {
-  color: #00F8FF;
+  text-align: center;
+  color: #605e5e;
+  margin-top: 40px;
+}
+
+.hr__header {
+  color: #a09e99;
+  width: 95%;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
 }
 
 .logoLogin {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  margin-top: 30px;
 }
 
-.logoLogin .stretch{
+.logoLogin .stretch {
   width: 30%;
   height: 30%;
 }
