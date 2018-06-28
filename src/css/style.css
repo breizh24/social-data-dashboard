@@ -101,3 +101,9 @@ svg {
   font-size: 100px;
   line-height: 80px;
 }
+
+.linkSide {
+  color: #FFF;
+  text-decoration: currentColor;
+}
+
