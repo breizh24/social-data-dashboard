@@ -6,9 +6,9 @@ import Accounts from './Accounts.js'
 // import Grafico from "./Grafico.js"
 import { Route, Switch } from 'react-router-dom'
 import NotFound from './NotFound.js'
-import Landing from './Landing'
 import Grafico from './Grafico'
 import Widget from './Widget.js'
+
 class Main extends Component {
   render() {
     return (
@@ -19,30 +19,15 @@ class Main extends Component {
             path="/"
             render={() => (
               <Widget>
-                <Landing />
+                <Grafico />
               </Widget>
             )}
           />
-          <Route
-            path="/hashtags"
-            render={props =>
-              <Hashtags />
-            }
-          />
+          <Route path="/hashtags" render={props => <Hashtags />} />
 
-          <Route
-            path="/acconuts"
-            render={props =>
-              <Accounts />
-            }
-          />
+          <Route path="/acconuts" render={props => <Accounts />} />
 
-          <Route
-            path="/personalita"
-            render={props =>
-              <Personalita />
-            }
-          />
+          <Route path="/personalita" render={props => <Personalita />} />
 
           <Route path="/competitors" render={props => <Competitors />} />
           <Route render={props => <NotFound />} />
