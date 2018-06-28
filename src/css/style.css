@@ -9,6 +9,7 @@
 
 svg {
   overflow: visible;
+  padding-bottom: 100px;
 }
 
 .app__container {
@@ -21,17 +22,22 @@ svg {
 .header__container {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 90% 10%;
+  /* display: flex;
+  align-items: center; */
   /* box-shadow: 0px 7px 8px -7px rgba(0, 0, 0, 0.75); */
   padding-top: 15px;
   padding-bottom: 10px;
 }
 
-.header__logo {
+.sidebar__logo__container {
   background-color: white;
   width: 100%;
-  padding: 60px;
+  padding: 10px;
+  display: grid;
+  grid-template: auto / auto;
+  align-content: center;
 }
 
 .sidebar__container {
@@ -42,6 +48,7 @@ svg {
 .main__container {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
+  padding: 20px
 }
 
 .sidebar__container {
@@ -72,13 +79,13 @@ svg {
 }
 
 .sidebar__container li {
-  margin-bottom: 10px;
   list-style: none;
   height: 20%;
   line-height: 50px;
   text-align: center;
   transition: 0.5s;
-  border-radius: 5px;
+  /* margin-bottom: 10px;
+  border-radius: 5px; */
 }
 
 .sidebar__container li:hover {
@@ -129,6 +136,7 @@ hr {
   text-decoration: none;
 }
 
+
 .recharts-wrapper {
   display: flex;
 }
@@ -146,4 +154,19 @@ hr {
   border-radius: 10px;
   padding-left: 10px;
   padding-top: 5px;
+}
+
+.titleMain {
+  color: #00F8FF;
+}
+
+.logoLogin {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.logoLogin .stretch{
+  width: 30%;
+  height: 30%;
 }

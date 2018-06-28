@@ -42,6 +42,8 @@ class Main extends Component {
               </div>
             )}
           />
+          <Route path="/login" render={props => <Grafico />} />
+
           <Route path="/hashtags" render={props => <Hashtags />} />
 
           <Route path="/accounts" render={props => <Accounts />} />
