@@ -48,11 +48,10 @@ svg {
 .main__container {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
-  padding: 20px
+  padding: 20px;
 }
 
 .sidebar__container {
-  height: 100vh;
   /* background-color: #1f1f1f; */
   display: flex;
   flex-direction: column;
@@ -63,6 +62,14 @@ svg {
 
 .sidebar__container ul {
   width: 90%;
+  margin: 0 auto;
+}
+
+.sidebar__container li {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-content: center;
 }
 
 .LinkSide li a:active {
@@ -90,6 +97,18 @@ svg {
 
 .sidebar__container li:hover {
   background-color: #ffffff64;
+}
+
+.sidebar__menu__link {
+  display: flex;
+}
+
+.sidebar__menu__link span {
+  margin-left: auto;
+}
+
+.sidebar__menu__link span:last-child {
+  margin-right: 10px;
 }
 
 hr {
@@ -132,10 +151,8 @@ hr {
 .active li {
   color: #fff;
   background: #e6b041;
-  display: block;
   text-decoration: none;
 }
-
 
 .recharts-wrapper {
   display: flex;
@@ -146,7 +163,7 @@ hr {
 }
 
 .titleMain {
-  color: #00F8FF;
+  color: #00f8ff;
 }
 
 .logoLogin {
@@ -155,7 +172,7 @@ hr {
   align-items: center;
 }
 
-.logoLogin .stretch{
+.logoLogin .stretch {
   width: 30%;
   height: 30%;
 }

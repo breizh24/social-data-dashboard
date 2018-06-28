@@ -3,6 +3,24 @@ import { NavLink } from 'react-router-dom'
 import Logo from '../components/Logo'
 
 class Sidebar extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      showDropDown: [false, false, false, false],
+    }
+  }
+
+  dropDownMenu = number => {
+    let showDropDown = this.state.showDropDown.slice()
+    showDropDown[number] = !showDropDown[number]
+    this.setState(
+      {
+        showDropDown: showDropDown,
+      },
+      () => console.log(this.state.showDropDown),
+    )
+  }
+
   render() {
     return (
       <div className="sidebar__container">
@@ -15,41 +33,112 @@ class Sidebar extends Component {
           {/* <div className="fotoUser">{this.props.username[0]}</div>
          <h2>{this.props.username}</h2> */}
           <div className="logoLogin">
-            <img className="stretch" src={require(
-              '../img/logoLogin.png')}
-            />
+            <img className="stretch" src={require('../img/logoLogin.png')} />
             <NavLink to="/login">
-              <span className="userProp">
-                Nome Utente
-              </span>
+              <span className="userProp">Nome Utente</span>
             </NavLink>
           </div>
-        </div >
+        </div>
 
         <hr />
         <ul>
-          <NavLink className="LinkSide" activeClassName="active" to="/hashtags">
-            <li>HASHTAGS</li>
+          <NavLink
+            className="LinkSide"
+            activeClassName="active"
+            to="/hashtags"
+            onClick={() => this.dropDownMenu(0)}
+          >
+            <li>
+              <div className="sidebar__menu__link">
+                <span>HASHTAGS</span> <span>></span>
+              </div>
+              <ul
+                className={
+                  this.state.showDropDown[0]
+                    ? 'dropdown sidebar__dropdown__show'
+                    : 'dropdown sidebar__dropdown__hide'
+                }
+              >
+                <li>lorem</li>
+                <li>lorem</li>
+                <li>lorem</li>
+              </ul>
+            </li>
           </NavLink>
-          <NavLink className="LinkSide" activeClassName="active" to="/accounts">
-            <li>ACCOUNTS</li>
+          <NavLink
+            className="LinkSide"
+            activeClassName="active"
+            to="/accounts"
+            onClick={() => this.dropDownMenu(1)}
+          >
+            <li>
+              <div className="sidebar__menu__link">
+                <span>ACCOUNTS</span>
+                <span>></span>
+              </div>
+              <ul
+                className={
+                  this.state.showDropDown[0]
+                    ? 'dropdown sidebar__dropdown__show'
+                    : 'dropdown sidebar__dropdown__hide'
+                }
+              >
+                <li>lorem</li>
+                <li>lorem</li>
+                <li>lorem</li>
+              </ul>
+            </li>
           </NavLink>
           <NavLink
             className="LinkSide"
             activeClassName="active"
             to="/personalita"
+            onClick={() => this.dropDownMenu(2)}
           >
-            <li>PERSONALITÀ</li>
+            <li>
+              <div className="sidebar__menu__link">
+                <span> PERSONALITÀ</span>
+                <span>></span>
+              </div>
+              <ul
+                className={
+                  this.state.showDropDown[0]
+                    ? 'dropdown sidebar__dropdown__show'
+                    : 'dropdown sidebar__dropdown__hide'
+                }
+              >
+                <li>lorem</li>
+                <li>lorem</li>
+                <li>lorem</li>
+              </ul>
+            </li>
           </NavLink>
           <NavLink
             className="LinkSide"
             activeClassName="active"
             to="/competitors"
+            onClick={() => this.dropDownMenu(3)}
           >
-            <li>COMPETITORS</li>
+            <li>
+              <div className="sidebar__menu__link">
+                <span>COMPETITORS</span>
+                <span>></span>
+              </div>
+              <ul
+                className={
+                  this.state.showDropDown[0]
+                    ? 'dropdown sidebar__dropdown__show'
+                    : 'dropdown sidebar__dropdown__hide'
+                }
+              >
+                <li>lorem</li>
+                <li>lorem</li>
+                <li>lorem</li>
+              </ul>
+            </li>
           </NavLink>
         </ul>
-      </div >
+      </div>
     )
   }
 }
