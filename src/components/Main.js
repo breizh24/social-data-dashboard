@@ -7,6 +7,7 @@ import { Route, Switch } from 'react-router-dom'
 import NotFound from './NotFound.js'
 import Grafico from './Grafico'
 import Widget from './Widget.js'
+import Home_Piechart from './Home__PieChart'
 
 class Main extends Component {
   render() {
@@ -17,9 +18,28 @@ class Main extends Component {
             exact
             path="/"
             render={() => (
-              <Widget>
-                <Grafico />
-              </Widget>
+              <div className="container__home__element">
+                <Widget width="50%">
+                  <Home_Piechart
+                    title={'ACCOUNT ACTIVITY'}
+                    version="155"
+                    category="ma"
+                    subCategory="trend"
+                    social="twitter"
+                    indicator="activity"
+                  />
+                </Widget>
+                <Widget width="50%">
+                  <Home_Piechart
+                    title={'HASHTAG ACTIVITY'}
+                    version="156"
+                    category="ht"
+                    subCategory="trend"
+                    social="twitter_hashtag"
+                    indicator="activity"
+                  />
+                </Widget>
+              </div>
             )}
           />
           <Route path="/login" render={props => <Grafico />} />
