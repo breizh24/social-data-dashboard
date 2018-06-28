@@ -25,7 +25,7 @@ class Main extends Component {
           />
           <Route path="/hashtags" render={props => <Hashtags />} />
 
-          <Route path="/acconuts" render={props => <Accounts />} />
+          <Route path="/accounts" render={props => <Accounts />} />
 
           <Route path="/personalita" render={props => <Personalita />} />
 
