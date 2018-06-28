@@ -11,26 +11,26 @@ class Sidebar extends Component {
           <Logo />
         </div>
         <ul>
-          <li>
-            <Link to="/hashtags">
+          <Link className="linkSide" to="/hashtags">
+            <li>
               HASHTAGS
-            </Link>
-          </li>
-          <li>
-            <Link to="/acconuts">
+            </li>
+          </Link>
+          <Link className="linkSide" to="/acconuts">
+            <li>
               ACCOUNTS
-            </Link>
-          </li>
-          <li>
-            <Link to="/personalità">
+            </li>
+          </Link>
+          <Link className="linkSide" to="/personalità">
+            <li>
               PERSONALITÀ
-            </Link>
-          </li>
-          <li>
-            <Link to="/competitors">
+            </li>
+          </Link>
+          <Link className="linkSide" to="/competitors">
+            <li>
               COMPETITORS
-            </Link>
-          </li>
+            </li>
+          </Link>
         </ul>
       </div>
     )
