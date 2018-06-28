@@ -14,7 +14,17 @@ class Sidebar extends Component {
         <div className="sidebar_user">
           {/* <div className="fotoUser">{this.props.username[0]}</div>
          <h2>{this.props.username}</h2> */}
-        </div>
+          <div className="logoLogin">
+            <img className="stretch" src={require(
+              '../img/logoLogin.png')}
+            />
+            <NavLink to="/login">
+              <span className="userProp">
+                Nome Utente
+              </span>
+            </NavLink>
+          </div>
+        </div >
 
         <hr />
         <ul>
@@ -39,7 +49,7 @@ class Sidebar extends Component {
             <li>COMPETITORS</li>
           </NavLink>
         </ul>
-      </div>
+      </div >
     )
   }
 }
