@@ -34,7 +34,7 @@ class Grafico extends Component {
     }
     return (
       <div>
-        <ResponsiveContainer width="100%" height={500}>
+        <ResponsiveContainer width="98%" height={500}>
           <BarChart data={this.state.apiData}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis
