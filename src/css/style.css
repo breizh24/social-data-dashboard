@@ -135,4 +135,15 @@ hr {
 
 .container__home__element {
   display: flex;
+  justify-content: space-around;
+  font-size: 14px;
+}
+
+.widget__graphs {
+  border-style: solid;
+  border-color: #a09e99;
+  border-width: 2px;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
 }

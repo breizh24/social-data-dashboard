@@ -19,7 +19,7 @@ class Main extends Component {
             path="/"
             render={() => (
               <div className="container__home__element">
-                <Widget width="50%">
+                <Widget width="45%">
                   <Home_Piechart
                     title={'ACCOUNT ACTIVITY'}
                     version="155"
@@ -29,7 +29,7 @@ class Main extends Component {
                     indicator="activity"
                   />
                 </Widget>
-                <Widget width="50%">
+                <Widget width="45%">
                   <Home_Piechart
                     title={'HASHTAG ACTIVITY'}
                     version="156"
