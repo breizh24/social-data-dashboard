@@ -6,7 +6,7 @@ class Sidebar extends Component {
   render() {
     return (
       <div className="sidebar__container">
-        <div className="header__logo">
+        <div className="sidebar__logo__container">
           <NavLink className="LinkSide" to="/">
             <Logo />
           </NavLink>
