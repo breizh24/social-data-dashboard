@@ -31,9 +31,7 @@ svg {
 .header__logo {
   background-color: white;
   width: 100%;
-  padding: 30px;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  padding: 60px;
 }
 
 .sidebar__container {
@@ -57,14 +55,27 @@ svg {
 }
 
 .sidebar__container ul {
-  width: 100%;
+  width: 90%;
+}
+
+.LinkSide li a:active {
+  color: #ffffff;
+  background-color: transparent;
+}
+
+.sidebar__container a {
+  text-decoration: none;
+}
+
+.sidebar__container a:visited {
+  color: #fff;
 }
 
 .sidebar__container li {
   margin-bottom: 10px;
   list-style: none;
   height: 20%;
-  line-height: 80px;
+  line-height: 50px;
   text-align: center;
   transition: 0.5s;
   border-radius: 5px;
@@ -74,8 +85,15 @@ svg {
   background-color: #ffffff64;
 }
 
-.sidebar__container li:onclick {
-  background-color: #e6b041;
+hr {
+  color: #ffffff9e;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.sidebar_user {
+  margin-bottom: 40px;
+  margin-top: 40px;
 }
 
 .img__404 {
@@ -100,12 +118,13 @@ svg {
 }
 
 .linkSide {
-  color: #FFF;
-  text-Decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 
 .active li {
-  color: #000;
-  background: #fff;
+  color: #fff;
+  background: #e6b041;
   display: block;
+  text-decoration: none;
 }
