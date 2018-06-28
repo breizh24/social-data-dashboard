@@ -30,9 +30,8 @@ class Main extends Component {
           <Route path="/personalita" render={props => <Personalita />} />
 
           <Route path="/competitors" render={props => <Competitors />} />
-          <Route component={NotFound} />
+          <Route render={props => <NotFound />} />
         </Switch>
-        {this.props.children}
       </div>
     )
   }
