@@ -57,7 +57,7 @@ svg {
 }
 
 .sidebar__container ul {
-  width: 90%;
+  width: 100%;
 }
 
 li:link {
@@ -91,12 +91,9 @@ li:link {
 
 .e__404__container {
   color: var(--darkGrey);
+  width: 100%;
+  height: 100%;
   text-align: center;
-  position: absolute;
-  top: 60px;
-  left: 0;
-  right: 0;
-  bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -109,6 +106,18 @@ li:link {
 }
 
 .linkSide {
+<<<<<<< HEAD
   color: #fff;
   text-decoration: currentColor;
 }
+=======
+  color: #FFF;
+  text-Decoration: none;
+}
+
+.active li {
+  color: #000;
+  background: #fff;
+  display: block;
+}
+>>>>>>> fe69daf1f68ab6ca2be735157fe3f95a7c322e3e
