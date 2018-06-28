@@ -33,7 +33,7 @@ class Sidebar extends Component {
           <NavLink
             className="LinkSide"
             activeClassName="active"
-            to="/personalità">
+            to="/personalita">
             <li>
               PERSONALITÀ
             </li>

@@ -3,7 +3,6 @@ import Hashtags from './Hashtags.js'
 import Personalita from './Personalita.js'
 import Competitors from './Competitors.js'
 import Accounts from './Accounts.js'
-// import Grafico from "./Grafico.js"
 import { Route, Switch } from 'react-router-dom'
 import NotFound from './NotFound.js'
 import Landing from './Landing'
@@ -19,7 +18,7 @@ class Main extends Component {
             path="/"
             render={() => (
               <Widget>
-                <Landing />
+                {/* <Landing /> */}
               </Widget>
             )}
           />
