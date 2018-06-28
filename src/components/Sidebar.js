@@ -11,6 +11,12 @@ class Sidebar extends Component {
             <Logo />
           </NavLink>
         </div>
+        <div className="sidebar_user">
+          {/* <div className="fotoUser">{this.props.username[0]}</div>
+         <h2>{this.props.username}</h2> */}
+        </div>
+
+        <hr />
         <ul>
           <NavLink className="LinkSide" activeClassName="active" to="/hashtags">
             <li>HASHTAGS</li>
@@ -21,7 +27,7 @@ class Sidebar extends Component {
           <NavLink
             className="LinkSide"
             activeClassName="active"
-            to="/personalità"
+            to="/personalita"
           >
             <li>PERSONALITÀ</li>
           </NavLink>

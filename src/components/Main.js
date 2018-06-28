@@ -3,7 +3,6 @@ import Hashtags from './Hashtags.js'
 import Personalita from './Personalita.js'
 import Competitors from './Competitors.js'
 import Accounts from './Accounts.js'
-// import Grafico from "./Grafico.js"
 import { Route, Switch } from 'react-router-dom'
 import NotFound from './NotFound.js'
 import Grafico from './Grafico'
@@ -25,7 +24,7 @@ class Main extends Component {
           />
           <Route path="/hashtags" render={props => <Hashtags />} />
 
-          <Route path="/acconuts" render={props => <Accounts />} />
+          <Route path="/accounts" render={props => <Accounts />} />
 
           <Route path="/personalita" render={props => <Personalita />} />
 
