@@ -27,12 +27,14 @@ class Grafico extends Component {
   getData = () => {
     let minDate = this.state.dateForFetch.minDate
     let maxDate = this.state.dateForFetch.maxDate
-    Fetcher(155, 'ma', 'trend', minDate, maxDate, 'activity').then(response => {
-      let apiData = response.apiData.data
-      this.setState({
-        apiData: apiData,
-      })
-    })
+    Fetcher(155, 'ma', 'trend', 'twitter', minDate, maxDate, 'activity').then(
+      response => {
+        let apiData = response.apiData.data
+        this.setState({
+          apiData: apiData,
+        })
+      },
+    )
   }
 
   componentDidMount() {

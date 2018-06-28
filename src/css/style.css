@@ -109,3 +109,11 @@ svg {
   background: #fff;
   display: block;
 }
+
+.recharts-wrapper {
+  display: flex;
+}
+
+.container__home__element {
+  display: flex;
+}
