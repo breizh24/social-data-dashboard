@@ -22,11 +22,9 @@ svg {
 .header__container {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
-  display: grid;
-  grid-template-columns: 90% 10%;
-  /* display: flex;
-  align-items: center; */
-  /* box-shadow: 0px 7px 8px -7px rgba(0, 0, 0, 0.75); */
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 7px 8px -7px rgba(0, 0, 0, 0.75);
   padding-top: 15px;
   padding-bottom: 10px;
 }
@@ -143,6 +141,8 @@ hr {
 
 .container__home__element {
   display: flex;
+  align-content: center;
+  justify-content: space-evenly;
 }
 
 .titleMain {
