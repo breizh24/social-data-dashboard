@@ -19,15 +19,30 @@ class Main extends Component {
             path="/"
             render={() => (
               <Widget>
-                <Grafico />
+                <Landing />
               </Widget>
             )}
           />
-          <Route path="/hashtags" render={props => <Hashtags />} />
+          <Route
+            path="/hashtags"
+            render={props =>
+              <Hashtags />
+            }
+          />
 
-          <Route path="/acconuts" render={props => <Accounts />} />
+          <Route
+            path="/acconuts"
+            render={props =>
+              <Accounts />
+            }
+          />
 
-          <Route path="/personalita" render={props => <Personalita />} />
+          <Route
+            path="/personalita"
+            render={props =>
+              <Personalita />
+            }
+          />
 
           <Route path="/competitors" render={props => <Competitors />} />
           <Route render={props => <NotFound />} />

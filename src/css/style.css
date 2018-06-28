@@ -57,7 +57,7 @@ svg {
 }
 
 .sidebar__container ul {
-  width: 90%;
+  width: 100%;
 }
 
 .sidebar__container li {
@@ -100,6 +100,12 @@ svg {
 }
 
 .linkSide {
-  color: #fff;
-  text-decoration: currentColor;
+  color: #FFF;
+  text-Decoration: none;
+}
+
+.active li {
+  color: #000;
+  background: #fff;
+  display: block;
 }
