@@ -60,6 +60,12 @@ svg {
   width: 90%;
 }
 
+li:link {
+  text-decoration: underline;
+  color: #f58529;
+  background-color: transparent;
+}
+
 .sidebar__container li {
   margin-bottom: 10px;
   list-style: none;
@@ -103,7 +109,6 @@ svg {
 }
 
 .linkSide {
-  color: #FFF;
+  color: #fff;
   text-decoration: currentColor;
 }
-
