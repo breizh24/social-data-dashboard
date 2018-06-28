@@ -14,7 +14,7 @@ svg {
 .app__container {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 20% 80%;
   grid-template-rows: 60px auto;
 }
 
@@ -127,4 +127,12 @@ hr {
   background: #e6b041;
   display: block;
   text-decoration: none;
+}
+
+.recharts-wrapper {
+  display: flex;
+}
+
+.container__home__element {
+  display: flex;
 }
