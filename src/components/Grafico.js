@@ -95,7 +95,7 @@ class Grafico extends Component {
       for (let i = 0; i < textNode.length; i++) {
         if (textNode[i].textContent === longerString) {
           let element = textNode[i].getBoundingClientRect()
-          margin = parseInt(element.height).toString() + 'px'
+          margin = parseInt(element.height + 10).toString() + 'px'
         }
       }
       this.setState({
@@ -129,7 +129,8 @@ class Grafico extends Component {
           defaultDate={new Date('2018-04-01')}
           dateFormat="dd/mm/yy"
           selectionMode="range"
-          style={{ bottom: '0' }}
+          placeholder="Range di date"
+          style={{ position: 'absolute', bottom: '5px', left: '20px' }}
           value={this.state.dateFromCalendar}
           onChange={e => this.getDateFromCalendar(e)}
         />

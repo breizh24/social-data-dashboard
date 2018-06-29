@@ -198,7 +198,8 @@ svg {
   border-color: #9e9d9d;
   border-width: 2px;
   border-radius: 10px;
-  padding-left: 10px;
+  padding: 5px;
+  position: relative;
   padding-top: 5px;
   margin-top: 20px;
   color: #605d5e;
