@@ -15,7 +15,7 @@ svg {
   width: 100%;
   display: grid;
   grid-template-columns: 20% 80%;
-  grid-template-rows: 80px auto;
+  grid-template-rows: 60px auto;
 }
 
 .header__container {
@@ -261,29 +261,6 @@ svg {
   animation: appear 1s ease 0s 1 normal;
 }
 
-@-webkit-keyframes appear {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale3d(0.3, 0.3, 0.3);
-    transform: scale3d(0.3, 0.3, 0.3);
-  }
-  60% {
-    opacity: 1;
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-}
-@keyframes appear {
-  0% {
-    opacity: 0;
-    transform: scale3d(0.3, 0.3, 0.3);
-  }
-  60% {
-    opacity: 1;
-    transform: scale3d(1, 1, 1);
-  }
-}
-
 .subtitle__piechart {
   font-size: 15px;
   margin-right: 10px;
@@ -295,7 +272,18 @@ svg {
   animation: appear 1s ease 0s 1 normal;
 }
 
-@-webkit-keyframes appear {
+.calendar__piechart {
+  border: 2px solid #9e9d9d;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.grafico3 {
+  margin-bottom: 50px;
+}
+
+@keyframes appear {
   0% {
     opacity: 0;
     -webkit-transform: scale3d(0.3, 0.3, 0.3);
@@ -306,25 +294,4 @@ svg {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
-}
-@keyframes appear {
-  0% {
-    opacity: 0;
-    transform: scale3d(0.3, 0.3, 0.3);
-  }
-  60% {
-    opacity: 1;
-    transform: scale3d(1, 1, 1);
-  }
-}
-
-.calendar__piechart {
-  border: 2px solid #9e9d9d;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  cursor: pointer;
-}
-
-.grafico3 {
-  margin-bottom: 50px;
 }
