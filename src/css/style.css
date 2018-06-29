@@ -24,6 +24,7 @@ svg {
   z-index: 10;
   display: flex;
   align-items: center;
+
 }
 
 .header__logo__container {
@@ -32,6 +33,15 @@ svg {
   display: grid;
   grid-template: auto / auto;
   align-content: center;
+}
+
+
+.hr_user {
+  color: #ffffff;
+  background-color: #ffffff;
+  width: 100%;
+  margin-top: -20px;
+  margin-bottom: 10px;
 }
 
 .sidebar__container {
@@ -53,11 +63,20 @@ svg {
   color: white;
   background: #605e5e;
   box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.555);
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.sidebar__container::-webkit-scrollbar {
+  display: none;
 }
 
 .sidebar__container ul {
   width: 90%;
   margin: 0 auto;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
 }
 
 .sidebar__container li {
@@ -65,6 +84,19 @@ svg {
   justify-content: space-around;
   flex-direction: column;
   align-content: center;
+}
+.dropdown {
+  display: flex;
+  flex-direction: column;
+}
+.dropdown li {
+  width: 85%;
+  margin: 0 auto;
+}
+
+
+.sidebar__dropdown__show li:hover {
+  background-color: #ffffff64;
 }
 
 .LinkSide li a:active {
@@ -90,8 +122,19 @@ svg {
   border-radius: 5px;
 }
 
+.sidebar__container li:first-child {
+  margin-top: 10px;
+}
+
 .sidebar__menu__link:hover {
   background-color: #ffffff64;
+  border-radius: 5px;
+}
+
+
+.sidebar__menu__link:active {
+  background-color: #ffffff64;
+  border-radius: 5px;
 }
 
 .sidebar__menu__link {
@@ -143,6 +186,7 @@ svg {
   color: #fff;
   background: #e6b041;
   text-decoration: none;
+  border-radius: 5px;
 }
 
 .recharts-wrapper {
