@@ -21,6 +21,7 @@ class Grafico extends Component {
         minDate: '2018-04-01',
         maxDate: '2018-05-24',
       },
+      marginBottom: '0',
     }
   }
 
@@ -30,9 +31,12 @@ class Grafico extends Component {
     Fetcher(155, 'ma', 'trend', 'twitter', minDate, maxDate, 'activity').then(
       response => {
         let apiData = response.apiData.data
-        this.setState({
-          apiData: apiData,
-        })
+        this.setState(
+          {
+            apiData: apiData,
+          },
+          () => this.getLongerString(),
+        )
       },
     )
   }
@@ -42,7 +46,6 @@ class Grafico extends Component {
   }
 
   getDateFromCalendar = e => {
-    console.log('datefromcalendar')
     this.setState(
       {
         dateFromCalendar: e.value,
@@ -59,7 +62,6 @@ class Grafico extends Component {
   }
 
   handleDate = date => {
-    console.log(date)
     let minDate = moment(date[0]).format('YYYY-MM-DD')
     let maxDate = moment(date[1]).format('YYYY-MM-DD')
     let dateForFetch = {
@@ -75,12 +77,39 @@ class Grafico extends Component {
     )
   }
 
+  getLongerString = () => {
+    let apiData = this.state.apiData.slice()
+    let longerString = ''
+    for (let i = 0; i < apiData.length; i++) {
+      if (apiData[i].entity.length > longerString.length) {
+        longerString = apiData[i].entity
+      }
+    }
+    this.getHeightForMargin(longerString)
+  }
+
+  getHeightForMargin = longerString => {
+    setTimeout(() => {
+      let textNode = document.getElementsByTagName('text')
+      let margin = ''
+      for (let i = 0; i < textNode.length; i++) {
+        if (textNode[i].textContent === longerString) {
+          let element = textNode[i].getBoundingClientRect()
+          margin = parseInt(element.height).toString() + 'px'
+        }
+      }
+      this.setState({
+        marginBottom: margin,
+      })
+    }, 1)
+  }
+
   render() {
     if (this.state.apiData.length === 0) {
       return <h2>Loading...</h2>
     }
     return (
-      <div>
+      <div style={{ marginBottom: this.state.marginBottom }}>
         <ResponsiveContainer width="98%" height={500}>
           <BarChart data={this.state.apiData}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -100,6 +129,7 @@ class Grafico extends Component {
           defaultDate={new Date('2018-04-01')}
           dateFormat="dd/mm/yy"
           selectionMode="range"
+          style={{ bottom: '0' }}
           value={this.state.dateFromCalendar}
           onChange={e => this.getDateFromCalendar(e)}
         />

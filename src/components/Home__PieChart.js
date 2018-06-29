@@ -30,7 +30,6 @@ class Home__PieChart extends Component {
       this.setState({
         apiData: apiData,
       })
-      console.log(apiData)
     })
   }
 
