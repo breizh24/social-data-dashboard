@@ -39,7 +39,7 @@ class Main extends Component {
                     indicator="activity"
                   />
                 </Widget>
-                <Widget width="95%">
+                <Widget width="95%" padding-bottom="50px">
                   <Grafico />
                 </Widget>
               </div>
