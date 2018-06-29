@@ -224,12 +224,17 @@ svg {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 15px;
+  width: 150px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #9e9d9d;
 }
 
 .logoLogin .stretch {
   width: 30%;
   height: 30%;
+  margin-right: 10px;
 }
 .arrow {
   height: 25%;

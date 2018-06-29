@@ -36,8 +36,6 @@ class Sidebar extends Component {
           </div>
         </div>
 
-        <hr className="hr_user" />
-
         <ul>
           <li>
             <NavLink
