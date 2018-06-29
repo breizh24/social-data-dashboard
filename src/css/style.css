@@ -24,6 +24,9 @@ svg {
   z-index: 10;
   display: flex;
   align-items: center;
+  position: fixed;
+  width: 100%;
+  background: #fff;
 }
 
 .header__logo__container {
@@ -58,12 +61,10 @@ svg {
   color: white;
   background: #605e5e;
   box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.555);
-  overflow: hidden;
-  overflow-y: scroll;
-}
-
-.sidebar__container::-webkit-scrollbar {
-  display: none;
+  position: fixed;
+  bottom: 0;
+  width: 20%;
+  top: 80px;
 }
 
 .sidebar__container ul {
