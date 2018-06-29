@@ -37,8 +37,8 @@ class Home__PieChart extends Component {
   render() {
     return (
       <React.Fragment>
-        <h2>{this.props.title}</h2>
-        <h3>Last 30 days</h3>
+        <h2 className="title__piechart">{this.props.title}</h2>
+        <h3 className="subtitle__piechart">Last 30 days</h3>
         <ResponsiveContainer width="100%" height={300}>
           <PieChart>
             <Pie

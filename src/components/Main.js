@@ -39,6 +39,9 @@ class Main extends Component {
                     indicator="activity"
                   />
                 </Widget>
+                <Widget width="95%">
+                  <Grafico />
+                </Widget>
               </div>
             )}
           />
