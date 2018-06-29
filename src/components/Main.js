@@ -45,15 +45,28 @@ class Main extends Component {
               </div>
             )}
           />
-          <Route path="/login" render={props => <Grafico />} />
+          <Route exact path="/login" render={props => <Grafico />} />
 
-          <Route path="/hashtags" render={props => <Hashtags />} />
+          <Route exact path="/hashtags" render={props => <Hashtags />} />
+          <Route exact path="/hashtags/graph1" render={props => <h1>Sei nel graph1</h1>} />
+          <Route exact path="/hashtags/graph2" render={props => <h1>Sei nel graph2</h1>} />
+          <Route exact path="/hashtags/graph3" render={props => <h1>Sei nel graph3</h1>} />
 
-          <Route path="/accounts" render={props => <Accounts />} />
+          <Route exact path="/accounts" render={props => <Accounts />} />
+          <Route exact path="/accounts/graph1" render={props => <h1>Sei nel graph1</h1>} />
+          <Route exact path="/accounts/graph2" render={props => <h1>Sei nel graph2</h1>} />
+          <Route exact path="/accounts/graph3" render={props => <h1>Sei nel graph3</h1>} />
 
-          <Route path="/personalita" render={props => <Personalita />} />
+          <Route exact path="/personalita" render={props => <Personalita />} />
+          <Route exact path="/personalita/graph1" render={props => <h1>Sei nel graph1</h1>} />
+          <Route exact path="/personalita/graph2" render={props => <h1>Sei nel graph2</h1>} />
+          <Route exact path="/personalita/graph3" render={props => <h1>Sei nel graph3</h1>} />
 
-          <Route path="/competitors" render={props => <Competitors />} />
+          <Route exact path="/competitors" render={props => <Competitors />} />
+          <Route exact path="/competitors/graph1" render={props => <h1>Sei nel graph1</h1>} />
+          <Route exact path="/competitors/graph2" render={props => <h1>Sei nel graph2</h1>} />
+          <Route exact path="/competitors/graph3" render={props => <h1>Sei nel graph3</h1>} />
+
           <Route render={props => <NotFound />} />
         </Switch>
       </div>
