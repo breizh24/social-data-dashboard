@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import Logo from '../components/Logo'
 
 class Sidebar extends Component {
@@ -25,33 +25,35 @@ class Sidebar extends Component {
     return (
       <div className="sidebar__container">
         <div className="sidebar__logo__container">
-          <NavLink className="LinkSide" to="/">
+          <Link className="LinkSide" to="/">
             <Logo />
-          </NavLink>
+          </Link>
         </div>
         <div className="sidebar_user">
           {/* <div className="fotoUser">{this.props.username[0]}</div>
          <h2>{this.props.username}</h2> */}
           <div className="logoLogin">
             <img className="stretch" src={require('../img/logoLogin.png')} />
-            <NavLink to="/login">
+            <Link to="/login">
               <span className="userProp">Nome Utente</span>
-            </NavLink>
+            </Link>
           </div>
         </div>
 
         <hr />
         <ul>
-          <NavLink
-            className="LinkSide"
-            activeClassName="active"
-            to="/hashtags"
-            onClick={() => this.dropDownMenu(0)}
-          >
-            <li>
+          <li>
+            <NavLink
+              className="LinkSide"
+              activeClassName="active"
+              to="/hashtags"
+              onClick={() => this.dropDownMenu(0)}
+            >
               <div className="sidebar__menu__link">
                 <span>HASHTAGS</span> <span>></span>
               </div>
+            </NavLink>
+            {this.state.showDropDown[0] ? (
               <ul
                 className={
                   this.state.showDropDown[0]
@@ -63,22 +65,25 @@ class Sidebar extends Component {
                 <li>lorem</li>
                 <li>lorem</li>
               </ul>
-            </li>
-          </NavLink>
-          <NavLink
-            className="LinkSide"
-            activeClassName="active"
-            to="/accounts"
-            onClick={() => this.dropDownMenu(1)}
-          >
-            <li>
+            ) : null}
+          </li>
+
+          <li>
+            <NavLink
+              className="LinkSide"
+              activeClassName="active"
+              to="/accounts"
+              onClick={() => this.dropDownMenu(1)}
+            >
               <div className="sidebar__menu__link">
                 <span>ACCOUNTS</span>
                 <span>></span>
               </div>
+            </NavLink>
+            {this.state.showDropDown[1] ? (
               <ul
                 className={
-                  this.state.showDropDown[0]
+                  this.state.showDropDown[1]
                     ? 'dropdown sidebar__dropdown__show'
                     : 'dropdown sidebar__dropdown__hide'
                 }
@@ -87,22 +92,25 @@ class Sidebar extends Component {
                 <li>lorem</li>
                 <li>lorem</li>
               </ul>
-            </li>
-          </NavLink>
-          <NavLink
-            className="LinkSide"
-            activeClassName="active"
-            to="/personalita"
-            onClick={() => this.dropDownMenu(2)}
-          >
-            <li>
+            ) : null}
+          </li>
+
+          <li>
+            <NavLink
+              className="LinkSide"
+              activeClassName="active"
+              to="/personalita"
+              onClick={() => this.dropDownMenu(2)}
+            >
               <div className="sidebar__menu__link">
                 <span> PERSONALITÀ</span>
                 <span>></span>
               </div>
+            </NavLink>
+            {this.state.showDropDown[2] ? (
               <ul
                 className={
-                  this.state.showDropDown[0]
+                  this.state.showDropDown[2]
                     ? 'dropdown sidebar__dropdown__show'
                     : 'dropdown sidebar__dropdown__hide'
                 }
@@ -111,22 +119,25 @@ class Sidebar extends Component {
                 <li>lorem</li>
                 <li>lorem</li>
               </ul>
-            </li>
-          </NavLink>
-          <NavLink
-            className="LinkSide"
-            activeClassName="active"
-            to="/competitors"
-            onClick={() => this.dropDownMenu(3)}
-          >
-            <li>
+            ) : null}
+          </li>
+
+          <li>
+            <NavLink
+              className="LinkSide"
+              activeClassName="active"
+              to="/competitors"
+              onClick={() => this.dropDownMenu(3)}
+            >
               <div className="sidebar__menu__link">
                 <span>COMPETITORS</span>
                 <span>></span>
               </div>
+            </NavLink>
+            {this.state.showDropDown[3] ? (
               <ul
                 className={
-                  this.state.showDropDown[0]
+                  this.state.showDropDown[3]
                     ? 'dropdown sidebar__dropdown__show'
                     : 'dropdown sidebar__dropdown__hide'
                 }
@@ -135,8 +146,8 @@ class Sidebar extends Component {
                 <li>lorem</li>
                 <li>lorem</li>
               </ul>
-            </li>
-          </NavLink>
+            ) : null}
+          </li>
         </ul>
       </div>
     )

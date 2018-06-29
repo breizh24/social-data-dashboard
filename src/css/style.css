@@ -72,6 +72,12 @@ svg {
   align-content: center;
 }
 
+.sidebar__dropdown__show {
+}
+
+.sidebar__dropdown__hide {
+}
+
 .LinkSide li a:active {
   color: #ffffff;
   background-color: transparent;
@@ -95,7 +101,7 @@ svg {
   border-radius: 5px; */
 }
 
-.sidebar__container li:hover {
+.sidebar__menu__link:hover {
   background-color: #ffffff64;
 }
 
@@ -148,7 +154,7 @@ hr {
   text-decoration: none;
 }
 
-.active li {
+.active {
   color: #fff;
   background: #e6b041;
   text-decoration: none;
