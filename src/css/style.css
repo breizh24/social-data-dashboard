@@ -239,7 +239,6 @@ svg {
 }
 .arrow  {
   height: 25%;
-  width: 4%;
   border: solid #fff;
   border-width: 0 3px 3px 0;
   display: inline-block;
@@ -248,7 +247,7 @@ svg {
 }
 
 .right {
-    transform: rotate(-45deg);
+  transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }
 .down {

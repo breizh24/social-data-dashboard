@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Logo from './Logo'
 
 class Header extends Component {
@@ -7,7 +7,9 @@ class Header extends Component {
     return (
       <div className="header__container">
         <div className="header__logo__container">
-          <Logo />
+          <Link to="/">
+            <Logo />
+          </Link>
         </div>
         <h1 className="titleMain"> DASHBOARD </h1>
       </div>
