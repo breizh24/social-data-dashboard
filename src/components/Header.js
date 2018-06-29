@@ -11,7 +11,9 @@ class Header extends Component {
             <Logo />
           </Link>
         </div>
-        <h1 className="titleMain"> DASHBOARD </h1>
+        <div className="title__container">
+          <h1 className="titleMain"> DASHBOARD </h1>
+        </div>
       </div>
     )
   }

@@ -24,17 +24,15 @@ svg {
   z-index: 10;
   display: flex;
   align-items: center;
-
 }
 
 .header__logo__container {
-  width: 200px;
-  padding: 10px;
+  width: 20%;
+  padding: 25px;
   display: grid;
   grid-template: auto / auto;
   align-content: center;
 }
-
 
 .hr_user {
   color: #ffffff;
@@ -94,7 +92,6 @@ svg {
   margin: 0 auto;
 }
 
-
 .sidebar__dropdown__show li:hover {
   background-color: #ffffff64;
 }
@@ -130,7 +127,6 @@ svg {
   background-color: #ffffff64;
   border-radius: 5px;
 }
-
 
 .sidebar__menu__link:active {
   background-color: #ffffff64;
@@ -206,7 +202,7 @@ svg {
   border-radius: 10px;
   padding-left: 10px;
   padding-top: 5px;
-  margin-top: 70px;
+  margin-top: 20px;
 }
 
 .titleMain {
@@ -215,6 +211,12 @@ svg {
   margin: 0 auto;
   width: 60%;
   border-bottom: 1px solid black;
+}
+
+.title__container {
+  margin: 0 auto;
+  text-align: center;
+  width: 80%;
 }
 
 .hr__header {
@@ -237,7 +239,7 @@ svg {
   width: 30%;
   height: 30%;
 }
-.arrow  {
+.arrow {
   height: 25%;
   border: solid #fff;
   border-width: 0 3px 3px 0;
