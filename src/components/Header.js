@@ -6,41 +6,30 @@ class Header extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      title: 'DASHBOARD',
-      currentLocation: ''
+      title: '',
+      currentLocation: this.props.location.pathname,
     }
   }
+
   componentDidMount() {
-    let newTitle;
+    let location = this.props.location.pathname
+    this.showTitle(location)
+  }
+
+  showTitle() {
     let currentLocation = this.props.location.pathname
     switch (currentLocation) {
-      case "/":
-        newTitle = "DASHBOARD";
-        break;
-      case "/login":
-        newTitle = "LOGIN";
-        break;
-      case "/hashtags":
-        newTitle = "HASHTAGS";
-        break;
-      case "/accounts":
-        newTitle = "ACCOUNTS";
-        break;
-      case "/personalita":
-        newTitle = "PERSONALITÁ";
-        break;
-      case "/competitors":
-        newTitle = "COMPETITORS";
-        break;
+      case '/':
+        return 'DASHBOARD'
+      case '/personalita':
+        return 'PERSONALITÀ'
+      default:
+        return currentLocation.slice(1).toUpperCase()
     }
-    this.setState({
-      title: newTitle
-    })
   }
-  // componentShouldUpdate() {
-  // }
 
   render() {
+    const title = this.showTitle()
     return (
       <div className="header__container">
         <div className="header__logo__container">
@@ -49,7 +38,7 @@ class Header extends Component {
           </Link>
         </div>
         <div className="title__container">
-          <h1 className="titleMain"> {this.state.title} </h1>
+          <h1 className="titleMain"> {title} </h1>
         </div>
       </div>
     )
