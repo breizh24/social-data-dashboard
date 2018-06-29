@@ -9,7 +9,9 @@ class Header extends Component {
         <div className="header__logo__container">
           <Logo />
         </div>
-        <h1 className="titleMain"> DASHBOARD </h1>
+        <div className="title__container">
+          <h1 className="titleMain"> DASHBOARD </h1>
+        </div>
       </div>
     )
   }
