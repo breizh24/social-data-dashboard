@@ -42,7 +42,7 @@ class Sidebar extends Component {
           </div>
         </div>
 
-        <hr />
+        <hr className="hr_user" />
 
         <ul>
           <li>
