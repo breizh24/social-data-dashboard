@@ -6,6 +6,7 @@ class Header extends Component {
     return (
       <div className="header__container">
         <h1 className="titleMain"> DASHBOARD </h1>
+        <hr className="hr__header" />
       </div>
     )
   }

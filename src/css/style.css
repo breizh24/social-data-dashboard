@@ -9,7 +9,7 @@
 
 svg {
   overflow: visible;
-  padding-bottom: 100px;
+  padding-bottom: 40px;
 }
 
 .app__container {
@@ -20,13 +20,11 @@ svg {
 }
 
 .header__container {
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  display: grid;
-  grid-template-columns: 90% 10%;
+
   /* display: flex;
   align-items: center; */
   /* box-shadow: 0px 7px 8px -7px rgba(0, 0, 0, 0.75); */
+
   padding-top: 15px;
   padding-bottom: 10px;
 }
@@ -34,10 +32,17 @@ svg {
 .sidebar__logo__container {
   background-color: white;
   width: 100%;
-  padding: 10px;
+  padding: 30px;
   display: grid;
+
   grid-template: auto / auto;
   align-content: center;
+}
+
+.hr__logo {
+  color: #a09e99;
+  width: 80%;
+  margin-top: -40px;
 }
 
 .sidebar__container {
@@ -58,6 +63,7 @@ svg {
   align-items: center;
   color: white;
   background: #605e5e;
+  box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.555);
 }
 
 .sidebar__container ul {
@@ -97,13 +103,14 @@ svg {
   line-height: 50px;
   text-align: center;
   transition: 0.5s;
-  /* margin-bottom: 10px;
-  border-radius: 5px; */
+  margin-bottom: 10px;
+  border-radius: 5px;
 }
 
 .sidebar__menu__link:hover {
   background-color: #ffffff64;
 }
+
 
 .sidebar__menu__link {
   display: flex;
@@ -117,8 +124,9 @@ svg {
   margin-right: 10px;
 }
 
-hr {
-  color: #ffffff9e;
+.hr__sidebar {
+  background-color: #ffffff9e;
+
   width: 100%;
   margin-bottom: 10px;
 }
@@ -166,16 +174,43 @@ hr {
 
 .container__home__element {
   display: flex;
+
+  justify-content: space-around;
+  font-size: 14px;
+}
+
+.widget__graphs {
+  border-style: solid;
+  border-color: #a09e99;
+  border-width: 2px;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
+  margin-top: 70px;
+
 }
 
 .titleMain {
-  color: #00f8ff;
+  text-align: center;
+  color: #605e5e;
+  margin-top: 40px;
+}
+
+.hr__header {
+  color: #a09e99;
+  width: 95%;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+
 }
 
 .logoLogin {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  margin-top: 30px;
 }
 
 .logoLogin .stretch {
