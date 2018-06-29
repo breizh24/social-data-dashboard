@@ -31,7 +31,7 @@ svg {
 
 .header__logo__container {
   width: 20%;
-  padding: 25px;
+  padding: 10px;
   display: grid;
   grid-template: auto / auto;
   align-content: center;
