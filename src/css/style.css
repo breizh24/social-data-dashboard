@@ -15,7 +15,7 @@ svg {
   width: 100%;
   display: grid;
   grid-template-columns: 20% 80%;
-  grid-template-rows: 80px auto;
+  grid-template-rows: 60px auto;
 }
 
 .header__container {
