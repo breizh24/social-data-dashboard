@@ -24,12 +24,6 @@ class Sidebar extends Component {
   render() {
     return (
       <div className="sidebar__container">
-        <div className="sidebar__logo__container">
-          <Link className="LinkSide" to="/">
-            <Logo />
-          </Link>
-        </div>
-        <hr className="hr__logo" />
         <div className="sidebar_user">
           {/* <div className="fotoUser">{this.props.username[0]}</div>
          <h2>{this.props.username}</h2> */}
