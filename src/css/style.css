@@ -57,7 +57,6 @@ svg {
 }
 
 .sidebar__container {
-  height: 100vh;
   /* background-color: #1f1f1f; */
   display: flex;
   flex-direction: column;
@@ -69,6 +68,20 @@ svg {
 
 .sidebar__container ul {
   width: 90%;
+  margin: 0 auto;
+}
+
+.sidebar__container li {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-content: center;
+}
+
+.sidebar__dropdown__show {
+}
+
+.sidebar__dropdown__hide {
 }
 
 .LinkSide li a:active {
@@ -94,12 +107,26 @@ svg {
   border-radius: 5px;
 }
 
-.sidebar__container li:hover {
+.sidebar__menu__link:hover {
   background-color: #ffffff64;
+}
+
+
+.sidebar__menu__link {
+  display: flex;
+}
+
+.sidebar__menu__link span {
+  margin-left: auto;
+}
+
+.sidebar__menu__link span:last-child {
+  margin-right: 10px;
 }
 
 .hr__sidebar {
   background-color: #ffffff9e;
+
   width: 100%;
   margin-bottom: 10px;
 }
@@ -135,10 +162,9 @@ svg {
   text-decoration: none;
 }
 
-.active li {
+.active {
   color: #fff;
   background: #e6b041;
-  display: block;
   text-decoration: none;
 }
 
@@ -177,6 +203,7 @@ svg {
   display: flex;
   align-items: center;
   margin-top: 10px;
+
 }
 
 .logoLogin {
