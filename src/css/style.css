@@ -162,7 +162,7 @@ svg {
   border-radius: 10px;
   padding-left: 10px;
   padding-top: 5px;
-  margin-top: 70px;
+  margin-top: 20px;
 }
 
 .titleMain {
@@ -193,7 +193,7 @@ svg {
   width: 30%;
   height: 30%;
 }
-.arrow  {
+.arrow {
   height: 25%;
   width: 4%;
   border: solid #fff;
@@ -204,7 +204,7 @@ svg {
 }
 
 .right {
-    transform: rotate(-45deg);
+  transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }
 .down {
