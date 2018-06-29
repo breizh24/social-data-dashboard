@@ -25,12 +25,6 @@ class Sidebar extends Component {
     let ArrPos = this.state.showDropDown;
     return (
       <div className="sidebar__container">
-        <div className="sidebar__logo__container">
-          <Link className="LinkSide" to="/">
-            <Logo />
-          </Link>
-        </div>
-        <hr className="hr__logo" />
         <div className="sidebar_user">
           {/* <div className="fotoUser">{this.props.username[0]}</div>
          <h2>{this.props.username}</h2> */}
@@ -43,7 +37,7 @@ class Sidebar extends Component {
           </div>
         </div>
 
-        <hr />
+        <hr className="hr_user" />
 
         <ul>
           <li>
