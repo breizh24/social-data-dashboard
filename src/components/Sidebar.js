@@ -11,6 +11,7 @@ class Sidebar extends Component {
 
   dropDownMenu = number => {
     let showDropDown = this.state.showDropDown.slice()
+    showDropDown = [false, false, false, false]
     showDropDown[number] = !showDropDown[number]
     this.setState(
       {
@@ -21,7 +22,7 @@ class Sidebar extends Component {
   }
 
   render() {
-    let ArrPos = this.state.showDropDown;
+    let ArrPos = this.state.showDropDown
     return (
       <div className="sidebar__container">
         <div className="sidebar_user">
@@ -48,7 +49,7 @@ class Sidebar extends Component {
             >
               <div className="sidebar__menu__link">
                 <span>HASHTAGS</span>
-                <span className={'arrow ' + (ArrPos[0] ? "down" : "right")}></span>
+                <span className={'arrow ' + (ArrPos[0] ? 'down' : 'right')} />
               </div>
             </NavLink>
             {this.state.showDropDown[0] ? (
@@ -75,7 +76,7 @@ class Sidebar extends Component {
             >
               <div className="sidebar__menu__link">
                 <span>ACCOUNTS</span>
-                <span className={'arrow ' + (ArrPos[1] ? "down" : "right")}></span>
+                <span className={'arrow ' + (ArrPos[1] ? 'down' : 'right')} />
               </div>
             </NavLink>
             {this.state.showDropDown[1] ? (
@@ -102,7 +103,7 @@ class Sidebar extends Component {
             >
               <div className="sidebar__menu__link">
                 <span> PERSONALITÀ</span>
-                <span className={'arrow ' + (ArrPos[2] ? "down" : "right")}></span>
+                <span className={'arrow ' + (ArrPos[2] ? 'down' : 'right')} />
               </div>
             </NavLink>
             {this.state.showDropDown[2] ? (
@@ -129,7 +130,7 @@ class Sidebar extends Component {
             >
               <div className="sidebar__menu__link">
                 <span>COMPETITORS</span>
-                <span className={'arrow ' + (ArrPos[3] ? "down" : "right")}></span>
+                <span className={'arrow ' + (ArrPos[3] ? 'down' : 'right')} />
               </div>
             </NavLink>
             {this.state.showDropDown[3] ? (
