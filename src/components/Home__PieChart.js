@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Fetcher } from './Fetch'
-import { PieChart, Pie, ResponsiveContainer, Tooltip } from 'recharts'
+import { PieChart, Pie, ResponsiveContainer, Tooltip, Cell } from 'recharts'
 
 class Home__PieChart extends Component {
   constructor(props) {
@@ -30,11 +30,22 @@ class Home__PieChart extends Component {
       this.setState({
         apiData: apiData,
       })
-      console.log(apiData)
     })
   }
 
   render() {
+    const COLORS = [
+      '#b61351',
+      '#BE2B63',
+      '#C54274',
+      '#CC5A86',
+      '#D37197',
+      '#D37197',
+      '#DB89A8',
+      '#E2A1BA',
+      '#E9B8CB',
+      '#edc2d3',
+    ]
     return (
       <React.Fragment>
         <h2 className="title__piechart">{this.props.title}</h2>
@@ -48,7 +59,11 @@ class Home__PieChart extends Component {
               outerRadius={100}
               fill="#8884d8"
               label
-            />
+            >
+              {this.state.apiData.map((entry, index) => (
+                <Cell fill={COLORS[index % COLORS.length]} />
+              ))}
+            </Pie>
             <Tooltip />
           </PieChart>
         </ResponsiveContainer>

@@ -1,5 +1,3 @@
-import React, { Component } from 'react'
-
 const Fetcher = (
   version,
   category,
