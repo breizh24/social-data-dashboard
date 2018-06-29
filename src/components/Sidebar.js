@@ -31,7 +31,7 @@ class Sidebar extends Component {
           <div className="logoLogin">
             <img className="stretch" src={require('../img/logoLogin.png')} />
 
-            <Link to="/login">
+            <Link className="userAlign" to="/login">
               <span className="userProp">Nome Utente</span>
             </Link>
           </div>
@@ -58,9 +58,15 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-                <li>lorem</li>
-                <li>lorem</li>
-                <li>lorem</li>
+                <Link to="/hashtags/graph1">
+                  <li>graph1</li>
+                </Link>
+                <Link to="/hashtags/graph2">
+                  <li>graph2</li>
+                </Link>
+                <Link to="/hashtags/graph3">
+                  <li>graph3</li>
+                </Link>
               </ul>
             ) : null}
           </li>
@@ -85,9 +91,15 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-                <li>lorem</li>
-                <li>lorem</li>
-                <li>lorem</li>
+                <Link to="/accounts/graph1">
+                  <li>graph1</li>
+                </Link>
+                <Link to="/accounts/graph2">
+                  <li>graph2</li>
+                </Link>
+                <Link to="/accounts/graph3">
+                  <li>graph3</li>
+                </Link>
               </ul>
             ) : null}
           </li>
@@ -112,9 +124,15 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-                <li>lorem</li>
-                <li>lorem</li>
-                <li>lorem</li>
+                <Link to="/personalita/graph1">
+                  <li>graph1</li>
+                </Link>
+                <Link to="/personalita/graph2">
+                  <li>graph2</li>
+                </Link>
+                <Link to="/personalita/graph3">
+                  <li>graph3</li>
+                </Link>
               </ul>
             ) : null}
           </li>
@@ -139,9 +157,15 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-                <li>lorem</li>
-                <li>lorem</li>
-                <li>lorem</li>
+                <Link to="/competitors/graph1">
+                  <li>graph1</li>
+                </Link>
+                <Link to="/competitors/graph2">
+                  <li>graph2</li>
+                </Link>
+                <Link to="/competitors/graph3">
+                  <li>graph3</li>
+                </Link>
               </ul>
             ) : null}
           </li>

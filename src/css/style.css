@@ -232,8 +232,12 @@ svg {
 .logoLogin .stretch {
   width: 30%;
   height: 30%;
-  margin-right: 10px;
+  margin: 0px 5%;
 }
+.userAlign{
+  text-align: center;
+}
+
 .arrow {
   height: 25%;
   border: solid #fff;
