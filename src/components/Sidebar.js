@@ -22,6 +22,7 @@ class Sidebar extends Component {
   }
 
   render() {
+    let ArrPos = this.state.showDropDown;
     return (
       <div className="sidebar__container">
         <div className="sidebar_user">
@@ -47,7 +48,8 @@ class Sidebar extends Component {
               onClick={() => this.dropDownMenu(0)}
             >
               <div className="sidebar__menu__link">
-                <span>HASHTAGS</span> <span>></span>
+                <span>HASHTAGS</span>
+                <span className={'arrow ' + (ArrPos[0] ? "down" : "right")}></span>
               </div>
             </NavLink>
             {this.state.showDropDown[0] ? (
@@ -74,7 +76,7 @@ class Sidebar extends Component {
             >
               <div className="sidebar__menu__link">
                 <span>ACCOUNTS</span>
-                <span>></span>
+                <span className={'arrow ' + (ArrPos[1] ? "down" : "right")}></span>
               </div>
             </NavLink>
             {this.state.showDropDown[1] ? (
@@ -101,7 +103,7 @@ class Sidebar extends Component {
             >
               <div className="sidebar__menu__link">
                 <span> PERSONALITÀ</span>
-                <span>></span>
+                <span className={'arrow ' + (ArrPos[2] ? "down" : "right")}></span>
               </div>
             </NavLink>
             {this.state.showDropDown[2] ? (
@@ -128,7 +130,7 @@ class Sidebar extends Component {
             >
               <div className="sidebar__menu__link">
                 <span>COMPETITORS</span>
-                <span>></span>
+                <span className={'arrow ' + (ArrPos[3] ? "down" : "right")}></span>
               </div>
             </NavLink>
             {this.state.showDropDown[3] ? (
