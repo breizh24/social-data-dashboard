@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed|Montserrat');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Encode Sans Condensed', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 svg {
@@ -197,12 +197,13 @@ svg {
 
 .widget__graphs {
   border-style: solid;
-  border-color: #a09e99;
+  border-color: #9e9d9d;
   border-width: 2px;
   border-radius: 10px;
   padding-left: 10px;
   padding-top: 5px;
   margin-top: 20px;
+  color: #605d5e;
 }
 
 .titleMain {
@@ -210,22 +211,13 @@ svg {
   color: #605e5e;
   margin: 0 auto;
   width: 60%;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid #9e9d9d;
 }
 
 .title__container {
   margin: 0 auto;
   text-align: center;
   width: 80%;
-}
-
-.hr__header {
-  color: #a09e99;
-  width: 95%;
-  margin: 20px;
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
 }
 
 .logoLogin {
@@ -255,4 +247,76 @@ svg {
 .down {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
+}
+
+.title__piechart {
+  font-size: 18px;
+  -webkit-animation: appear 1s ease 0s 1 normal;
+  -moz-animation: appear 1s ease 0s 1 normal;
+  -ms-animation: appear 1s ease 0s 1 normal;
+  animation: appear 1s ease 0s 1 normal;
+}
+
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  60% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.subtitle__piechart {
+  font-size: 15px;
+  margin-right: 10px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #9e9d9d;
+  -webkit-animation: appear 1s ease 0s 1 normal;
+  -moz-animation: appear 1s ease 0s 1 normal;
+  -ms-animation: appear 1s ease 0s 1 normal;
+  animation: appear 1s ease 0s 1 normal;
+}
+
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  60% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.calendar__piechart {
+  border: 2px solid #9e9d9d;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
