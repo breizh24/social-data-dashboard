@@ -192,60 +192,66 @@ class Grafico extends Component {
       return <h2>Loading...</h2>
     }
     return (
-      <div
-        className="graph__barchart"
-        style={{ marginBottom: this.state.marginBottom }}
-      >
-        <ResponsiveContainer width="98%" height={500}>
-          <BarChart data={this.state.apiData}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis
-              dataKey="entity"
-              textAnchor="end"
-              tick={{ angle: -45 }}
-              minTickGap={-200}
-            />
-            <YAxis />
-            <Bar dataKey="frequency" fill="#8884d8" />
-            {this.state.apiDataCompare < 1 ? null : (
-              <Bar dataKey="frequencyCompare" fill="#ccc" />
-            )}
-          </BarChart>
-        </ResponsiveContainer>
-        {this.props.calendarRange === false &&
-        this.props.calendarCompare === false ? null : (
-          <div className="calendar__container">
-            {this.props.calendarRange === false ? null : (
-              <div className="calendar__range">
-                <Calendar
-                  minDate={new Date('2018-04-01')}
-                  maxDate={new Date('2018-05-24')}
-                  defaultDate={new Date('2018-04-01')}
-                  dateFormat="dd/mm/yy"
-                  selectionMode="range"
-                  placeholder="Range di date"
-                  value={this.state.dateFromCalendar}
-                  onChange={e => this.getDateFromCalendar(e)}
-                />
-              </div>
-            )}
-            {this.props.calendarRange === false ? null : (
-              <div className="calendar__compare">
-                <Calendar
-                  minDate={new Date('2018-04-01')}
-                  maxDate={new Date('2018-05-24')}
-                  defaultDate={new Date('2018-04-01')}
-                  dateFormat="dd/mm/yy"
-                  selectionMode="range"
-                  placeholder="Compare"
-                  value={this.state.dateFromCalendarCompare}
-                  onChange={e => this.getDateFromCalendarCompare(e)}
-                />
-              </div>
-            )}
-          </div>
-        )}
-      </div>
+      <React.Fragment>
+        <div className="graph__barchart__header">
+          <h2 className="title__piechart">{this.props.title}</h2>
+          <h3 className="subtitle__piechart">-</h3>
+        </div>
+        <div
+          className="graph__barchart"
+          style={{ marginBottom: this.state.marginBottom }}
+        >
+          <ResponsiveContainer width="98%" height={500}>
+            <BarChart data={this.state.apiData}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis
+                dataKey="entity"
+                textAnchor="end"
+                tick={{ angle: -45 }}
+                minTickGap={-200}
+              />
+              <YAxis />
+              <Bar dataKey="frequency" fill="#8884d8" />
+              {this.state.apiDataCompare < 1 ? null : (
+                <Bar dataKey="frequencyCompare" fill="#ccc" />
+              )}
+            </BarChart>
+          </ResponsiveContainer>
+          {this.props.calendarRange === false &&
+          this.props.calendarCompare === false ? null : (
+            <div className="calendar__container">
+              {this.props.calendarRange === false ? null : (
+                <div className="calendar__range">
+                  <Calendar
+                    minDate={new Date('2018-04-01')}
+                    maxDate={new Date('2018-05-24')}
+                    defaultDate={new Date('2018-04-01')}
+                    dateFormat="dd/mm/yy"
+                    selectionMode="range"
+                    placeholder="Range di date"
+                    value={this.state.dateFromCalendar}
+                    onChange={e => this.getDateFromCalendar(e)}
+                  />
+                </div>
+              )}
+              {this.props.calendarRange === false ? null : (
+                <div className="calendar__compare">
+                  <Calendar
+                    minDate={new Date('2018-04-01')}
+                    maxDate={new Date('2018-05-24')}
+                    defaultDate={new Date('2018-04-01')}
+                    dateFormat="dd/mm/yy"
+                    selectionMode="range"
+                    placeholder="Compare"
+                    value={this.state.dateFromCalendarCompare}
+                    onChange={e => this.getDateFromCalendarCompare(e)}
+                  />
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      </React.Fragment>
     )
   }
 }
