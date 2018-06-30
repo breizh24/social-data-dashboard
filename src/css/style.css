@@ -279,6 +279,13 @@ svg {
   cursor: pointer;
 }
 
+.calendar__container {
+  position: absolute;
+  bottom: 5px;
+  left: 20px;
+  display: flex;
+}
+
 .grafico3 {
   margin-bottom: 50px;
 }
