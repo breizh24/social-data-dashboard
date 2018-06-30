@@ -7,6 +7,7 @@ import Sidebar from './components/Sidebar'
 import 'primereact/resources/themes/omega/theme.css'
 import 'primereact/resources/primereact.min.css'
 import 'primeicons/primeicons.css'
+import Login from './components/Login'
 
 class App extends Component {
   render() {
