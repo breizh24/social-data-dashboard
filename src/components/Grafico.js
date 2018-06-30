@@ -16,10 +16,16 @@ class Grafico extends Component {
     super(props)
     this.state = {
       apiData: [],
+      apiDataCompare: [],
       dateFromCalendar: null,
+      dateFromCalendarCompare: null,
       dateForFetch: {
         minDate: '2018-04-01',
         maxDate: '2018-05-24',
+      },
+      dateForFetchCompare: {
+        minDate: '',
+        maxDate: '',
       },
       marginBottom: '0',
     }
@@ -77,6 +83,58 @@ class Grafico extends Component {
     )
   }
 
+  getDateFromCalendarCompare = e => {
+    this.setState(
+      {
+        dateFromCalendarCompare: e.value,
+      },
+      () => {
+        if (
+          this.state.dateFromCalendarCompare[0] !== null &&
+          this.state.dateFromCalendarCompare[1] !== null
+        ) {
+          this.handleDateCompare(this.state.dateFromCalendarCompare)
+        }
+      },
+    )
+  }
+
+  handleDateCompare = date => {
+    let minDate = moment(date[0]).format('YYYY-MM-DD')
+    let maxDate = moment(date[1]).format('YYYY-MM-DD')
+    let dateForFetchCompare = {
+      minDate: minDate,
+      maxDate: maxDate,
+    }
+
+    this.setState(
+      {
+        dateForFetchCompare: dateForFetchCompare,
+      },
+      () => this.getDataCompare(),
+    )
+  }
+
+  getDataCompare = () => {
+    let minDate = this.state.dateForFetchCompare.minDate
+    let maxDate = this.state.dateForFetchCompare.maxDate
+    Fetcher(155, 'ma', 'trend', 'twitter', minDate, maxDate, 'activity').then(
+      response => {
+        let apiDataCompare = response.apiData.data
+        this.setState({
+          apiDataCompare: apiDataCompare,
+        })
+      },
+    )
+  }
+
+  handleDataForCompare = () => {
+    let apiData = this.state.apiData.slice()
+    let apiDataCompare = this.state.apiDataCompare.slice()
+    let newData = []
+    for (let i = 0; i < apiDataCompare.length; i++) {}
+  }
+
   getLongerString = () => {
     let apiData = this.state.apiData.slice()
     let longerString = ''
@@ -105,11 +163,15 @@ class Grafico extends Component {
   }
 
   render() {
+    console.log(this.state.apiData)
     if (this.state.apiData.length === 0) {
       return <h2>Loading...</h2>
     }
     return (
-      <div style={{ marginBottom: this.state.marginBottom }}>
+      <div
+        className="graph__barchart"
+        style={{ marginBottom: this.state.marginBottom }}
+      >
         <ResponsiveContainer width="98%" height={500}>
           <BarChart data={this.state.apiData}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -123,17 +185,39 @@ class Grafico extends Component {
             <Bar dataKey="frequency" fill="#8884d8" />
           </BarChart>
         </ResponsiveContainer>
-        <Calendar
-          minDate={new Date('2018-04-01')}
-          maxDate={new Date('2018-05-24')}
-          defaultDate={new Date('2018-04-01')}
-          dateFormat="dd/mm/yy"
-          selectionMode="range"
-          placeholder="Range di date"
-          style={{ position: 'absolute', bottom: '5px', left: '20px' }}
-          value={this.state.dateFromCalendar}
-          onChange={e => this.getDateFromCalendar(e)}
-        />
+        {this.props.calendarRange === false &&
+        this.props.calendarCompare === false ? null : (
+          <div className="calendar__container">
+            {this.props.calendarRange === false ? null : (
+              <div className="calendar__range">
+                <Calendar
+                  minDate={new Date('2018-04-01')}
+                  maxDate={new Date('2018-05-24')}
+                  defaultDate={new Date('2018-04-01')}
+                  dateFormat="dd/mm/yy"
+                  selectionMode="range"
+                  placeholder="Range di date"
+                  value={this.state.dateFromCalendar}
+                  onChange={e => this.getDateFromCalendar(e)}
+                />
+              </div>
+            )}
+            {this.props.calendarRange === false ? null : (
+              <div className="calendar__compare">
+                <Calendar
+                  minDate={new Date('2018-04-01')}
+                  maxDate={new Date('2018-05-24')}
+                  defaultDate={new Date('2018-04-01')}
+                  dateFormat="dd/mm/yy"
+                  selectionMode="range"
+                  placeholder="Compare"
+                  value={this.state.dateFromCalendar}
+                  onChange={e => this.getDateFromCalendar(e)}
+                />
+              </div>
+            )}
+          </div>
+        )}
       </div>
     )
   }
