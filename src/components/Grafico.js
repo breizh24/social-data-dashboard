@@ -84,9 +84,10 @@ class Grafico extends Component {
   }
 
   getDateFromCalendarCompare = e => {
+    let date = e.value
     this.setState(
       {
-        dateFromCalendarCompare: e.value,
+        dateFromCalendarCompare: date,
       },
       () => {
         if (
@@ -106,7 +107,6 @@ class Grafico extends Component {
       minDate: minDate,
       maxDate: maxDate,
     }
-
     this.setState(
       {
         dateForFetchCompare: dateForFetchCompare,
@@ -121,18 +121,42 @@ class Grafico extends Component {
     Fetcher(155, 'ma', 'trend', 'twitter', minDate, maxDate, 'activity').then(
       response => {
         let apiDataCompare = response.apiData.data
-        this.setState({
-          apiDataCompare: apiDataCompare,
-        })
+        this.setState(
+          {
+            apiDataCompare: apiDataCompare,
+          },
+          () => this.showInChart(),
+        )
       },
     )
   }
 
-  handleDataForCompare = () => {
+  showInChart = () => {
     let apiData = this.state.apiData.slice()
     let apiDataCompare = this.state.apiDataCompare.slice()
-    let newData = []
-    for (let i = 0; i < apiDataCompare.length; i++) {}
+    for (let i = 0; i < apiDataCompare.length; i++) {
+      let counter = 0
+      let entityCompare = apiDataCompare[i].entity
+      let frequencyCompare = apiDataCompare[i].frequency
+      for (let j = 0; j < apiData.length; j++) {
+        if (entityCompare === apiData[j].entity) {
+          apiData[j].frequencyCompare = frequencyCompare
+        }
+        if (entityCompare !== apiData[j].entity) {
+          counter = counter + 1
+          if (counter === apiData.length) {
+            apiData.push({
+              days: apiDataCompare[i].days,
+              entity: apiDataCompare[i].entity,
+              frequencyCompare: apiDataCompare[i].frequency,
+            })
+          }
+        }
+      }
+    }
+    this.setState({
+      apiData: apiData,
+    })
   }
 
   getLongerString = () => {
@@ -153,7 +177,7 @@ class Grafico extends Component {
       for (let i = 0; i < textNode.length; i++) {
         if (textNode[i].textContent === longerString) {
           let element = textNode[i].getBoundingClientRect()
-          margin = parseInt(element.height + 10).toString() + 'px'
+          margin = parseInt(element.height + 10, 10).toString() + 'px'
         }
       }
       this.setState({
@@ -183,6 +207,9 @@ class Grafico extends Component {
             />
             <YAxis />
             <Bar dataKey="frequency" fill="#8884d8" />
+            {this.state.apiDataCompare < 1 ? null : (
+              <Bar dataKey="frequencyCompare" fill="#ccc" />
+            )}
           </BarChart>
         </ResponsiveContainer>
         {this.props.calendarRange === false &&
@@ -211,8 +238,8 @@ class Grafico extends Component {
                   dateFormat="dd/mm/yy"
                   selectionMode="range"
                   placeholder="Compare"
-                  value={this.state.dateFromCalendar}
-                  onChange={e => this.getDateFromCalendar(e)}
+                  value={this.state.dateFromCalendarCompare}
+                  onChange={e => this.getDateFromCalendarCompare(e)}
                 />
               </div>
             )}
