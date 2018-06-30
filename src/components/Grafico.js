@@ -17,6 +17,7 @@ class Grafico extends Component {
     this.state = {
       apiData: [],
       apiDataCompare: [],
+      showData: [],
       dateFromCalendar: null,
       dateFromCalendarCompare: null,
       dateForFetch: {
@@ -41,7 +42,10 @@ class Grafico extends Component {
           {
             apiData: apiData,
           },
-          () => this.getLongerString(),
+          () => (
+            this.getLongerString(),
+            this.state.apiDataCompare.length > 1 ? this.showInChart() : null
+          ),
         )
       },
     )
@@ -155,7 +159,7 @@ class Grafico extends Component {
       }
     }
     this.setState({
-      apiData: apiData,
+      showData: apiData,
     })
   }
 
@@ -187,7 +191,6 @@ class Grafico extends Component {
   }
 
   render() {
-    console.log(this.state.apiData)
     if (this.state.apiData.length === 0) {
       return <h2>Loading...</h2>
     }
@@ -202,13 +205,19 @@ class Grafico extends Component {
           style={{ marginBottom: this.state.marginBottom }}
         >
           <ResponsiveContainer width="98%" height={500}>
-            <BarChart data={this.state.apiData}>
+            <BarChart
+              data={
+                this.state.apiDataCompare.length < 1
+                  ? this.state.apiData
+                  : this.state.showData
+              }
+            >
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis
                 dataKey="entity"
                 textAnchor="end"
                 tick={{ angle: -45 }}
-                minTickGap={-200}
+                minTickGap={-150}
               />
               <YAxis />
               <Bar dataKey="frequency" fill="#8884d8" />
