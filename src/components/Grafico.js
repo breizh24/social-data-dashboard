@@ -16,10 +16,17 @@ class Grafico extends Component {
     super(props)
     this.state = {
       apiData: [],
+      apiDataCompare: [],
+      showData: [],
       dateFromCalendar: null,
+      dateFromCalendarCompare: null,
       dateForFetch: {
         minDate: '2018-04-01',
         maxDate: '2018-05-24',
+      },
+      dateForFetchCompare: {
+        minDate: '',
+        maxDate: '',
       },
       marginBottom: '0',
     }
@@ -35,7 +42,7 @@ class Grafico extends Component {
           {
             apiData: apiData,
           },
-          () => this.getLongerString(),
+          () => (this.getLongerString(), this.showInChart()),
         )
       },
     )
@@ -77,6 +84,90 @@ class Grafico extends Component {
     )
   }
 
+  getDateFromCalendarCompare = e => {
+    let date = e.value
+    this.setState(
+      {
+        dateFromCalendarCompare: date,
+      },
+      () => {
+        if (
+          this.state.dateFromCalendarCompare[0] !== null &&
+          this.state.dateFromCalendarCompare[1] !== null
+        ) {
+          this.handleDateCompare(this.state.dateFromCalendarCompare)
+        }
+      },
+    )
+  }
+
+  handleDateCompare = date => {
+    let minDate = moment(date[0]).format('YYYY-MM-DD')
+    let maxDate = moment(date[1]).format('YYYY-MM-DD')
+    let dateForFetchCompare = {
+      minDate: minDate,
+      maxDate: maxDate,
+    }
+    this.setState(
+      {
+        dateForFetchCompare: dateForFetchCompare,
+      },
+      () => this.getDataCompare(),
+    )
+  }
+
+  getDataCompare = () => {
+    let minDate = this.state.dateForFetchCompare.minDate
+    let maxDate = this.state.dateForFetchCompare.maxDate
+    Fetcher(155, 'ma', 'trend', 'twitter', minDate, maxDate, 'activity').then(
+      response => {
+        let apiDataCompare = response.apiData.data
+        this.setState(
+          {
+            apiDataCompare: apiDataCompare,
+          },
+          () => this.showInChart(),
+        )
+      },
+    )
+  }
+
+  showInChart = () => {
+    let showData = this.state.showData.slice()
+    let apiData = this.state.apiData.slice()
+    if (showData.length < 1) {
+      showData = apiData
+      this.setState({
+        showData: showData,
+      })
+    } else {
+      let apiDataCompare = this.state.apiDataCompare.slice()
+      for (let i = 0; i < apiDataCompare.length; i++) {
+        let counter = 0
+        let entityCompare = apiDataCompare[i].entity
+        let frequencyCompare = apiDataCompare[i].frequency
+        for (let j = 0; j < apiData.length; j++) {
+          if (entityCompare === apiData[j].entity) {
+            apiData[j].frequencyCompare = frequencyCompare
+          }
+          if (entityCompare !== apiData[j].entity) {
+            counter = counter + 1
+            if (counter === apiData.length) {
+              apiData.push({
+                days: apiDataCompare[i].days,
+                entity: apiDataCompare[i].entity,
+                frequencyCompare: apiDataCompare[i].frequency,
+              })
+            }
+          }
+        }
+      }
+      this.setState({
+        showData: apiData,
+      })
+    }
+  }
+
   getLongerString = () => {
     let apiData = this.state.apiData.slice()
     let longerString = ''
@@ -95,7 +186,7 @@ class Grafico extends Component {
       for (let i = 0; i < textNode.length; i++) {
         if (textNode[i].textContent === longerString) {
           let element = textNode[i].getBoundingClientRect()
-          margin = parseInt(element.height + 10).toString() + 'px'
+          margin = parseInt(element.height + 10, 10).toString() + 'px'
         }
       }
       this.setState({
@@ -109,32 +200,66 @@ class Grafico extends Component {
       return <h2>Loading...</h2>
     }
     return (
-      <div style={{ marginBottom: this.state.marginBottom }}>
-        <ResponsiveContainer width="98%" height={500}>
-          <BarChart data={this.state.apiData}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis
-              dataKey="entity"
-              textAnchor="end"
-              tick={{ angle: -45 }}
-              minTickGap={-200}
-            />
-            <YAxis />
-            <Bar dataKey="frequency" fill="#8884d8" />
-          </BarChart>
-        </ResponsiveContainer>
-        <Calendar
-          minDate={new Date('2018-04-01')}
-          maxDate={new Date('2018-05-24')}
-          defaultDate={new Date('2018-04-01')}
-          dateFormat="dd/mm/yy"
-          selectionMode="range"
-          placeholder="Range di date"
-          style={{ position: 'absolute', bottom: '5px', left: '20px' }}
-          value={this.state.dateFromCalendar}
-          onChange={e => this.getDateFromCalendar(e)}
-        />
-      </div>
+      <React.Fragment>
+        <div className="graph__barchart__header">
+          <h2 className="title__piechart">{this.props.title}</h2>
+          <h3 className="subtitle__piechart">-</h3>
+        </div>
+        <div
+          className="graph__barchart"
+          style={{ marginBottom: this.state.marginBottom }}
+        >
+          <ResponsiveContainer width="98%" height={500}>
+            <BarChart data={this.state.showData}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis
+                dataKey="entity"
+                textAnchor="end"
+                tick={{ angle: -45 }}
+                minTickGap={-150}
+              />
+              <YAxis />
+              <Bar dataKey="frequency" fill="#8884d8" />
+              {this.state.apiDataCompare < 1 ? null : (
+                <Bar dataKey="frequencyCompare" fill="#ccc" />
+              )}
+            </BarChart>
+          </ResponsiveContainer>
+          {this.props.calendarRange === false &&
+          this.props.calendarCompare === false ? null : (
+            <div className="calendar__container">
+              {this.props.calendarRange === false ? null : (
+                <div className="calendar__range">
+                  <Calendar
+                    minDate={new Date('2018-04-01')}
+                    maxDate={new Date('2018-05-24')}
+                    defaultDate={new Date('2018-04-01')}
+                    dateFormat="dd/mm/yy"
+                    selectionMode="range"
+                    placeholder="Range di date"
+                    value={this.state.dateFromCalendar}
+                    onChange={e => this.getDateFromCalendar(e)}
+                  />
+                </div>
+              )}
+              {this.props.calendarRange === false ? null : (
+                <div className="calendar__compare">
+                  <Calendar
+                    minDate={new Date('2018-04-01')}
+                    maxDate={new Date('2018-05-24')}
+                    defaultDate={new Date('2018-04-01')}
+                    dateFormat="dd/mm/yy"
+                    selectionMode="range"
+                    placeholder="Compare"
+                    value={this.state.dateFromCalendarCompare}
+                    onChange={e => this.getDateFromCalendarCompare(e)}
+                  />
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      </React.Fragment>
     )
   }
 }

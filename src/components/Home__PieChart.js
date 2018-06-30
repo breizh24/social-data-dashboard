@@ -61,7 +61,7 @@ class Home__PieChart extends Component {
               label
             >
               {this.state.apiData.map((entry, index) => (
-                <Cell fill={COLORS[index % COLORS.length]} />
+                <Cell key={index} fill={COLORS[index % COLORS.length]} />
               ))}
             </Pie>
             <Tooltip />
