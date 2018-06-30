@@ -8,6 +8,7 @@ import NotFound from './NotFound.js'
 import Grafico from './Grafico'
 import Widget from './Widget.js'
 import Home_Piechart from './Home__PieChart'
+import Login from './Login'
 
 class Main extends Component {
   render() {
@@ -39,13 +40,12 @@ class Main extends Component {
                     indicator="activity"
                   />
                 </Widget>
-                <Widget width="95%" padding-bottom="50px">
-                  <Grafico />
+                <Widget width="95%">
+                  <Grafico title={'TREND ACTIVITY ACCOUNTS'} />
                 </Widget>
               </div>
             )}
           />
-          <Route path="/login" render={props => <Grafico />} />
 
           <Route path="/hashtags" render={props => <Hashtags />} />
 

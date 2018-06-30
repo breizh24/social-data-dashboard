@@ -18,6 +18,8 @@ svg {
   grid-template-rows: 60px auto;
 }
 
+/* //header// */
+
 .header__container {
   grid-column: 1 / 3;
   grid-row: 1 / 2;
@@ -50,6 +52,8 @@ svg {
   grid-row: 2 / 3;
   padding: 20px;
 }
+
+/* //sidebar// */
 
 .sidebar__container {
   grid-column: 1 / 2;
@@ -182,6 +186,8 @@ svg {
   border-radius: 5px;
 }
 
+/* //main// */
+
 .recharts-wrapper {
   display: flex;
 }
@@ -194,10 +200,10 @@ svg {
 }
 
 .widget__graphs {
-  border-style: solid;
+  /* border-style: solid;
   border-color: #9e9d9d;
   border-width: 2px;
-  border-radius: 10px;
+  border-radius: 10px; */
   padding: 5px;
   position: relative;
   padding-top: 5px;
@@ -286,10 +292,6 @@ svg {
   display: flex;
 }
 
-.grafico3 {
-  margin-bottom: 50px;
-}
-
 @keyframes appear {
   0% {
     opacity: 0;
@@ -301,4 +303,138 @@ svg {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
+}
+
+.calendar__container input {
+  width: 100%;
+  border: none;
+  background: none;
+  border-bottom: 2px solid #9e9d9d;
+  border-radius: 0px;
+  height: 30px;
+  font-size: 16px;
+  color: #9e9d9d;
+  letter-spacing: 1px;
+  outline: none;
+  padding-left: 10px;
+  /* margin-right: 80px; */
+}
+
+.calendar__container input::placeholder {
+  color: #9e9d9d;
+  font-size: 14px;
+  font-weight: 100;
+  letter-spacing: 1px;
+  padding-left: 10px;
+  transition: all 0.3s ease;
+}
+
+.calendar__container input:focus::placeholder {
+  opacity: 0;
+}
+
+.calendar__container input:focus {
+  box-shadow: none;
+}
+
+.ui-calendar {
+  margin-right: 30px;
+}
+
+.graph__barchart__header {
+  margin-bottom: 30px;
+}
+
+/* //login// */
+
+.login__container {
+  background-size: cover;
+  height: 100vh;
+  padding: 30px;
+  color: rgb(179, 30, 30);
+  display: flex;
+  align-items: center;
+}
+
+.login__logo {
+  width: 50px;
+}
+
+.login__h1 {
+  font-size: 60px;
+  line-height: 65px;
+  margin-top: 50px;
+}
+
+.logo__h1__form__container {
+  margin-top: -150px;
+}
+
+.login__form input {
+  width: 100%;
+  border: none;
+  background: none;
+  border-bottom: 1px solid rgb(196, 0, 0);
+  height: 30px;
+  font-size: 16px;
+  color: #fff;
+  letter-spacing: 1px;
+  outline: none;
+  padding-left: 10px;
+}
+
+.login__form input::placeholder {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 100;
+  letter-spacing: 1px;
+  padding-left: 10px;
+  transition: all 0.3s ease;
+}
+
+.login__form input:focus::placeholder {
+  opacity: 0;
+}
+
+.input__email {
+  margin-top: 50px;
+}
+
+.input__password {
+  margin-top: 30px;
+}
+
+.login__button {
+  position: fixed;
+  width: 100%;
+  background: var(--darkGrey);
+  left: 0;
+  bottom: 0;
+  height: 60px;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #fff;
+  border: none;
+}
+
+.login__button:active {
+  background: var(--darkGreyActive);
+}
+
+.button__container {
+  display: flex;
+  align-content: center;
+  cursor: pointer;
+}
+
+.login__privacy {
+  letter-spacing: 1px;
+  font-size: 14px;
+  position: absolute;
+  bottom: 80px;
+}
+
+.login__privacy span {
+  text-decoration: underline;
 }
