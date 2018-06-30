@@ -42,10 +42,7 @@ class Grafico extends Component {
           {
             apiData: apiData,
           },
-          () => (
-            this.getLongerString(),
-            this.state.apiDataCompare.length > 1 ? this.showInChart() : null
-          ),
+          () => (this.getLongerString(), this.showInChart()),
         )
       },
     )
@@ -136,31 +133,39 @@ class Grafico extends Component {
   }
 
   showInChart = () => {
+    let showData = this.state.showData.slice()
     let apiData = this.state.apiData.slice()
-    let apiDataCompare = this.state.apiDataCompare.slice()
-    for (let i = 0; i < apiDataCompare.length; i++) {
-      let counter = 0
-      let entityCompare = apiDataCompare[i].entity
-      let frequencyCompare = apiDataCompare[i].frequency
-      for (let j = 0; j < apiData.length; j++) {
-        if (entityCompare === apiData[j].entity) {
-          apiData[j].frequencyCompare = frequencyCompare
-        }
-        if (entityCompare !== apiData[j].entity) {
-          counter = counter + 1
-          if (counter === apiData.length) {
-            apiData.push({
-              days: apiDataCompare[i].days,
-              entity: apiDataCompare[i].entity,
-              frequencyCompare: apiDataCompare[i].frequency,
-            })
+    if (showData.length < 1) {
+      showData = apiData
+      this.setState({
+        showData: showData,
+      })
+    } else {
+      let apiDataCompare = this.state.apiDataCompare.slice()
+      for (let i = 0; i < apiDataCompare.length; i++) {
+        let counter = 0
+        let entityCompare = apiDataCompare[i].entity
+        let frequencyCompare = apiDataCompare[i].frequency
+        for (let j = 0; j < apiData.length; j++) {
+          if (entityCompare === apiData[j].entity) {
+            apiData[j].frequencyCompare = frequencyCompare
+          }
+          if (entityCompare !== apiData[j].entity) {
+            counter = counter + 1
+            if (counter === apiData.length) {
+              apiData.push({
+                days: apiDataCompare[i].days,
+                entity: apiDataCompare[i].entity,
+                frequencyCompare: apiDataCompare[i].frequency,
+              })
+            }
           }
         }
       }
+      this.setState({
+        showData: apiData,
+      })
     }
-    this.setState({
-      showData: apiData,
-    })
   }
 
   getLongerString = () => {
@@ -205,13 +210,7 @@ class Grafico extends Component {
           style={{ marginBottom: this.state.marginBottom }}
         >
           <ResponsiveContainer width="98%" height={500}>
-            <BarChart
-              data={
-                this.state.apiDataCompare.length < 1
-                  ? this.state.apiData
-                  : this.state.showData
-              }
-            >
+            <BarChart data={this.state.showData}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis
                 dataKey="entity"
