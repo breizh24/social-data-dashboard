@@ -11,14 +11,16 @@ class Sidebar extends Component {
 
   dropDownMenu = number => {
     let showDropDown = this.state.showDropDown.slice()
-    showDropDown = [false, false, false, false]
-    showDropDown[number] = !showDropDown[number]
-    this.setState(
-      {
-        showDropDown: showDropDown,
-      },
-      () => console.log(this.state.showDropDown),
-    )
+    for (let i = 0; i < showDropDown.length; i++) {
+      if (i === number) {
+        showDropDown[i] = !showDropDown[i]
+      } else {
+        showDropDown[i] = false
+      }
+    }
+    this.setState({
+      showDropDown: showDropDown,
+    })
   }
 
   render() {
