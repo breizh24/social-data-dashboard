@@ -187,7 +187,6 @@ class Grafico extends Component {
   }
 
   render() {
-    console.log(this.state.apiData)
     if (this.state.apiData.length === 0) {
       return <h2>Loading...</h2>
     }
