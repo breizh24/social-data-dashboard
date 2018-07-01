@@ -203,7 +203,21 @@ class Grafico extends Component {
       <React.Fragment>
         <div className="graph__barchart__header">
           <h2 className="title__piechart">{this.props.title}</h2>
-          <h3 className="subtitle__piechart">-</h3>
+          <h3 className="subtitle__piechart">
+            {`Range ${moment(this.state.dateForFetch.minDate).format(
+              'DD/MM/YYYY',
+            )} to ${moment(this.state.dateForFetch.maxDate).format(
+              'DD/MM/YYYY',
+            )} ${
+              this.state.apiDataCompare.length > 0
+                ? `compared with ${moment(
+                    this.state.dateForFetchCompare.minDate,
+                  ).format('DD/MM/YYYY')} to ${moment(
+                    this.state.dateForFetchCompare.maxDate,
+                  ).format('DD/MM/YYYY')}`
+                : ''
+            }`}
+          </h3>
         </div>
         <div
           className="graph__barchart"
