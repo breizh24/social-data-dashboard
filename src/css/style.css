@@ -346,6 +346,56 @@ svg {
   margin-bottom: 30px;
 }
 
+.calendar__range input {
+  width: 100%;
+  border: none;
+  background: none;
+  border-bottom: 2px solid #d70040;
+  border-radius: 0px;
+  height: 30px;
+  font-size: 16px;
+  color: #9e9d9d;
+  letter-spacing: 1px;
+  outline: none;
+  padding-left: 10px;
+  /* margin-right: 80px; */
+}
+
+.calendar__range input:focus {
+  box-shadow: none;
+  border-bottom: 2px solid #d70040;
+}
+
+.calendar__range input:hover {
+  box-shadow: none;
+  border-bottom: 2px solid #d70040;
+}
+
+.calendar__compare input {
+  width: 100%;
+  border: none;
+  background: none;
+  border-bottom: 2px solid #61bd88;
+  border-radius: 0px;
+  height: 30px;
+  font-size: 16px;
+  color: #9e9d9d;
+  letter-spacing: 1px;
+  outline: none;
+  padding-left: 10px;
+  /* margin-right: 80px; */
+}
+
+.calendar__compare input:focus {
+  box-shadow: none;
+  border-bottom: 2px solid #61bd88;
+}
+
+.calendar__compare input:hover {
+  box-shadow: none;
+  border-bottom: 2px solid #61bd88;
+}
+
 /* //login// */
 
 .login__container {
