@@ -8,6 +8,7 @@ import NotFound from './NotFound.js'
 import Grafico from './Grafico'
 import Widget from './Widget.js'
 import Home_Piechart from './Home__PieChart'
+
 import AccountActivity from './AccountActivity.js';
 import AccountInvolvement from './AccountInvolvement.js';
 import Personality_AccountActivity from './Personality_AccountActivity.js';
@@ -15,6 +16,8 @@ import Personality_AccountInvolvement from './Personality_AccountInvolvement.js'
 import Personality_AccountApproval from './Personality_AccountApproval.js';
 import Competitor_AccountActivity from './Competitor_AccountActivity.js';
 import Competitor_AccountInvolvement from './Competitor_AccountInvolvement.js';
+import Login from './Login'
+
 
 class Main extends Component {
   render() {
@@ -46,10 +49,12 @@ class Main extends Component {
                     indicator="activity"
                   />
                 </Widget>
+                <Widget width="95%">
+                  <Grafico title={'TREND ACTIVITY ACCOUNTS'} />
+                </Widget>
               </div>
             )}
           />
-          <Route path="/login" render={props => <Grafico />} />
 
           <Route path="/hashtags" render={props => <Hashtags />} />
 
