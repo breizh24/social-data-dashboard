@@ -1,41 +1,34 @@
+import React, { Component } from 'react'
 import {
   LineChart,
-  PieChart,
-  Pie,
   ResponsiveContainer,
+  XAxis,
+  YAxis,
+  Line,
   Tooltip,
   Cell,
+  CartesianGrid,
+  Legend,
 } from 'recharts'
 
-class LineChart extends Component {
+class PersonalityApproval extends Component {
   constructor(props) {
     super(props)
     this.state = {
       apiData: [],
-      dateForFetch: {
-        minDate: '2018-04-24',
-        maxDate: '2018-05-24',
-      },
     }
   }
 
   componentDidMount() {
-    let minDate = this.state.dateForFetch.minDate
-    let maxDate = this.state.dateForFetch.maxDate
-    Fetcher(
-      this.props.version,
-      this.props.category,
-      this.props.subCategory,
-      this.props.social,
-      minDate,
-      maxDate,
-      this.props.indicator,
-    ).then(response => {
-      let apiData = response.apiData.data
-      this.setState({
-        apiData: apiData,
+    fetch('http://165.227.158.131/dp/api/v160/trend/ma/twitter/order/approval')
+      .then(response => response.json())
+      .then(response => {
+        let apiData = response.apiData.data
+        this.setState({
+          apiData: apiData,
+        })
+        console.log(this.state.apiData)
       })
-    })
   }
 
   render() {
@@ -51,12 +44,10 @@ class LineChart extends Component {
               type="category"
               allowDuplicatedCategory={false}
             />
-            <YAxis dataKey="frequency" />
+            <YAxis />
             <Tooltip />
             <Legend />
-            {series.map(s => (
-              <Line dataKey="value" data={s.data} name={s.name} key={s.name} />
-            ))}
+            <Line type="monotone" stroke="#8884d8" dataKey="frequency" />
           </LineChart>
         </ResponsiveContainer>
       </React.Fragment>
@@ -64,4 +55,4 @@ class LineChart extends Component {
   }
 }
 
-export default LineChart
+export default PersonalityApproval

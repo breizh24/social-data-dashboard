@@ -474,3 +474,31 @@ svg {
 .login__privacy span {
   text-decoration: underline;
 }
+
+#target {
+  position: relative;
+  width: 350px;
+  margin: 0 auto;
+}
+
+.nr_chord_diagram {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  overflow: hidden;
+}
+svg {
+  position: relative;
+  width: 100%;
+}
+.link {
+  stroke: #086788;
+  stroke-width: 2px;
+  stroke-opacity: 0.2;
+  fill: none;
+  pointer-events: none;
+  stroke-opacity: 1;
+  stroke-width: 2px;
+  stroke: #d62728;
+}
