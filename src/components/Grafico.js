@@ -233,9 +233,9 @@ class Grafico extends Component {
                 minTickGap={-150}
               />
               <YAxis />
-              <Bar dataKey="frequency" fill="#8884d8" />
+              <Bar dataKey="frequency" fill="#C6004A" />
               {this.state.apiDataCompare < 1 ? null : (
-                <Bar dataKey="frequencyCompare" fill="#ccc" />
+                <Bar dataKey="frequencyCompare" fill="#78B688" />
               )}
             </BarChart>
           </ResponsiveContainer>

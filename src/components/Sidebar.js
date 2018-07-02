@@ -93,15 +93,9 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-                <Link to="/accounts/graph1">
-                  <li>graph1</li>
-                </Link>
-                <Link to="/accounts/graph2">
-                  <li>graph2</li>
-                </Link>
-                <Link to="/accounts/graph3">
-                  <li>graph3</li>
-                </Link>
+
+                <li>Activity</li>
+                <li>Involvement</li>
               </ul>
             ) : null}
           </li>
@@ -126,15 +120,11 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-                <Link to="/personalita/graph1">
-                  <li>graph1</li>
-                </Link>
-                <Link to="/personalita/graph2">
-                  <li>graph2</li>
-                </Link>
-                <Link to="/personalita/graph3">
-                  <li>graph3</li>
-                </Link>
+
+                <li>Activity</li>
+                <li>Approval</li>
+                <li>Involvement</li>
+
               </ul>
             ) : null}
           </li>
@@ -159,15 +149,9 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-                <Link to="/competitors/graph1">
-                  <li>graph1</li>
-                </Link>
-                <Link to="/competitors/graph2">
-                  <li>graph2</li>
-                </Link>
-                <Link to="/competitors/graph3">
-                  <li>graph3</li>
-                </Link>
+
+                <li>Activity</li>
+                <li>Involvement</li>
               </ul>
             ) : null}
           </li>
