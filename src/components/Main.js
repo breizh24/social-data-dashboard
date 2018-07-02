@@ -7,7 +7,7 @@ import { Route, Switch } from 'react-router-dom'
 import NotFound from './NotFound.js'
 import Grafico from './Grafico'
 import Widget from './Widget.js'
-import Home_Piechart from './Home__PieChart'
+import Home__CustomPieChart from './Home_CustomPieChart'
 import Login from './Login'
 
 class Main extends Component {
@@ -21,7 +21,7 @@ class Main extends Component {
             render={() => (
               <div className="container__home__element">
                 <Widget width="45%">
-                  <Home_Piechart
+                  <Home__CustomPieChart
                     title={'ACCOUNT ACTIVITY'}
                     version="155"
                     category="ma"
@@ -31,7 +31,7 @@ class Main extends Component {
                   />
                 </Widget>
                 <Widget width="45%">
-                  <Home_Piechart
+                  <Home__CustomPieChart
                     title={'HASHTAG ACTIVITY'}
                     version="156"
                     category="ht"

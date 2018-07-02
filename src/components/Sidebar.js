@@ -49,7 +49,7 @@ class Sidebar extends Component {
             >
               <div className="sidebar__menu__link">
                 <span>HASHTAGS</span>
-                <span className={'arrow ' + (ArrPos[0] ? 'down' : 'up')} />
+                <span className={'arrow ' + (ArrPos[0] ? 'up' : 'down')} />
               </div>
             </NavLink>
             {this.state.showDropDown[0] ? (
@@ -82,7 +82,7 @@ class Sidebar extends Component {
             >
               <div className="sidebar__menu__link">
                 <span>ACCOUNTS</span>
-                <span className={'arrow ' + (ArrPos[1] ? 'down' : 'up')} />
+                <span className={'arrow ' + (ArrPos[1] ? 'up' : 'down')} />
               </div>
             </NavLink>
             {this.state.showDropDown[1] ? (
@@ -115,7 +115,7 @@ class Sidebar extends Component {
             >
               <div className="sidebar__menu__link">
                 <span> PERSONALITÀ</span>
-                <span className={'arrow ' + (ArrPos[2] ? 'down' : 'up')} />
+                <span className={'arrow ' + (ArrPos[2] ? 'up' : 'down')} />
               </div>
             </NavLink>
             {this.state.showDropDown[2] ? (
@@ -148,7 +148,7 @@ class Sidebar extends Component {
             >
               <div className="sidebar__menu__link">
                 <span>COMPETITORS</span>
-                <span className={'arrow ' + (ArrPos[3] ? 'down' : 'up')} />
+                <span className={'arrow ' + (ArrPos[3] ? 'up' : 'down')} />
               </div>
             </NavLink>
             {this.state.showDropDown[3] ? (
