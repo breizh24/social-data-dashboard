@@ -239,8 +239,12 @@ svg {
 .logoLogin .stretch {
   width: 30%;
   height: 30%;
-  margin-right: 10px;
+  margin: 0px 5%;
 }
+.userAlign{
+  text-align: center;
+}
+
 .arrow {
   height: 25%;
   border: solid #fff;
@@ -250,13 +254,21 @@ svg {
   align-self: center;
 }
 
-.right {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
 }
 .down {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
+}
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
 }
 
 .title__piechart {
