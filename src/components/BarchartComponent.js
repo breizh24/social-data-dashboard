@@ -11,7 +11,7 @@ import { Fetcher } from '../components/Fetch'
 import { Calendar } from 'primereact/components/calendar/Calendar'
 import moment from 'moment'
 
-class Grafico extends Component {
+class BarchartComponent extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -204,7 +204,7 @@ class Grafico extends Component {
         <div className="graph__barchart__header">
           <h2 className="title__piechart">{this.props.title}</h2>
           <h3 className="subtitle__piechart">
-            {`Range ${moment(this.state.dateForFetch.minDate).format(
+            {`Range: ${moment(this.state.dateForFetch.minDate).format(
               'DD/MM/YYYY',
             )} to ${moment(this.state.dateForFetch.maxDate).format(
               'DD/MM/YYYY',
@@ -278,4 +278,4 @@ class Grafico extends Component {
   }
 }
 
-export default Grafico
+export default BarchartComponent

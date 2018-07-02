@@ -5,7 +5,7 @@ import Competitors from './Competitors.js'
 import Accounts from './Accounts.js'
 import { Route, Switch } from 'react-router-dom'
 import NotFound from './NotFound.js'
-import Grafico from './Grafico'
+import BarchartComponent from './BarchartComponent'
 import Widget from './Widget.js'
 import Home_Piechart from './Home__PieChart'
 import Login from './Login'
@@ -41,7 +41,7 @@ class Main extends Component {
                   />
                 </Widget>
                 <Widget width="95%">
-                  <Grafico title={'TREND ACTIVITY ACCOUNTS'} />
+                  <BarchartComponent title={'TREND ACTIVITY ACCOUNTS'} />
                 </Widget>
               </div>
             )}
