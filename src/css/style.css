@@ -241,7 +241,7 @@ svg {
   height: 30%;
   margin: 0px 5%;
 }
-.userAlign{
+.userAlign {
   text-align: center;
 }
 
@@ -330,7 +330,7 @@ svg {
   width: 100%;
   border: none;
   background: none;
-  border-bottom: 2px solid #d70040;
+  border-bottom: 2px solid #d70040 !important;
   border-radius: 0px;
   height: 30px;
   font-size: 16px;
@@ -339,11 +339,6 @@ svg {
   outline: none;
   padding-left: 10px;
   /* margin-right: 80px; */
-}
-
-.calendar__range input:focus {
-  box-shadow: none;
-  border-bottom: 2px solid #d70040;
 }
 
 .calendar__range input:placeholder {
@@ -357,21 +352,14 @@ svg {
   transition: all 0.3s ease;
 }
 
-.calendar__range input:focus::placeholder {
-  opacity: 0;
-}
-
 .calendar__range input:focus {
   box-shadow: none;
-}
-.ui-inputtext:enabled:hover {
-  color: #d70040;
 }
 .calendar__compare input {
   width: 100%;
   border: none;
   background: none;
-  border-bottom: 2px solid #61bd88;
+  border-bottom: 2px solid #61bd88 !important;
   border-radius: 0px;
   height: 30px;
   font-size: 16px;
@@ -384,14 +372,15 @@ svg {
 
 .calendar__compare input:focus {
   box-shadow: none;
-  border-bottom: 2px solid #61bd88;
 }
 
 .calendar__compare input:hover {
-  box-shadow: none;
   border-bottom: 2px solid #61bd88;
 }
 
+.ui-inputtext:enabled:hover {
+  background-color: none;
+}
 /* //login// */
 
 .login__container {
