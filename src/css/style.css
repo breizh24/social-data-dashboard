@@ -239,8 +239,12 @@ svg {
 .logoLogin .stretch {
   width: 30%;
   height: 30%;
-  margin-right: 10px;
+  margin: 0px 5%;
 }
+.userAlign{
+  text-align: center;
+}
+
 .arrow {
   height: 25%;
   border: solid #fff;
@@ -250,13 +254,21 @@ svg {
   align-self: center;
 }
 
-.right {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
 }
 .down {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
+}
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
 }
 
 .title__piechart {
@@ -339,10 +351,61 @@ svg {
 
 .ui-calendar {
   margin-right: 30px;
+  width: 225px;
 }
 
 .graph__barchart__header {
   margin-bottom: 30px;
+}
+
+.calendar__range input {
+  width: 100%;
+  border: none;
+  background: none;
+  border-bottom: 2px solid #d70040;
+  border-radius: 0px;
+  height: 30px;
+  font-size: 16px;
+  color: #9e9d9d;
+  letter-spacing: 1px;
+  outline: none;
+  padding-left: 10px;
+  /* margin-right: 80px; */
+}
+
+.calendar__range input:focus {
+  box-shadow: none;
+  border-bottom: 2px solid #d70040;
+}
+
+.calendar__range input:hover {
+  box-shadow: none;
+  border-bottom: 2px solid #d70040;
+}
+
+.calendar__compare input {
+  width: 100%;
+  border: none;
+  background: none;
+  border-bottom: 2px solid #61bd88;
+  border-radius: 0px;
+  height: 30px;
+  font-size: 16px;
+  color: #9e9d9d;
+  letter-spacing: 1px;
+  outline: none;
+  padding-left: 10px;
+  /* margin-right: 80px; */
+}
+
+.calendar__compare input:focus {
+  box-shadow: none;
+  border-bottom: 2px solid #61bd88;
+}
+
+.calendar__compare input:hover {
+  box-shadow: none;
+  border-bottom: 2px solid #61bd88;
 }
 
 /* //login// */

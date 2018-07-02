@@ -33,7 +33,7 @@ class Sidebar extends Component {
           <div className="logoLogin">
             <img className="stretch" src={require('../img/logoLogin.png')} />
 
-            <Link to="/login">
+            <Link className="userAlign" to="/login">
               <span className="userProp">Nome Utente</span>
             </Link>
           </div>
@@ -49,7 +49,7 @@ class Sidebar extends Component {
             >
               <div className="sidebar__menu__link">
                 <span>HASHTAGS</span>
-                <span className={'arrow ' + (ArrPos[0] ? 'down' : 'right')} />
+                <span className={'arrow ' + (ArrPos[0] ? 'up' : 'down')} />
               </div>
             </NavLink>
             {this.state.showDropDown[0] ? (
@@ -60,9 +60,15 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-                <li>lorem</li>
-                <li>lorem</li>
-                <li>lorem</li>
+                <Link to="/hashtags/graph1">
+                  <li>graph1</li>
+                </Link>
+                <Link to="/hashtags/graph2">
+                  <li>graph2</li>
+                </Link>
+                <Link to="/hashtags/graph3">
+                  <li>graph3</li>
+                </Link>
               </ul>
             ) : null}
           </li>
@@ -76,7 +82,7 @@ class Sidebar extends Component {
             >
               <div className="sidebar__menu__link">
                 <span>ACCOUNTS</span>
-                <span className={'arrow ' + (ArrPos[1] ? 'down' : 'right')} />
+                <span className={'arrow ' + (ArrPos[1] ? 'up' : 'down')} />
               </div>
             </NavLink>
             {this.state.showDropDown[1] ? (
@@ -87,9 +93,9 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-                <li>lorem</li>
-                <li>lorem</li>
-                <li>lorem</li>
+
+                <li>Activity</li>
+                <li>Involvement</li>
               </ul>
             ) : null}
           </li>
@@ -103,7 +109,7 @@ class Sidebar extends Component {
             >
               <div className="sidebar__menu__link">
                 <span> PERSONALITÀ</span>
-                <span className={'arrow ' + (ArrPos[2] ? 'down' : 'right')} />
+                <span className={'arrow ' + (ArrPos[2] ? 'up' : 'down')} />
               </div>
             </NavLink>
             {this.state.showDropDown[2] ? (
@@ -114,9 +120,11 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-                <li>lorem</li>
-                <li>lorem</li>
-                <li>lorem</li>
+
+                <li>Activity</li>
+                <li>Approval</li>
+                <li>Involvement</li>
+
               </ul>
             ) : null}
           </li>
@@ -130,7 +138,7 @@ class Sidebar extends Component {
             >
               <div className="sidebar__menu__link">
                 <span>COMPETITORS</span>
-                <span className={'arrow ' + (ArrPos[3] ? 'down' : 'right')} />
+                <span className={'arrow ' + (ArrPos[3] ? 'up' : 'down')} />
               </div>
             </NavLink>
             {this.state.showDropDown[3] ? (
@@ -141,9 +149,9 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-                <li>lorem</li>
-                <li>lorem</li>
-                <li>lorem</li>
+
+                <li>Activity</li>
+                <li>Involvement</li>
               </ul>
             ) : null}
           </li>
