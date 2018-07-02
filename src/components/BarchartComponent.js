@@ -51,7 +51,10 @@ class BarchartComponent extends Component {
         {
           apiData: apiData,
         },
-        () => (this.getLongerString(), this.showInChart()),
+        () => {
+          this.getLongerString()
+          this.showInChart()
+        },
       )
     })
   }
@@ -204,14 +207,15 @@ class BarchartComponent extends Component {
   getHeightForMargin = longerString => {
     setTimeout(() => {
       let textNode = document.getElementsByTagName('text')
+      console.log(textNode)
       let margin = ''
       for (let i = 0; i < textNode.length; i++) {
         if (textNode[i].textContent === longerString) {
           let element = textNode[i].getBoundingClientRect()
           margin = parseInt(element.height + 10, 10).toString() + 'px'
+          break
         }
       }
-      console.log(this.props.title, this.state.marginBottom)
       this.setState({
         marginBottom: margin,
       })
@@ -222,8 +226,6 @@ class BarchartComponent extends Component {
     if (this.state.apiData.length === 0) {
       return <h2>Loading...</h2>
     }
-
-    console.log(this.props.title, this.state.apiData)
     return (
       <Widget width={this.props.width}>
         <div className="graph__barchart__header">
@@ -255,7 +257,7 @@ class BarchartComponent extends Component {
                 dataKey="entity"
                 textAnchor="end"
                 tick={{ angle: -45 }}
-                minTickGap={-150}
+                minTickGap={-200}
               />
               <YAxis />
               <Bar dataKey="frequency" fill="#C6004A" />
