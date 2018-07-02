@@ -6,10 +6,12 @@ import {
   YAxis,
   Bar,
   ResponsiveContainer,
+  Tooltip,
 } from 'recharts'
 import { Fetcher } from '../components/Fetch'
 import { Calendar } from 'primereact/components/calendar/Calendar'
 import moment from 'moment'
+import Widget from './Widget'
 
 class BarchartComponent extends Component {
   constructor(props) {
@@ -35,17 +37,23 @@ class BarchartComponent extends Component {
   getData = () => {
     let minDate = this.state.dateForFetch.minDate
     let maxDate = this.state.dateForFetch.maxDate
-    Fetcher(155, 'ma', 'trend', 'twitter', minDate, maxDate, 'activity').then(
-      response => {
-        let apiData = response.apiData.data
-        this.setState(
-          {
-            apiData: apiData,
-          },
-          () => (this.getLongerString(), this.showInChart()),
-        )
-      },
-    )
+    Fetcher(
+      this.props.version,
+      this.props.category,
+      this.props.subCategory,
+      this.props.social,
+      minDate,
+      maxDate,
+      this.props.indicator,
+    ).then(response => {
+      let apiData = response.apiData.data
+      this.setState(
+        {
+          apiData: apiData,
+        },
+        () => (this.getLongerString(), this.showInChart()),
+      )
+    })
   }
 
   componentDidMount() {
@@ -119,17 +127,23 @@ class BarchartComponent extends Component {
   getDataCompare = () => {
     let minDate = this.state.dateForFetchCompare.minDate
     let maxDate = this.state.dateForFetchCompare.maxDate
-    Fetcher(155, 'ma', 'trend', 'twitter', minDate, maxDate, 'activity').then(
-      response => {
-        let apiDataCompare = response.apiData.data
-        this.setState(
-          {
-            apiDataCompare: apiDataCompare,
-          },
-          () => this.showInChart(),
-        )
-      },
-    )
+    Fetcher(
+      this.props.version,
+      this.props.category,
+      this.props.subCategory,
+      this.props.social,
+      minDate,
+      maxDate,
+      this.props.indicator,
+    ).then(response => {
+      let apiDataCompare = response.apiData.data
+      this.setState(
+        {
+          apiDataCompare: apiDataCompare,
+        },
+        () => (this.getLongerString(), this.showInChart()),
+      )
+    })
   }
 
   showInChart = () => {
@@ -175,6 +189,14 @@ class BarchartComponent extends Component {
       if (apiData[i].entity.length > longerString.length) {
         longerString = apiData[i].entity
       }
+      if (this.state.apiDataCompare.length > 0) {
+        let apiDataCompare = this.state.apiDataCompare.slice()
+        for (let i = 0; i < apiDataCompare.length; i++) {
+          if (apiDataCompare[i].entity.length > longerString.length) {
+            longerString = apiDataCompare[i].entity
+          }
+        }
+      }
     }
     this.getHeightForMargin(longerString)
   }
@@ -189,6 +211,7 @@ class BarchartComponent extends Component {
           margin = parseInt(element.height + 10, 10).toString() + 'px'
         }
       }
+      console.log(this.props.title, this.state.marginBottom)
       this.setState({
         marginBottom: margin,
       })
@@ -199,8 +222,10 @@ class BarchartComponent extends Component {
     if (this.state.apiData.length === 0) {
       return <h2>Loading...</h2>
     }
+
+    console.log(this.props.title, this.state.apiData)
     return (
-      <React.Fragment>
+      <Widget width={this.props.width}>
         <div className="graph__barchart__header">
           <h2 className="title__piechart">{this.props.title}</h2>
           <h3 className="subtitle__piechart">
@@ -273,7 +298,7 @@ class BarchartComponent extends Component {
             </div>
           )}
         </div>
-      </React.Fragment>
+      </Widget>
     )
   }
 }
