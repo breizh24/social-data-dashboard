@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Widget from './Widget'
 import BarchartComponent from './BarchartComponent'
 
 class Accounts extends Component {
