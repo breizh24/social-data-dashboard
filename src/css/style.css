@@ -305,38 +305,6 @@ svg {
   }
 }
 
-.calendar__container input {
-  width: 100%;
-  border: none;
-  background: none;
-  border-bottom: 2px solid #9e9d9d;
-  border-radius: 0px;
-  height: 30px;
-  font-size: 16px;
-  color: #9e9d9d;
-  letter-spacing: 1px;
-  outline: none;
-  padding-left: 10px;
-  /* margin-right: 80px; */
-}
-
-.calendar__container input::placeholder {
-  color: #9e9d9d;
-  font-size: 14px;
-  font-weight: 100;
-  letter-spacing: 1px;
-  padding-left: 10px;
-  transition: all 0.3s ease;
-}
-
-.calendar__container input:focus::placeholder {
-  opacity: 0;
-}
-
-.calendar__container input:focus {
-  box-shadow: none;
-}
-
 .ui-calendar {
   margin-right: 30px;
   width: 225px;
@@ -366,11 +334,27 @@ svg {
   border-bottom: 2px solid #d70040;
 }
 
-.calendar__range input:hover {
+.calendar__range input:placeholder {
   box-shadow: none;
   border-bottom: 2px solid #d70040;
+  color: #d70040;
+  font-size: 14px;
+  font-weight: 100;
+  letter-spacing: 1px;
+  padding-left: 10px;
+  transition: all 0.3s ease;
 }
 
+.calendar__range input:focus::placeholder {
+  opacity: 0;
+}
+
+.calendar__range input:focus {
+  box-shadow: none;
+}
+.ui-inputtext:enabled:hover {
+  color: #d70040;
+}
 .calendar__compare input {
   width: 100%;
   border: none;
