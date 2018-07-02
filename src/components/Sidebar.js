@@ -87,9 +87,8 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-                <li>lorem</li>
-                <li>lorem</li>
-                <li>lorem</li>
+                <li>Activity</li>
+                <li>Involvement</li>
               </ul>
             ) : null}
           </li>
@@ -114,9 +113,9 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-                <li>lorem</li>
-                <li>lorem</li>
-                <li>lorem</li>
+                <li>Activity</li>
+                <li>Approval</li>
+                <li>Involvement</li>
               </ul>
             ) : null}
           </li>
@@ -141,9 +140,8 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-                <li>lorem</li>
-                <li>lorem</li>
-                <li>lorem</li>
+                <li>Activity</li>
+                <li>Involvement</li>
               </ul>
             ) : null}
           </li>

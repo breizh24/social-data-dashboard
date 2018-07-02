@@ -34,6 +34,7 @@ class Competitor_AccountInvolvement extends Component {
         }
         return (
             <div>
+                <h2>{this.props.title}</h2>
                 <ResponsiveContainer width="98%" height={500}>
                     <BarChart data={this.state.apiData}>
                         <CartesianGrid strokeDasharray="3 3" />
