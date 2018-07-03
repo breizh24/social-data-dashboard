@@ -226,6 +226,7 @@ class BarchartComponent extends Component {
     if (this.state.apiData.length === 0) {
       return <h2>Loading...</h2>
     }
+    const color = this.props.color
     return (
       <Widget width={this.props.width}>
         <div className="graph__barchart__header">
@@ -260,9 +261,9 @@ class BarchartComponent extends Component {
                 minTickGap={-200}
               />
               <YAxis />
-              <Bar dataKey="frequency" fill="#C6004A" />
+              <Bar dataKey="frequency" fill={this.props.colour1} />
               {this.state.apiDataCompare < 1 ? null : (
-                <Bar dataKey="frequencyCompare" fill="#78B688" />
+                <Bar dataKey="frequencyCompare" fill={this.props.colour2} />
               )}
             </BarChart>
           </ResponsiveContainer>
@@ -270,7 +271,9 @@ class BarchartComponent extends Component {
           this.props.calendarCompare === false ? null : (
             <div className="calendar__container">
               {this.props.calendarRange === false ? null : (
-                <div className="calendar__range">
+                <div
+                  className={`calendar__range ${this.props.classColorRange}`}
+                >
                   <Calendar
                     minDate={new Date('2018-04-01')}
                     maxDate={new Date('2018-05-24')}
@@ -284,7 +287,11 @@ class BarchartComponent extends Component {
                 </div>
               )}
               {this.props.calendarRange === false ? null : (
-                <div className="calendar__compare">
+                <div
+                  className={`calendar__compare ${
+                    this.props.classColorCompare
+                  }`}
+                >
                   <Calendar
                     minDate={new Date('2018-04-01')}
                     maxDate={new Date('2018-05-24')}
