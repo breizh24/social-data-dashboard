@@ -12,6 +12,7 @@ import Home_Piechart from './Home__PieChart'
 
 import Personality_AccountApproval from './Personality_AccountApproval.js'
 import Login from './Login'
+import PersonalityApproval from './PersonalityApproval.js'
 
 class Main extends Component {
   render() {
@@ -46,7 +47,13 @@ class Main extends Component {
               </div>
             )}
           />
-          <Route exact path="/login" render={props => <Hashtags />} />
+          <Route
+            exact
+            path="/login"
+
+            render={props => <Personality_AccountApproval />}
+
+          />
 
           <Route exact path="/hashtags" render={props => <Hashtags />} />
 
