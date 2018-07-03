@@ -50,7 +50,9 @@ class Main extends Component {
           <Route
             exact
             path="/login"
-            render={props => <PersonalityApproval />}
+
+            render={props => <Personality_AccountApproval />}
+
           />
 
           <Route exact path="/hashtags" render={props => <Hashtags />} />
