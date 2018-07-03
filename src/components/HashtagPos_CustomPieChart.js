@@ -3,7 +3,7 @@ import { Fetcher } from './Fetch'
 import {
   PieChart, Pie, Sector,
   ResponsiveContainer,
-  Tooltip, Cell
+  Tooltip, Cell,
 } from 'recharts'
 
 class HashtagPos_CustomPieChart extends Component {
@@ -106,9 +106,10 @@ class HashtagPos_CustomPieChart extends Component {
       <React.Fragment>
         <h2 className="title__piechart">{this.props.title}</h2>
         <h3 className="subtitle__piechart">Last 30 days</h3>
-        <ResponsiveContainer width="100%" height={300}>
+        <ResponsiveContainer width="100%" height={300} id="target">
+
           <PieChart>
-            <Pie
+            // <Pie
               activeIndex={this.state.activeIndex}
               activeShape={this.renderActiveShape}
               data={this.state.apiData}
@@ -126,11 +127,11 @@ class HashtagPos_CustomPieChart extends Component {
                 <Cell key={index} fill={COLORS[index % COLORS.length]} />
               ))}
             </Pie>
-          </PieChart>
+            </PieChart>
+
         </ResponsiveContainer>
       </React.Fragment>
     )
   }
 }
-
 export default HashtagPos_CustomPieChart
