@@ -49,7 +49,11 @@ class Main extends Component {
               </div>
             )}
           />
-          <Route exact path="/login" render={props => <ChordCharts />} />
+          <Route
+            exact
+            path="/login"
+            render={props => <Personality_AccountApproval />}
+          />
 
           <Route exact path="/hashtags" render={props => <Hashtags />} />
 

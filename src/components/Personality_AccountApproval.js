@@ -34,11 +34,9 @@ class Personality_AccountApproval extends Component {
 
   handleApiData = data => {
     let myData = data.slice()
-    let dataAllDates = []
 
     for (let i = 0; i < myData[0].days.length; i++) {
       let dayCompare = myData[0].days[i].day
-
       for (let j = 0; j < myData.length; j++) {
         for (let k = 0; k < myData[j].days.length; k++) {
           if (myData[j].days[k].day === dayCompare) {
@@ -115,7 +113,7 @@ class Personality_AccountApproval extends Component {
     }
     return (
       <div>
-        <ResponsiveContainer width="100%" height={900}>
+        <ResponsiveContainer width="100%" height={500}>
           <LineChart data={dataLineChart}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="day" />
