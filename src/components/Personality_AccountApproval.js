@@ -6,7 +6,6 @@ import {
   CartesianGrid,
   XAxis,
   YAxis,
-  Bar,
   ResponsiveContainer,
   Tooltip,
   Legend,
@@ -22,9 +21,7 @@ class Personality_AccountApproval extends Component {
   }
 
   componentDidMount() {
-    fetch(
-      'http://165.227.158.131/dp/api/v160/trend/ma/twitter/range/2018-05-01/2018-05-10/order/approval',
-    )
+    fetch('http://165.227.158.131/dp/api/v160/trend/ma/twitter/order/approval')
       .then(response => response.json())
       .then(response => {
         let apiData = response.apiData.data
@@ -33,6 +30,33 @@ class Personality_AccountApproval extends Component {
         })
         console.log(this.state.apiData)
       })
+  }
+
+  handleApiData = data => {
+    let myData = data.slice()
+    let dataAllDates = []
+
+    for (let i = 0; i < myData[0].days.length; i++) {
+      let dayCompare = myData[0].days[i].day
+
+      for (let j = 0; j < myData.length; j++) {
+        for (let k = 0; k < myData[j].days.length; k++) {
+          if (myData[j].days[k].day === dayCompare) {
+            myData[j].days[k].value = parseFloat(
+              myData[j].days[k].value.toFixed(2),
+            )
+            break
+          } else {
+            if (myData[j].days.find(el => el.day === dayCompare) === undefined)
+              myData[j].days.push({
+                day: dayCompare,
+                value: 0,
+              })
+          }
+        }
+      }
+    }
+    return myData
   }
 
   handleDataLineChart = apiData => {
@@ -48,15 +72,18 @@ class Personality_AccountApproval extends Component {
             index: 0,
             value0: el.value,
             entity0: obj.entity,
+            [obj.entity]: el.value,
           })
         } else {
           let day = dataLineChart.find(els => els.day === tempDay)
           day.index++
           day['value' + day.index] = el.value
+          day[obj.entity] = el.value
           day['entity' + day.index] = obj.entity
         }
       })
     })
+    // console.log(dataLineChart)
     return dataLineChart
   }
 
@@ -83,29 +110,26 @@ class Personality_AccountApproval extends Component {
     ]
     let dataLineChart = []
     if (this.state.apiData.length > 0) {
-      dataLineChart = this.handleTime(this.state.apiData)
+      let data = this.handleApiData(this.state.apiData)
+      dataLineChart = this.handleTime(data)
     }
     return (
       <div>
         <ResponsiveContainer width="100%" height={900}>
           <LineChart data={dataLineChart}>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="day" textAnchor="end" tick={{ angle: -45 }} />
+            <XAxis dataKey="day" />
             <YAxis />
-            {/* <Line dataKey="value0" fill="#8884d8" /> */}
-            {this.state.apiData.map(
-              (obj, idx) => (
-                console.log('entity' + idx),
-                (
-                  <Line
-                    type="monotone"
-                    dataKey={`value${idx}`}
-                    stroke={`${color[idx]}`}
-                  />
-                )
-              ),
-            )}
+            {this.state.apiData.map((obj, idx) => (
+              <Line
+                key={idx}
+                type="monotone"
+                dataKey={`${obj.entity}`}
+                stroke={`${color[idx]}`}
+              />
+            ))}
             <Tooltip />
+            <Legend />
           </LineChart>
         </ResponsiveContainer>
       </div>
