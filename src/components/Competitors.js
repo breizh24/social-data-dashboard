@@ -21,6 +21,10 @@ class Competitors extends Component {
           indicator="activity"
           title="Competitor activity"
           width="100%"
+          colour1="#C6004A"
+          colour2="#78B688"
+          classColorRange="activity__color__range"
+          classColorCompare="activity__color__compare"
         />
         <BarchartComponent
           version="158"
@@ -30,6 +34,10 @@ class Competitors extends Component {
           indicator="involvement"
           title="Competitor involvement"
           width="100%"
+          colour1="#6D7AB2"
+          colour2="#d786a3"
+          classColorRange="involvement__color__range"
+          classColorCompare="involvement__color__compare"
         />
       </React.Fragment>
     )
