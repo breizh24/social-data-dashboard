@@ -455,6 +455,16 @@ svg {
 .involvement__color__compare input:focus {
   border-bottom: 2px solid #d786a3;
 }
+
+/* //404 not found// */
+
+.e__404__container {
+  display: flex;
+  align-items: center;
+  margin-top: 20%;
+  line-height: 50px;
+}
+
 /* //login// */
 
 .login__container {
