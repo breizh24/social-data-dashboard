@@ -8,6 +8,7 @@
     "primeicons": "^1.0.0-beta.9",
     "primereact": "^1.6.2",
     "react": "^16.4.1",
+    "react-chord-diagram": "^1.0.4",
     "react-collapsible": "^2.2.0",
     "react-d3-graph": "^1.3.0",
     "react-dom": "^16.4.1",
