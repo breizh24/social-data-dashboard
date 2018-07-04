@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import BarchartComponent from './BarchartComponent'
-import ChordCharts from './Chord'
+import ChordCharts from './Chord__Accounts'
+
 class Accounts extends Component {
   render() {
     return (
@@ -31,7 +32,7 @@ class Accounts extends Component {
           classColorRange="involvement__color__range"
           classColorCompare="involvement__color__compare"
         />
-        <ChordCharts />
+        <ChordCharts width="100%" title="Account Chord" />
       </React.Fragment>
     )
   }
