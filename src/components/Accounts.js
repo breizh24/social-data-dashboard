@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import BarchartComponent from './BarchartComponent'
-import ChordCharts from './Chord__Accounts'
-
+import ChordCharts from './Chord_Account'
+import AccountNetwork from './AccountNetwork'
 
 class Accounts extends Component {
   render() {
     return (
       <div>
         <React.Fragment>
+          <AccountNetwork
+            ref="AccountNetwork"
+          />
           <BarchartComponent
             ref="AccActy"
             version="155"
@@ -39,8 +42,9 @@ class Accounts extends Component {
           <ChordCharts
             ref="ChorChart"
           />
+
         </React.Fragment>
-      </div>
+      </div >
     )
   }
 }

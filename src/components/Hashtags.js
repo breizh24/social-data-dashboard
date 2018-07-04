@@ -12,7 +12,6 @@ import HashNetwork from "./HashNetwork"
 import HashtagPos_CustomPieChart from './HashtagPos_CustomPieChart'
 import HashtagNeg_CustomPieChart from './HashtagNeg_CustomPieChart'
 
-
 class Hashtags extends Component {
 
   render() {
@@ -38,6 +37,7 @@ class Hashtags extends Component {
             social="twitter"
             indicator="negativity"
           />
+
         </Widget>
       </div>
     )
