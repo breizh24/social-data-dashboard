@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import BarchartComponent from './BarchartComponent'
 import ChordCharts from './Chord'
-
 class Accounts extends Component {
   render() {
     return (
