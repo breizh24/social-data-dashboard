@@ -602,3 +602,23 @@ svg {
   stroke-width: 2px;
   stroke: #d62728;
 }
+
+/* Login */
+
+  .Login {
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+  }
+
+  .Login form {
+    border: solid 3px #d9d9d9;
+    padding: 10px 10px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 15px;
+  }
+
+  .form-group.form-group-lg {
+    display: grid;
+}
