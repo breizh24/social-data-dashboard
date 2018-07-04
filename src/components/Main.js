@@ -12,11 +12,13 @@ import Home_Piechart from './Home__PieChart'
 import Chord_Account from './Chord_Account'
 import Chord_Personality from './Chord_Personality'
 import Chord_Competitors from './Chord_Competitors'
+import Hierarchy_Accounts from './Hierarchy_Account'
 
 
 import Personality_AccountApproval from './Personality_AccountApproval.js'
 import Login from './Login'
 import PersonalityApproval from './PersonalityApproval.js'
+
 
 class Main extends Component {
   render() {
@@ -51,6 +53,7 @@ class Main extends Component {
                 <Chord_Account />
                 <Chord_Personality />
                 <Chord_Competitors />
+                <Hierarchy_Accounts />
               </div>
             )}
           />
