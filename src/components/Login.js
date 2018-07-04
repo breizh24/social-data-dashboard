@@ -12,7 +12,8 @@ class Login extends Component {
   }
 
   onClickLogin = () => {
-    if (this.props.username.length > 0) {
+    // if (this.props.username.length > 0) {
+    if (this.state.email.length > 0 && this.state.password.length > 0) {
       this.props.history.push('/')
     }
   }
@@ -57,6 +58,7 @@ class Login extends Component {
             bsSize="large"
             disabled={!this.validateForm()}
             type="submit"
+            onClick={this.onClickLogin}
           >
             Login
                 </Button>

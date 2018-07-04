@@ -36,12 +36,6 @@ class Main extends Component {
             exact
             path="/login"
             component={Login}
-          // render={() => (
-          //   <div className="container__home__element">
-          //     <h1>La sig.na Sodi MargoT sarà subito da lei</h1>
-          //     <Login />
-          //   </div>
-          // )}
           />
           <Route
             exact
