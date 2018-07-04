@@ -9,11 +9,11 @@ import BarchartComponent from './BarchartComponent'
 import Widget from './Widget.js'
 import Home__CustomPieChart from './Home_CustomPieChart'
 import Home_Piechart from './Home__PieChart'
-import ChordCharts from './Chord'
 
 import Personality_AccountApproval from './Personality_AccountApproval.js'
 import Login from './Login'
 import PersonalityApproval from './PersonalityApproval.js'
+import ChordCharts from './Chord.js'
 
 class Main extends Component {
   render() {
@@ -45,7 +45,6 @@ class Main extends Component {
                     indicator="activity"
                   />
                 </Widget>
-                <ChordCharts />
               </div>
             )}
           />

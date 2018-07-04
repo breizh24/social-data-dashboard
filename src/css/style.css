@@ -206,7 +206,7 @@ svg {
   border-radius: 10px; */
   padding: 5px;
   position: relative;
-  padding-top: 5px;
+
   margin-top: 20px;
   color: #605d5e;
 }
@@ -224,6 +224,21 @@ svg {
   text-align: center;
   width: 80%;
 }
+
+.graph_chord {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.graph__chord__header {
+  justify-self: flex-start;
+}
+
+.chord {
+  position: relative;
+  align-self: center;
+}
+/* login */
 
 .logoLogin {
   display: flex;
@@ -277,6 +292,7 @@ svg {
   -moz-animation: appear 1s ease 0s 1 normal;
   -ms-animation: appear 1s ease 0s 1 normal;
   animation: appear 1s ease 0s 1 normal;
+  margin-top: 25px;
 }
 
 .subtitle__piechart {
