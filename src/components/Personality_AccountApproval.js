@@ -12,14 +12,21 @@ import {
 } from 'recharts'
 import moment from 'moment'
 import Widget from './Widget'
-import { Checkbox } from 'primereact/components/checkbox/Checkbox'
+import { Calendar } from 'primereact/components/calendar/Calendar'
+import { Fetcher } from '../components/Fetch'
 
 class Personality_AccountApproval extends Component {
   constructor(props) {
     super(props)
     this.state = {
       apiData: [],
+      dateFromCalendar: null,
+      dateForFetch: {
+        minDate: '2018-04-01',
+        maxDate: '2018-05-24',
+      },
     }
+
     this.color = [
       'red',
       'yellow',
@@ -35,21 +42,95 @@ class Personality_AccountApproval extends Component {
   }
 
   componentDidMount() {
-    fetch(
-      'http://165.227.158.131/dp/api/v160/trend/ma/twitter/range/2018-05-01/2018-05-20/order/approval',
-    )
-      .then(response => response.json())
-      .then(response => {
-        let apiData = response.apiData.data
-        this.setState({
-          apiData: apiData,
-        })
-      })
+    this.getData()
   }
 
-  onChangeCheckbox = (idx, data) => {
-    data[idx].checked = !data[idx].checked
-    console.log(data)
+  getData = () => {
+    let minDate = this.state.dateForFetch.minDate
+    let maxDate = this.state.dateForFetch.maxDate
+    Fetcher(160, 'ma', 'trend', 'twitter', minDate, maxDate, 'approval').then(
+      response => {
+        let apiData = response.apiData.data
+        if (this.state.apiData.length < 1) {
+          this.setState(
+            {
+              apiData: apiData,
+            },
+            () => this.handleApiData(this.state.apiData),
+          )
+        } else {
+          let oldData = this.state.apiData.map((el, idx) => {
+            const newObj = el.days.map(element => {
+              const obj = { ...element }
+              return obj
+            })
+            const result = { ...el }
+            return result
+          })
+
+          for (let i = 0; i < apiData.length; i++) {
+            for (let j = 0; j < oldData.length; j++) {
+              if (apiData[i].entity === oldData[j].entity) {
+                apiData[i].checked = oldData[j].checked
+              }
+            }
+          }
+          this.setState(
+            {
+              apiData: apiData,
+            },
+            () => this.handleApiData(this.state.apiData),
+          )
+        }
+      },
+    )
+  }
+
+  getDateFromCalendar = e => {
+    this.setState(
+      {
+        dateFromCalendar: e.value,
+      },
+      () => {
+        if (
+          this.state.dateFromCalendar[0] !== null &&
+          this.state.dateFromCalendar[1] !== null
+        ) {
+          this.handleDate(this.state.dateFromCalendar)
+        }
+      },
+    )
+  }
+
+  handleDate = date => {
+    let minDate = moment(date[0]).format('YYYY-MM-DD')
+    let maxDate = moment(date[1]).format('YYYY-MM-DD')
+    let dateForFetch = {
+      minDate: minDate,
+      maxDate: maxDate,
+    }
+
+    this.setState(
+      {
+        dateForFetch: dateForFetch,
+      },
+      () => this.getData(),
+    )
+  }
+
+  onClickCheckbox = (idx, data) => {
+    let newData = data.map((el, idx) => {
+      const newObj = el.days.map(element => {
+        const obj = { ...element }
+        return obj
+      })
+      const result = { ...el }
+      return result
+    })
+    newData[idx].checked = !newData[idx].checked
+    this.setState({
+      apiData: newData,
+    })
   }
 
   handleApiData = data => {
@@ -58,14 +139,20 @@ class Personality_AccountApproval extends Component {
         const obj = { ...element }
         return obj
       })
+
       const result = {
         ...el,
         days: newObj,
         color: this.color[idx],
-        checked: true,
+        checked:
+          typeof this.state.apiData[idx].checked === 'undefined'
+            ? true
+            : this.state.apiData[idx].checked,
       }
+
       return result
     })
+
     for (let i = 0; i < myData[0].days.length; i++) {
       let dayCompare = myData[0].days[i].day
       for (let j = 0; j < myData.length; j++) {
@@ -88,8 +175,20 @@ class Personality_AccountApproval extends Component {
         }
       }
     }
-    console.log(myData)
-    return myData
+    myData.forEach(el =>
+      el.days.sort(function(b, a) {
+        // Turn your strings into dates, and then subtract them
+        // to get a value that is either negative, positive, or zero.
+        return new Date(b.day) - new Date(a.day)
+      }),
+    )
+
+    this.setState(
+      {
+        apiData: myData,
+      },
+      () => console.log(this.state.apiData),
+    )
   }
 
   handleDataLineChart = apiData => {
@@ -123,7 +222,7 @@ class Personality_AccountApproval extends Component {
         }
       })
     })
-    console.log(dataLineChart)
+
     return dataLineChart
   }
 
@@ -137,10 +236,8 @@ class Personality_AccountApproval extends Component {
 
   render() {
     let dataLineChart = []
-    let data = []
     if (this.state.apiData.length > 0) {
-      data = this.handleApiData(this.state.apiData)
-      dataLineChart = this.handleTime(data)
+      dataLineChart = this.handleTime(this.state.apiData)
     }
 
     return (
@@ -151,33 +248,50 @@ class Personality_AccountApproval extends Component {
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="day" />
               <YAxis />
-              {data.map((obj, idx) => (
-                <Line
-                  key={idx}
-                  type="monotone"
-                  dataKey={`${obj.entity}`}
-                  stroke={`${obj.color}`}
-                />
-              ))}
+              {this.state.apiData.map(
+                (obj, idx) =>
+                  obj.checked ? (
+                    <Line
+                      key={idx}
+                      type="monotone"
+                      dataKey={`${obj.entity}`}
+                      stroke={`${obj.color}`}
+                    />
+                  ) : null,
+              )}
               <Tooltip />
             </LineChart>
           </ResponsiveContainer>
           <div className="linechart__legend">
             <ul className="linechart__legend__ul">
-              {data.map((obj, idx) => (
+              {this.state.apiData.map((obj, idx) => (
                 <li key={idx}>
                   <span>
                     <input
                       type="checkbox"
-                      data-id={idx}
-                      defaultChecked={data[idx].checked}
-                      onChange={() => this.onChangeCheckbox(idx, data)}
+                      defaultChecked={this.state.apiData[idx].checked}
+                      onClick={() =>
+                        this.onClickCheckbox(idx, this.state.apiData)
+                      }
                     />
                   </span>
                   <span>{obj.entity}</span>
                 </li>
               ))}
             </ul>
+          </div>
+
+          <div className={`calendar__range ${this.props.classColorRange}`}>
+            <Calendar
+              minDate={new Date('2018-04-01')}
+              maxDate={new Date('2018-05-24')}
+              defaultDate={new Date('2018-04-01')}
+              dateFormat="dd/mm/yy"
+              selectionMode="range"
+              placeholder="Range di date"
+              value={this.state.dateFromCalendar}
+              onChange={e => this.getDateFromCalendar(e)}
+            />
           </div>
         </div>
       </Widget>

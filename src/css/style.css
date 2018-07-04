@@ -362,7 +362,7 @@ svg {
   width: 100%;
   border: none;
   background: none;
-  /* border-bottom: 2px solid #d70040; */
+  border-bottom: 2px solid #605d5e;
   border-radius: 0px;
   height: 30px;
   font-size: 16px;
@@ -375,12 +375,12 @@ svg {
 
 .calendar__range input:focus {
   box-shadow: none;
-  /* border-bottom: 2px solid #d70040; */
+  border-bottom: 2px solid #605d5e;
 }
 
 .calendar__range input:hover {
   box-shadow: none;
-  /* border-bottom: 2px solid #d70040; */
+  border-bottom: 2px solid #605d5e;
 }
 
 .activity__color__range input {
