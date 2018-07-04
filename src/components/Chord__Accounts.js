@@ -1,5 +1,6 @@
 import React from 'react'
 import ChordDiagram from 'react-chord-diagram'
+import Widget from './Widget'
 
 class ChordCharts extends React.Component {
   constructor(props) {
@@ -91,28 +92,36 @@ class ChordCharts extends React.Component {
     }
 
     return (
-      <div>
-        <ChordDiagram
-          innerRadius={160}
-          outerRadius={200}
-          matrix={this.matrix}
-          componentId={1}
-          style={{ fontSize: '12px' }}
-          groupLabels={this.state.names}
-          groupColors={[
-            '#0088FE',
-            '#00C49F',
-            '#FFBB28',
-            '#FF8042',
-            '#b61351',
-            '#e6b041',
-            '#6d7eb0',
-            '#a6ba66	',
-            '#7ba97d',
-            '#000000',
-          ]}
-        />
-      </div>
+      <Widget width={this.props.width}>
+        <div className="graph_chord">
+          <div className="graph__chord__header">
+            <h2 className="title__piechart">{this.props.title}</h2>
+            <h3 className="subtitle__piechart" />
+          </div>
+          <div className="chord">
+            <ChordDiagram
+              innerRadius={160}
+              outerRadius={200}
+              matrix={this.matrix}
+              componentId={1}
+              style={{ fontSize: '12px' }}
+              groupLabels={this.state.names}
+              groupColors={[
+                '#0088FE',
+                '#00C49F',
+                '#FFBB28',
+                '#FF8042',
+                '#b61351',
+                '#e6b041',
+                '#6d7eb0',
+                '#a6ba66',
+                '#7ba97d',
+                '#585858',
+              ]}
+            />
+          </div>
+        </div>
+      </Widget>
     )
   }
 }
