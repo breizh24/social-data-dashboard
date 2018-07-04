@@ -1,12 +1,45 @@
 import React, { Component } from 'react'
 import { NavLink, Link } from 'react-router-dom'
+import ReactDOM from "react-dom"
 
 class Sidebar extends Component {
   constructor(props) {
     super(props)
+    this.hashLinks = React.createRef();
+    this.hashActy = React.createRef();
+    this.hashInvolv = React.createRef();
+    this.accLinks = React.createRef();
+    this.accActy = React.createRef();
+    this.accInvolv = React.createRef();
+    this.persLinks = React.createRef();
+    this.persActy = React.createRef();
+    this.persAppr = React.createRef();
+    this.persInvolv = React.createRef();
+    this.compLinks = React.createRef();
+    this.compActy = React.createRef();
+    this.compInvolv = React.createRef();
     this.state = {
       showDropDown: [false, false, false, false],
     }
+  }
+  handleScrollToElement() {
+    console.log('Clicca')
+    // let tesNode = ReactDOM.findDOMNode(this.myRef)
+    // let tesNode = this.myRef.current
+    // console.log(tesNode)
+    // switch (tesNode) {
+    //   case ('AccActy'):
+    //     window.scrollTo(0, tesNode.offsetTop);
+    //     break;
+    //   case ('HashActy'):
+    //     window.scrollTo(1, tesNode.offsetTop);
+    //     break;
+    //   case ('ChorChart'):
+    //     window.scrollTo(2, tesNode.offsetTop);
+    //     break;
+    //   default:
+    //     console.log('non funziono');
+    // }
   }
 
   dropDownMenu = number => {
@@ -33,7 +66,8 @@ class Sidebar extends Component {
           <div className="logoLogin">
             <img className="stretch" src={require('../img/logoLogin.png')} />
 
-            <Link className="userAlign" to="/login">
+
+            <Link className="userAlign" to="/user">
               <span className="userProp">Nome Utente</span>
             </Link>
           </div>
@@ -60,15 +94,9 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-                <Link to="/hashtags/graph1">
-                  <li>graph1</li>
-                </Link>
-                <Link to="/hashtags/graph2">
-                  <li>graph2</li>
-                </Link>
-                <Link to="/hashtags/graph3">
-                  <li>graph3</li>
-                </Link>
+                <li onClick={this.handleScrollToElement} ref={this.hashLinks}>Links</li>
+                <li onClick={this.handleScrollToElement} ref={this.hashActy}>Activity</li>
+                <li onClick={this.handleScrollToElement} ref={this.hashInvolv}>Involvement</li>
               </ul>
             ) : null}
           </li>
@@ -93,9 +121,9 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-
-                <li>Activity</li>
-                <li>Involvement</li>
+                <li onClick={this.handleScrollToElement} ref={this.accLinks}>Links</li>
+                <li onClick={this.handleScrollToElement} ref={this.accActy}>Activity</li>
+                <li onClick={this.handleScrollToElement} ref={this.accInvolv}>Involvement</li>
               </ul>
             ) : null}
           </li>
@@ -120,11 +148,10 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-
-                <li>Activity</li>
-                <li>Approval</li>
-                <li>Involvement</li>
-
+                <li onClick={this.handleScrollToElement} ref={this.persLinks}>Links</li>
+                <li onClick={this.handleScrollToElement} ref={this.persActy}>Activity</li>
+                <li onClick={this.handleScrollToElement} ref={this.persAppr}>Approval</li>
+                <li onClick={this.handleScrollToElement} ref={this.persInvolv}>Involvement</li>
               </ul>
             ) : null}
           </li>
@@ -149,9 +176,9 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-
-                <li>Activity</li>
-                <li>Involvement</li>
+                <li onClick={this.handleScrollToElement} ref={this.compLinks}>Links</li>
+                <li onClick={this.handleScrollToElement} ref={this.compActy}>Activity</li>
+                <li onClick={this.handleScrollToElement} ref={this.compInvolv}>Involvement</li>
               </ul>
             ) : null}
           </li>
