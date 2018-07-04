@@ -1,7 +1,7 @@
 import React from 'react'
 import ChordDiagram from 'react-chord-diagram'
 
-class ChordCharts extends React.Component {
+class Chord_Account extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -11,7 +11,7 @@ class ChordCharts extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://165.227.158.131/dp/api/v155/chord/twitter/ma/100')
+    fetch('http://165.227.158.131/dp/api/v160/chord/twitter/ma/100')
       .then(response => response.json())
       .then(response => {
         let apiData = response.apiData.chord.data
@@ -110,11 +110,11 @@ class ChordCharts extends React.Component {
             '#6d7eb0',
             '#a6ba66	',
             '#7ba97d',
-            '#000000',
+            '#585858',
           ]}
         />
       </div>
     )
   }
 }
-export default ChordCharts
+export default Chord_Account

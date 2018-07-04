@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import BarchartComponent from './BarchartComponent'
-import ChordCharts from './Chord'
+import ChordCharts from './Chord_Account'
 
 class Accounts extends Component {
   render() {
