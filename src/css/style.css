@@ -53,6 +53,11 @@ svg {
   padding: 20px;
 }
 
+.sidebar_user {
+  display: flex;
+  justify-content: space-around;
+}
+
 /* //sidebar// */
 
 .sidebar__container {
@@ -242,7 +247,8 @@ svg {
 
 .logoLogin {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: left;
+  flex-direction: row;
   align-items: center;
   margin-top: 15px;
   width: 150px;
@@ -250,14 +256,27 @@ svg {
   padding-bottom: 15px;
   border-bottom: 2px solid #9e9d9d;
 }
+.userQuadrato {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 3px solid #fff;
+  color: #fff;
+  text-align: center;
+  line-height: 45px;
+  margin-right: 10px;
+  box-shadow: 3px 3px 2px 0px rgba(0, 0, 0, 0.75);
+}
 
 .logoLogin .stretch {
   width: 30%;
   height: 30%;
   margin: 0px 5%;
 }
-.userAlign {
-  text-align: center;
+.userProp {
+  text-align: left;
+  width: min-content;
 }
 
 .arrow {

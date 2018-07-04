@@ -13,7 +13,7 @@ import Home_Piechart from './Home__PieChart'
 import Personality_AccountApproval from './Personality_AccountApproval.js'
 import Login from './Login'
 import PersonalityApproval from './PersonalityApproval.js'
-import ChordCharts from './Chord.js'
+import ChordCharts from './Chord__Accounts'
 
 class Main extends Component {
   render() {

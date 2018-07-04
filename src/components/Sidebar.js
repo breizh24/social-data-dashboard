@@ -27,16 +27,18 @@ class Sidebar extends Component {
     let ArrPos = this.state.showDropDown
     return (
       <div className="sidebar__container">
-        <div className="sidebar_user">
-          {/* <div className="fotoUser">{this.props.username[0]}</div>
+        {/* <div className="fotoUser">{this.props.username[0]}</div>
          <h2>{this.props.username}</h2> */}
-          <div className="logoLogin">
-            <img className="stretch" src={require('../img/logoLogin.png')} />
-
-            <Link className="userAlign" to="/login">
-              <span className="userProp">Nome Utente</span>
-            </Link>
+        <div className="logoLogin">
+          <div className="userQuadrato">
+            <h3>F</h3>
           </div>
+
+          <span className="userProp">
+            <Link className="userAlign" to="/login">
+              Federica Binomi
+            </Link>
+          </span>
         </div>
 
         <ul>
@@ -93,7 +95,6 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-
                 <li>Activity</li>
                 <li>Involvement</li>
               </ul>
@@ -120,11 +121,9 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-
                 <li>Activity</li>
                 <li>Approval</li>
                 <li>Involvement</li>
-
               </ul>
             ) : null}
           </li>
@@ -149,7 +148,6 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-
                 <li>Activity</li>
                 <li>Involvement</li>
               </ul>
