@@ -82,7 +82,7 @@ class HashtagPos_CustomPieChart extends Component {
       .then(response => response.json())
       .then(response => {
         let apiData = response.apiData.data
-        console.log(apiData)
+        // console.log(apiData)
         this.setState({
           apiData: apiData,
         })

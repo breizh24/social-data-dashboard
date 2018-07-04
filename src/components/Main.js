@@ -10,6 +10,7 @@ import BarchartComponent from './BarchartComponent'
 import Widget from './Widget.js'
 import Home__CustomPieChart from './Home_CustomPieChart'
 import Home_Piechart from './Home__PieChart'
+import ChordCharts from './Chord'
 
 import Personality_AccountApproval from './Personality_AccountApproval.js'
 import Login from './Login'
@@ -66,6 +67,7 @@ class Main extends Component {
                     indicator="activity"
                   />
                 </Widget>
+                <ChordCharts />
               </div>
             )}
           />
@@ -74,7 +76,6 @@ class Main extends Component {
             path="/user"
 
             render={props => <Personality_AccountApproval />}
-
           />
 
           <Route exact path="/hashtags" render={props => <Hashtags />} />
