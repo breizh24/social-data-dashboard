@@ -378,7 +378,7 @@ svg {
   width: 100%;
   border: none;
   background: none;
-  /* border-bottom: 2px solid #d70040; */
+  border-bottom: 2px solid #605d5e;
   border-radius: 0px;
   height: 30px;
   font-size: 16px;
@@ -391,12 +391,12 @@ svg {
 
 .calendar__range input:focus {
   box-shadow: none;
-  /* border-bottom: 2px solid #d70040; */
+  border-bottom: 2px solid #605d5e;
 }
 
 .calendar__range input:hover {
   box-shadow: none;
-  /* border-bottom: 2px solid #d70040; */
+  border-bottom: 2px solid #605d5e;
 }
 
 .activity__color__range input {
@@ -479,6 +479,32 @@ svg {
   align-items: center;
   margin-top: 20%;
   line-height: 50px;
+}
+
+/* //Linechart// */
+.linechart__container {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.linechart__legend {
+  width: 70%;
+}
+.linechart__legend__ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.linechart__legend__ul li {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+.linechart__legend__ul span:first-child {
+  border-radius: 10px;
+  margin-right: 5px;
 }
 
 /* //login// */
