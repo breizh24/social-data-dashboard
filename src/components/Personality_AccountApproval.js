@@ -20,6 +20,7 @@ class Personality_AccountApproval extends Component {
     super(props)
     this.state = {
       apiData: [],
+      dataLineChart: [],
       dateFromCalendar: null,
       dateForFetch: {
         minDate: '2018-04-01',
@@ -149,8 +150,11 @@ class Personality_AccountApproval extends Component {
             ? true
             : this.state.apiData[idx].checked,
       }
-
       return result
+    })
+
+    myData.sort(function(b, a) {
+      return a.days.length - b.days.length
     })
 
     for (let i = 0; i < myData[0].days.length; i++) {
@@ -177,8 +181,6 @@ class Personality_AccountApproval extends Component {
     }
     myData.forEach(el =>
       el.days.sort(function(b, a) {
-        // Turn your strings into dates, and then subtract them
-        // to get a value that is either negative, positive, or zero.
         return new Date(b.day) - new Date(a.day)
       }),
     )
@@ -187,7 +189,7 @@ class Personality_AccountApproval extends Component {
       {
         apiData: myData,
       },
-      () => console.log(this.state.apiData),
+      () => this.handleTime(this.state.apiData),
     )
   }
 
@@ -222,7 +224,6 @@ class Personality_AccountApproval extends Component {
         }
       })
     })
-
     return dataLineChart
   }
 
@@ -231,14 +232,14 @@ class Personality_AccountApproval extends Component {
     let correctDate = dataLineChart.map(obj => {
       return { ...obj, day: moment(obj.day).format('DD/MM/YYYY') }
     })
-    return correctDate
+    this.setState({
+      dataLineChart: correctDate,
+    })
   }
 
   render() {
-    let dataLineChart = []
-    if (this.state.apiData.length > 0) {
-      dataLineChart = this.handleTime(this.state.apiData)
-    }
+    let dataLineChart = this.state.dataLineChart
+    console.log(this.state.apiData)
 
     return (
       <Widget width="100%">
