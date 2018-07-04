@@ -9,7 +9,7 @@ import {
 } from 'recharts'
 import BarchartComponent from './BarchartComponent'
 
-class Personalita extends Component {
+class Personality extends Component {
   render() {
     return (
       <React.Fragment>
@@ -45,4 +45,4 @@ class Personalita extends Component {
   }
 }
 
-export default Personalita
+export default Personality

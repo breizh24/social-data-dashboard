@@ -60,14 +60,14 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-                <Link to="/hashtags/graph1">
-                  <li>graph1</li>
+                <Link to="/hashtags/Activity">
+                  <li>Activity</li>
                 </Link>
-                <Link to="/hashtags/graph2">
-                  <li>graph2</li>
+                <Link to="/hashtags/Involvement">
+                  <li>Involvement</li>
                 </Link>
-                <Link to="/hashtags/graph3">
-                  <li>graph3</li>
+                <Link to="/hashtags/Approval">
+                  <li>Approval</li>
                 </Link>
               </ul>
             ) : null}
@@ -93,9 +93,12 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-
-                <li>Activity</li>
-                <li>Involvement</li>
+                <Link to="/Accounts/Activity">
+                  <li>Activity</li>
+                </Link>
+                <Link to="/Accounts/Involvement">
+                  <li>Involvement</li>
+                </Link>
               </ul>
             ) : null}
           </li>
@@ -104,11 +107,11 @@ class Sidebar extends Component {
             <NavLink
               className="LinkSide"
               activeClassName="active"
-              to="/personalita"
+              to="/personality"
               onClick={() => this.dropDownMenu(2)}
             >
               <div className="sidebar__menu__link">
-                <span> PERSONALITÀ</span>
+                <span> PERSONALITY</span>
                 <span className={'arrow ' + (ArrPos[2] ? 'up' : 'down')} />
               </div>
             </NavLink>
@@ -121,10 +124,15 @@ class Sidebar extends Component {
                 }
               >
 
-                <li>Activity</li>
-                <li>Approval</li>
-                <li>Involvement</li>
-
+                <Link to="/Personality/Activity">
+                  <li>Activity</li>
+                </Link>
+                <Link to="/Personality/Involvement">
+                  <li>Involvement</li>
+                </Link>
+                <Link to="/Personality/Approval">
+                  <li>Approval</li>
+                </Link>
               </ul>
             ) : null}
           </li>
@@ -149,9 +157,12 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-
-                <li>Activity</li>
-                <li>Involvement</li>
+                <Link to="/Competitors/Activity">
+                  <li>Activity</li>
+                </Link>
+                <Link to="/Competitors/Involvement">
+                  <li>Involvement</li>
+                </Link>
               </ul>
             ) : null}
           </li>

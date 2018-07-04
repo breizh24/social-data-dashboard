@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Hashtags from './Hashtags.js'
-import Personalita from './Personalita.js'
+import Personality from './Personality.js'
 import Competitors from './Competitors.js'
 import Accounts from './Accounts.js'
 import { Route, Switch } from 'react-router-dom'
@@ -59,7 +59,7 @@ class Main extends Component {
 
           <Route path="/accounts" render={props => <Accounts />} />
 
-          <Route path="/personalita" render={props => <Personalita />} />
+          <Route path="/personality" render={props => <Personality />} />
 
           <Route path="/competitors" render={props => <Competitors />} />
 
