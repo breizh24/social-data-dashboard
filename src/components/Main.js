@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Hashtags from './Hashtags.js'
-import Personalita from './Personalita.js'
+import Personality from './Personality.js'
 import Competitors from './Competitors.js'
 import Accounts from './Accounts.js'
 import { Route, Switch } from 'react-router-dom'
@@ -10,6 +10,10 @@ import BarchartComponent from './BarchartComponent'
 import Widget from './Widget.js'
 import Home__CustomPieChart from './Home_CustomPieChart'
 import Home_Piechart from './Home__PieChart'
+import Chord_Account from './Chord_Account'
+import Chord_Personality from './Chord_Personality'
+import Chord_Competitors from './Chord_Competitors'
+import HashNetwork from './HashNetwork'
 
 import Personality_AccountApproval from './Personality_AccountApproval.js'
 import Login from './Login'
@@ -62,6 +66,9 @@ class Main extends Component {
                     indicator="activity"
                   />
                 </Widget>
+                <Chord_Account />
+                <Chord_Personality />
+                <Chord_Competitors />
               </div>
             )}
           />
@@ -76,7 +83,7 @@ class Main extends Component {
 
           <Route path="/accounts" render={props => <Accounts />} />
 
-          <Route path="/personalita" render={props => <Personalita />} />
+          <Route path="/personality" render={props => <Personality />} />
 
           <Route path="/competitors" render={props => <Competitors />} />
 

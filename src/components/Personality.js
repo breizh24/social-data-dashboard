@@ -8,11 +8,16 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 import BarchartComponent from './BarchartComponent'
+import PersonalityNetwork from './PersonalityNetwork';
 
-class Personalita extends Component {
+class Personality extends Component {
   render() {
     return (
       <React.Fragment>
+        <PersonalityNetwork
+          ref="PersonalityNetwork"
+        />
+
         <BarchartComponent
           version="160"
           category="ma"
@@ -45,4 +50,4 @@ class Personalita extends Component {
   }
 }
 
-export default Personalita
+export default Personality
