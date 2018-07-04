@@ -14,7 +14,6 @@ import Home_Piechart from './Home__PieChart'
 import Personality_AccountApproval from './Personality_AccountApproval.js'
 import Login from './Login'
 import PersonalityApproval from './PersonalityApproval.js'
-import ChordCharts from './Chord.js'
 
 class Main extends Component {
   handleScrollToElement(event) {
