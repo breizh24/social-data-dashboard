@@ -33,7 +33,7 @@ class Sidebar extends Component {
           <div className="logoLogin">
             <img className="stretch" src={require('../img/logoLogin.png')} />
 
-            <Link className="userAlign" to="/login">
+            <Link className="userAlign" to="/user">
               <span className="userProp">Nome Utente</span>
             </Link>
           </div>
@@ -60,15 +60,9 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-                <Link to="/hashtags/graph1">
-                  <li>graph1</li>
-                </Link>
-                <Link to="/hashtags/graph2">
-                  <li>graph2</li>
-                </Link>
-                <Link to="/hashtags/graph3">
-                  <li>graph3</li>
-                </Link>
+                <li>Links</li>
+                <li>Activity</li>
+                <li>Involvement</li>
               </ul>
             ) : null}
           </li>
@@ -93,7 +87,7 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-
+                <li>Links</li>
                 <li>Activity</li>
                 <li>Involvement</li>
               </ul>
@@ -120,11 +114,10 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-
+                <li>Links</li>
                 <li>Activity</li>
                 <li>Approval</li>
                 <li>Involvement</li>
-
               </ul>
             ) : null}
           </li>
@@ -149,7 +142,7 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-
+                <li>Links</li>
                 <li>Activity</li>
                 <li>Involvement</li>
               </ul>
