@@ -8,11 +8,15 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 import BarchartComponent from './BarchartComponent'
+import CompetitorsNetwork from './CompetitorsNetwork';
 
 class Competitors extends Component {
   render() {
     return (
       <React.Fragment>
+        <CompetitorsNetwork
+          ref="CompetitorsNetwork"
+        />
         <BarchartComponent
           version="158"
           category="ma"

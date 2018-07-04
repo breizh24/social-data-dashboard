@@ -27,7 +27,6 @@ class ChordCharts extends React.Component {
   }
 
   ProcessData() {
-    console.log('funzione')
     this.matrix = []
     let data = this.state.oldData
     data = Object.values(data)
