@@ -21,8 +21,8 @@ class Header extends Component {
     switch (currentLocation) {
       case '/':
         return 'DASHBOARD'
-      case '/personalita':
-        return 'PERSONALITÀ'
+      case '/personality':
+        return 'PERSONALITY'
       default:
         return currentLocation.slice(1).toUpperCase()
     }

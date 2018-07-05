@@ -145,11 +145,11 @@ class Sidebar extends Component {
             <NavLink
               className="LinkSide"
               activeClassName="active"
-              to="/personalita"
+              to="/personality"
               onClick={() => this.dropDownMenu(2)}
             >
               <div className="sidebar__menu__link">
-                <span> PERSONALITÀ</span>
+                <span> PERSONALITY</span>
                 <span className={'arrow ' + (ArrPos[2] ? 'up' : 'down')} />
               </div>
             </NavLink>
