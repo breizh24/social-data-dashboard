@@ -14,6 +14,7 @@ import moment from 'moment'
 import Widget from './Widget'
 import { Calendar } from 'primereact/components/calendar/Calendar'
 import { Fetcher } from '../components/Fetch'
+import { Checkbox } from 'primereact/components/checkbox/Checkbox'
 
 class Personality_AccountApproval extends Component {
   constructor(props) {
@@ -137,6 +138,7 @@ class Personality_AccountApproval extends Component {
 
   giveColor = entity => {
     let color
+
     for (let i = 0; i < this.nameColor.length; i++) {
       if (this.nameColor[i].entity === entity) {
         color = this.nameColor[i].color
@@ -144,6 +146,17 @@ class Personality_AccountApproval extends Component {
       }
     }
     return color
+  }
+
+  giveClass = entity => {
+    let cName
+    for (let i = 0; i < this.nameColor.length; i++) {
+      if (this.nameColor[i].entity === entity) {
+        cName = this.nameColor[i].cName
+        break
+      }
+    }
+    return cName
   }
 
   handleApiData = data => {
@@ -163,12 +176,20 @@ class Personality_AccountApproval extends Component {
           typeof this.state.apiData[idx].checked === 'undefined'
             ? true
             : this.state.apiData[idx].checked,
+        cName:
+          this.nameColor.length < 1
+            ? this.color[idx].replace('#', 'a')
+            : this.giveClass(el.entity),
       }
       return result
     })
     if (this.nameColor.length < 1) {
       myData.forEach(el => {
-        this.nameColor.push({ entity: el.entity, color: el.color })
+        this.nameColor.push({
+          entity: el.entity,
+          color: el.color,
+          cName: el.cName,
+        })
       })
     }
 
@@ -293,7 +314,16 @@ class Personality_AccountApproval extends Component {
               {this.state.apiData.map((obj, idx) => (
                 <li key={idx}>
                   <span>
-                    <input
+                    <Checkbox
+                      className={`legend__checkbox ${obj.cName}`}
+                      // style={{ border: `2px solid ${obj.color}` }}
+                      onChange={() =>
+                        this.onClickCheckbox(idx, this.state.apiData)
+                      }
+                      checked={this.state.apiData[idx].checked}
+                    />
+
+                    {/* <input
                       type="checkbox"
                       defaultChecked={this.state.apiData[idx].checked}
                       onClick={() =>
@@ -304,7 +334,7 @@ class Personality_AccountApproval extends Component {
                         border: obj.color,
                         borderRadius: '15px',
                       }}
-                    />
+                    /> */}
                   </span>
                   <span>{obj.entity}</span>
                 </li>
