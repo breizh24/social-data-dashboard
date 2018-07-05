@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { ResponsiveContainer } from 'recharts'
-import { Sigma, RandomizeNodePositions, RelativeSize } from 'react-sigma';
+import { Sigma, RandomizeNodePositions, RelativeSize } from 'react-sigma'
 
 // let myGraph = {
 //   nodes: [{ "n1", "Alice" }, { id: "n2", label: "Rabbit" }],
@@ -32,25 +32,25 @@ class HashNetwork extends Component {
   }
 
   parseNode(arr) {
-    let workarr = [];
-    let prefix = arr.apiData.network.data.nodes;
+    let workarr = []
+    let prefix = arr.apiData.network.data.nodes
     for (let i = 0; i < prefix.length; i++) {
       workarr[i] = {
         id: prefix[i].id,
-        label: prefix[i].label
-      };
+        label: prefix[i].label,
+      }
     }
     return workarr
   }
   parseEdge(arr) {
-    let workarr = [];
-    let prefix = arr.apiData.network.data.edges;
+    let workarr = []
+    let prefix = arr.apiData.network.data.edges
     for (let i = 0; i < prefix.length; i++) {
       workarr[i] = {
         id: i,
         source: prefix[i].source,
         target: prefix[i].target,
-      };
+      }
     }
     return workarr
   }
@@ -60,14 +60,25 @@ class HashNetwork extends Component {
     return (
       <ResponsiveContainer>
         {/* {(this.state.apiData !== null || this.state.apiData !== undefined) */}
-        {(this.state.apiData !== false)
-          ? (
-            <Sigma graph={this.state.apiData} settings={{ drawEdges: true, clone: false }}>
-              <RelativeSize initialSize={15} />
-              <RandomizeNodePositions />
-            </Sigma>)
-          : <h1>Loading</h1>}
-      </ResponsiveContainer >
+        {this.state.apiData !== false ? (
+          <Sigma
+            graph={this.state.apiData}
+            settings={{
+              drawEdges: true,
+              clone: false,
+              defaultNodeColor: '#EDB63E',
+              labelHoverShadowColor: '#605D5E',
+              defaultLabelColor: '#605D5E',
+              labelSize: 'fixed',
+            }}
+          >
+            <RelativeSize initialSize={15} />
+            <RandomizeNodePositions />
+          </Sigma>
+        ) : (
+          <h1>Loading</h1>
+        )}
+      </ResponsiveContainer>
     )
   }
 }

@@ -8,12 +8,11 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 import Widget from './Widget.js'
-import HashNetwork from "./HashNetwork"
+import HashNetwork from './HashNetwork'
 import HashtagPos_CustomPieChart from './HashtagPos_CustomPieChart'
 import HashtagNeg_CustomPieChart from './HashtagNeg_CustomPieChart'
 
 class Hashtags extends Component {
-
   render() {
     return (
       <div className="container__home__element">
@@ -37,7 +36,6 @@ class Hashtags extends Component {
             social="twitter"
             indicator="negativity"
           />
-
         </Widget>
       </div>
     )
