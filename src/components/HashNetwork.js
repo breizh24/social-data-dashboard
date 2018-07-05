@@ -25,9 +25,6 @@ class HashNetwork extends Component {
         this.setState({
           apiData: apiData,
         })
-        // console.log(response)
-        // console.log(nodes)
-        // console.log(edges)
       })
   }
 
@@ -56,7 +53,6 @@ class HashNetwork extends Component {
   }
 
   render() {
-    console.log(this.state.apiData)
     return (
       <ResponsiveContainer>
         {/* {(this.state.apiData !== null || this.state.apiData !== undefined) */}
