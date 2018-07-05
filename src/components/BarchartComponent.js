@@ -238,18 +238,57 @@ class BarchartComponent extends Component {
             )} ${
               this.state.apiDataCompare.length > 0
                 ? `compared with ${moment(
-                  this.state.dateForFetchCompare.minDate,
-                ).format('DD/MM/YYYY')} to ${moment(
-                  this.state.dateForFetchCompare.maxDate,
-                ).format('DD/MM/YYYY')}`
+                    this.state.dateForFetchCompare.minDate,
+                  ).format('DD/MM/YYYY')} to ${moment(
+                    this.state.dateForFetchCompare.maxDate,
+                  ).format('DD/MM/YYYY')}`
                 : ''
-              }`}
+            }`}
           </h3>
         </div>
         <div
           className="graph__barchart"
           style={{ marginBottom: this.state.marginBottom }}
         >
+          {this.props.calendarRange === false &&
+          this.props.calendarCompare === false ? null : (
+            <div className="calendar__container">
+              {this.props.calendarRange === false ? null : (
+                <div
+                  className={`calendar__range ${this.props.classColorRange}`}
+                >
+                  <Calendar
+                    minDate={new Date('2018-04-01')}
+                    maxDate={new Date('2018-05-24')}
+                    defaultDate={new Date('2018-04-01')}
+                    dateFormat="dd/mm/yy"
+                    selectionMode="range"
+                    placeholder="Range di date"
+                    value={this.state.dateFromCalendar}
+                    onChange={e => this.getDateFromCalendar(e)}
+                  />
+                </div>
+              )}
+              {this.props.calendarRange === false ? null : (
+                <div
+                  className={`calendar__compare ${
+                    this.props.classColorCompare
+                  }`}
+                >
+                  <Calendar
+                    minDate={new Date('2018-04-01')}
+                    maxDate={new Date('2018-05-24')}
+                    defaultDate={new Date('2018-04-01')}
+                    dateFormat="dd/mm/yy"
+                    selectionMode="range"
+                    placeholder="Compare"
+                    value={this.state.dateFromCalendarCompare}
+                    onChange={e => this.getDateFromCalendarCompare(e)}
+                  />
+                </div>
+              )}
+            </div>
+          )}
           <ResponsiveContainer width="98%" height={500}>
             <BarChart data={this.state.showData}>
               <CartesianGrid strokeDasharray="3 3" />
@@ -266,45 +305,6 @@ class BarchartComponent extends Component {
               )}
             </BarChart>
           </ResponsiveContainer>
-          {this.props.calendarRange === false &&
-            this.props.calendarCompare === false ? null : (
-              <div className="calendar__container">
-                {this.props.calendarRange === false ? null : (
-                  <div
-                    className={`calendar__range ${this.props.classColorRange}`}
-                  >
-                    <Calendar
-                      minDate={new Date('2018-04-01')}
-                      maxDate={new Date('2018-05-24')}
-                      defaultDate={new Date('2018-04-01')}
-                      dateFormat="dd/mm/yy"
-                      selectionMode="range"
-                      placeholder="Range di date"
-                      value={this.state.dateFromCalendar}
-                      onChange={e => this.getDateFromCalendar(e)}
-                    />
-                  </div>
-                )}
-                {this.props.calendarRange === false ? null : (
-                  <div
-                    className={`calendar__compare ${
-                      this.props.classColorCompare
-                      }`}
-                  >
-                    <Calendar
-                      minDate={new Date('2018-04-01')}
-                      maxDate={new Date('2018-05-24')}
-                      defaultDate={new Date('2018-04-01')}
-                      dateFormat="dd/mm/yy"
-                      selectionMode="range"
-                      placeholder="Compare"
-                      value={this.state.dateFromCalendarCompare}
-                      onChange={e => this.getDateFromCalendarCompare(e)}
-                    />
-                  </div>
-                )}
-              </div>
-            )}
         </div>
       </Widget>
     )

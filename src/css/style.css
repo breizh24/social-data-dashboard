@@ -333,10 +333,8 @@ svg {
 }
 
 .calendar__container {
-  position: absolute;
-  bottom: 5px;
-  left: 20px;
   display: flex;
+  margin-bottom: 20px;
 }
 
 @keyframes appear {
@@ -390,7 +388,7 @@ svg {
 }
 
 .graph__barchart__header {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .calendar__range input {
