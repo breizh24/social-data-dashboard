@@ -1,23 +1,23 @@
 import React, { Component } from 'react'
 import { NavLink, Link } from 'react-router-dom'
-import ReactDOM from "react-dom"
+import ReactDOM from 'react-dom'
 
 class Sidebar extends Component {
   constructor(props) {
     super(props)
-    this.hashLinks = React.createRef();
-    this.hashActy = React.createRef();
-    this.hashInvolv = React.createRef();
-    this.accLinks = React.createRef();
-    this.accActy = React.createRef();
-    this.accInvolv = React.createRef();
-    this.persLinks = React.createRef();
-    this.persActy = React.createRef();
-    this.persAppr = React.createRef();
-    this.persInvolv = React.createRef();
-    this.compLinks = React.createRef();
-    this.compActy = React.createRef();
-    this.compInvolv = React.createRef();
+    this.hashLinks = React.createRef()
+    this.hashActy = React.createRef()
+    this.hashInvolv = React.createRef()
+    this.accLinks = React.createRef()
+    this.accActy = React.createRef()
+    this.accInvolv = React.createRef()
+    this.persLinks = React.createRef()
+    this.persActy = React.createRef()
+    this.persAppr = React.createRef()
+    this.persInvolv = React.createRef()
+    this.compLinks = React.createRef()
+    this.compActy = React.createRef()
+    this.compInvolv = React.createRef()
     this.state = {
       showDropDown: [false, false, false, false],
     }
@@ -60,17 +60,18 @@ class Sidebar extends Component {
     let ArrPos = this.state.showDropDown
     return (
       <div className="sidebar__container">
-        <div className="sidebar_user">
-          {/* <div className="fotoUser">{this.props.username[0]}</div>
+        {/* <div className="fotoUser">{this.props.username[0]}</div>
          <h2>{this.props.username}</h2> */}
-          <div className="logoLogin">
-            <img className="stretch" src={require('../img/logoLogin.png')} />
-
-
-            <Link className="userAlign" to="/user">
-              <span className="userProp">Nome Utente</span>
-            </Link>
+        <div className="logoLogin">
+          <div className="userQuadrato">
+            <h3>F</h3>
           </div>
+
+          <span className="userProp">
+            <Link className="userAlign" to="/login">
+              Federica Binomi
+            </Link>
+          </span>
         </div>
 
         <ul>
@@ -94,9 +95,15 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-                <li onClick={this.handleScrollToElement} ref={this.hashLinks}>Links</li>
-                <li onClick={this.handleScrollToElement} ref={this.hashActy}>Activity</li>
-                <li onClick={this.handleScrollToElement} ref={this.hashInvolv}>Involvement</li>
+                <li onClick={this.handleScrollToElement} ref={this.hashLinks}>
+                  Links
+                </li>
+                <li onClick={this.handleScrollToElement} ref={this.hashActy}>
+                  Activity
+                </li>
+                <li onClick={this.handleScrollToElement} ref={this.hashInvolv}>
+                  Involvement
+                </li>
               </ul>
             ) : null}
           </li>
@@ -121,9 +128,15 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-                <li onClick={this.handleScrollToElement} ref={this.accLinks}>Links</li>
-                <li onClick={this.handleScrollToElement} ref={this.accActy}>Activity</li>
-                <li onClick={this.handleScrollToElement} ref={this.accInvolv}>Involvement</li>
+                <li onClick={this.handleScrollToElement} ref={this.accLinks}>
+                  Links
+                </li>
+                <li onClick={this.handleScrollToElement} ref={this.accActy}>
+                  Activity
+                </li>
+                <li onClick={this.handleScrollToElement} ref={this.accInvolv}>
+                  Involvement
+                </li>
               </ul>
             ) : null}
           </li>
@@ -148,10 +161,18 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-                <li onClick={this.handleScrollToElement} ref={this.persLinks}>Links</li>
-                <li onClick={this.handleScrollToElement} ref={this.persActy}>Activity</li>
-                <li onClick={this.handleScrollToElement} ref={this.persAppr}>Approval</li>
-                <li onClick={this.handleScrollToElement} ref={this.persInvolv}>Involvement</li>
+                <li onClick={this.handleScrollToElement} ref={this.persLinks}>
+                  Links
+                </li>
+                <li onClick={this.handleScrollToElement} ref={this.persActy}>
+                  Activity
+                </li>
+                <li onClick={this.handleScrollToElement} ref={this.persAppr}>
+                  Approval
+                </li>
+                <li onClick={this.handleScrollToElement} ref={this.persInvolv}>
+                  Involvement
+                </li>
               </ul>
             ) : null}
           </li>
@@ -176,9 +197,15 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-                <li onClick={this.handleScrollToElement} ref={this.compLinks}>Links</li>
-                <li onClick={this.handleScrollToElement} ref={this.compActy}>Activity</li>
-                <li onClick={this.handleScrollToElement} ref={this.compInvolv}>Involvement</li>
+                <li onClick={this.handleScrollToElement} ref={this.compLinks}>
+                  Links
+                </li>
+                <li onClick={this.handleScrollToElement} ref={this.compActy}>
+                  Activity
+                </li>
+                <li onClick={this.handleScrollToElement} ref={this.compInvolv}>
+                  Involvement
+                </li>
               </ul>
             ) : null}
           </li>

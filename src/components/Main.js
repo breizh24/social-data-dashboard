@@ -4,7 +4,7 @@ import Personality from './Personality.js'
 import Competitors from './Competitors.js'
 import Accounts from './Accounts.js'
 import { Route, Switch } from 'react-router-dom'
-import ReactDOM from "react-dom"
+import ReactDOM from 'react-dom'
 import NotFound from './NotFound.js'
 import BarchartComponent from './BarchartComponent'
 import Widget from './Widget.js'
@@ -75,7 +75,6 @@ class Main extends Component {
           <Route
             exact
             path="/user"
-
             render={props => <Personality_AccountApproval />}
           />
 

@@ -27,7 +27,7 @@ class Personality_AccountApproval extends Component {
         maxDate: '2018-05-24',
       },
     }
-
+    this.nameColor = []
     this.color = [
       'red',
       'yellow',
@@ -73,6 +73,7 @@ class Personality_AccountApproval extends Component {
             for (let j = 0; j < oldData.length; j++) {
               if (apiData[i].entity === oldData[j].entity) {
                 apiData[i].checked = oldData[j].checked
+                apiData[i].color = oldData[j].color
               }
             }
           }
@@ -134,17 +135,30 @@ class Personality_AccountApproval extends Component {
     })
   }
 
+  giveColor = entity => {
+    let color
+    for (let i = 0; i < this.nameColor.length; i++) {
+      if (this.nameColor[i].entity === entity) {
+        color = this.nameColor[i].color
+        break
+      }
+    }
+    return color
+  }
+
   handleApiData = data => {
     let myData = data.map((el, idx) => {
       const newObj = el.days.map(element => {
         const obj = { ...element }
         return obj
       })
-
       const result = {
         ...el,
         days: newObj,
-        color: this.color[idx],
+        color:
+          this.nameColor.length < 1
+            ? this.color[idx]
+            : this.giveColor(el.entity),
         checked:
           typeof this.state.apiData[idx].checked === 'undefined'
             ? true
@@ -152,6 +166,11 @@ class Personality_AccountApproval extends Component {
       }
       return result
     })
+    if (this.nameColor.length < 1) {
+      myData.forEach(el => {
+        this.nameColor.push({ entity: el.entity, color: el.color })
+      })
+    }
 
     myData.sort(function(b, a) {
       return a.days.length - b.days.length
@@ -184,6 +203,12 @@ class Personality_AccountApproval extends Component {
         return new Date(b.day) - new Date(a.day)
       }),
     )
+
+    myData = myData.sort((b, a) => {
+      if (a.entity > b.entity) return -1
+      else if (a.entity < b.entity) return 1
+      else return 0
+    })
 
     this.setState(
       {
