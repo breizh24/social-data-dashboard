@@ -37,8 +37,9 @@ class Login extends Component {
       <div className="Login">
         <form onSubmit={this.handleSubmit}>
           <FormGroup controlId="user" bsSize="large">
-            <ControlLabel>User</ControlLabel>
+            <ControlLabel>Username</ControlLabel>
             <FormControl
+              className=""
               autoFocus
               type="user"
               value={this.state.user}

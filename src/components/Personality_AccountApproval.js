@@ -292,20 +292,21 @@ class Personality_AccountApproval extends Component {
             <ul className="linechart__legend__ul">
               {this.state.apiData.map((obj, idx) => (
                 <li key={idx}>
-                  <span>
+                  <label class="container">
                     <input
                       type="checkbox"
                       defaultChecked={this.state.apiData[idx].checked}
                       onClick={() =>
                         this.onClickCheckbox(idx, this.state.apiData)
                       }
+                    />
+                    <span
+                      class="checkmark"
                       style={{
-                        backgroundColor: 'red',
                         border: obj.color,
-                        borderRadius: '15px',
                       }}
                     />
-                  </span>
+                  </label>
                   <span>{obj.entity}</span>
                 </li>
               ))}

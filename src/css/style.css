@@ -43,7 +43,7 @@ svg {
 }
 
 .header__logo {
-  width: 65%;
+  width: 55%;
   display: flex;
   align-content: center;
 }
@@ -347,11 +347,13 @@ svg {
   -ms-animation: appear 1s ease 0s 1 normal;
   animation: appear 1s ease 0s 1 normal;
   margin-top: 25px;
+  margin-left: 20px;
 }
 
 .subtitle__piechart {
   font-size: 15px;
   margin-right: 10px;
+  margin-left: 20px;
   padding-bottom: 5px;
   border-bottom: 2px solid #9e9d9d;
   -webkit-animation: appear 1s ease 0s 1 normal;
@@ -438,6 +440,7 @@ svg {
   letter-spacing: 1px;
   outline: none;
   padding-left: 10px;
+  margin-left: 20px;
   /* margin-right: 80px; */
 }
 
@@ -475,6 +478,7 @@ svg {
   letter-spacing: 1px;
   outline: none;
   padding-left: 10px;
+  margin-left: 20px;
   /* margin-right: 80px; */
 }
 
@@ -561,7 +565,30 @@ svg {
 
 /* //login// */
 
-.login__container {
+.Login input {
+  border-radius: none;
+  border-bottom: 3px solid #605d5e;
+  border-top: none;
+  border-left: none;
+}
+.Login input:focus {
+}
+
+.Login {
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+}
+
+.Login form {
+  border: solid 3px #d9d9d9;
+  padding: 10px 10px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 15px;
+}
+
+/* .login__container {
   background-size: cover;
   height: 100vh;
   padding: 30px;
@@ -634,7 +661,7 @@ svg {
 
 .login__button:active {
   background: var(--darkGreyActive);
-}
+} 
 
 .button__container {
   display: flex;
@@ -652,7 +679,7 @@ svg {
 .login__privacy span {
   text-decoration: underline;
 }
-
+*/
 #target {
   position: relative;
   width: 350px;
@@ -681,22 +708,14 @@ svg {
   stroke: #d62728;
 }
 
-/* Login */
-
-.Login {
-  display: flex;
-  flex-flow: column;
-  text-align: center;
-}
-
-.Login form {
-  border: solid 3px #d9d9d9;
-  padding: 10px 10px;
-  margin: 0 auto;
-  display: grid;
-  grid-gap: 15px;
-}
-
 .form-group.form-group-lg {
   display: grid;
+}
+
+.input[type='checkbox']:checked {
+  background-color: red;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: red;
 }
