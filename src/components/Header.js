@@ -33,12 +33,25 @@ class Header extends Component {
     return (
       <div className="header__container">
         <div className="header__logo__container">
-          <Link to="/">
-            <Logo />
-          </Link>
+          <div className="header__logo">
+            <Link to="/">
+              <Logo />
+            </Link>
+          </div>
         </div>
         <div className="title__container">
           <h1 className="titleMain"> {title} </h1>
+        </div>
+        <div className="logoLogin">
+          <div className="userQuadrato">
+            <h3>F</h3>
+          </div>
+
+          <span className="userProp">
+            <Link className="userAlign" to="/login">
+              Federica Binomi
+            </Link>
+          </span>
         </div>
       </div>
     )

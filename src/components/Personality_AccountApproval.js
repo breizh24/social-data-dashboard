@@ -29,16 +29,16 @@ class Personality_AccountApproval extends Component {
     }
     this.nameColor = []
     this.color = [
-      'red',
-      'yellow',
-      'green',
-      'blue',
-      '#ccc',
-      '#585858',
-      '#d786e3',
-      '#c6004a',
-      '#7480b5',
-      '#75b586',
+      '#D83A00',
+      '#6D7AB2',
+      '#6BAF7D',
+      '#7971ea',
+      '#ECB02E',
+      '#C6004A',
+      '#D786A3',
+      '#A4C46B',
+      '#74dbef',
+      '#fab2ac',
     ]
   }
 
@@ -299,6 +299,11 @@ class Personality_AccountApproval extends Component {
                       onClick={() =>
                         this.onClickCheckbox(idx, this.state.apiData)
                       }
+                      style={{
+                        backgroundColor: 'red',
+                        border: obj.color,
+                        borderRadius: '15px',
+                      }}
                     />
                   </span>
                   <span>{obj.entity}</span>
