@@ -314,10 +314,8 @@ svg {
 }
 
 .calendar__container {
-  position: absolute;
-  bottom: 5px;
-  left: 20px;
   display: flex;
+  margin-bottom: 20px;
 }
 
 @keyframes appear {
@@ -371,7 +369,7 @@ svg {
 }
 
 .graph__barchart__header {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .calendar__range input {
@@ -631,20 +629,20 @@ svg {
 
 /* Login */
 
-  .Login {
-    display: flex;
-    flex-flow: column;
-    text-align: center;
-  }
+.Login {
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+}
 
-  .Login form {
-    border: solid 3px #d9d9d9;
-    padding: 10px 10px;
-    margin: 0 auto;
-    display: grid;
-    grid-gap: 15px;
-  }
+.Login form {
+  border: solid 3px #d9d9d9;
+  padding: 10px 10px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 15px;
+}
 
-  .form-group.form-group-lg {
-    display: grid;
+.form-group.form-group-lg {
+  display: grid;
 }
