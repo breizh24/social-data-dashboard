@@ -60,13 +60,24 @@ class PersonalityNetwork extends Component {
         return (
             <ResponsiveContainer>
                 {/* {(this.state.apiData !== null || this.state.apiData !== undefined) */}
-                {(this.state.apiData !== false)
-                    ? (
-                        <Sigma graph={this.state.apiData} settings={{ drawEdges: true, clone: false }}>
-                            <RelativeSize initialSize={15} />
-                            <RandomizeNodePositions />
-                        </Sigma>)
-                    : <h1>Loading</h1>}
+                {this.state.apiData !== false ? (
+                    <Sigma
+                        graph={this.state.apiData}
+                        settings={{
+                            drawEdges: true,
+                            clone: false,
+                            defaultNodeColor: '#EDB63E',
+                            labelHoverShadowColor: '#605D5E',
+                            defaultLabelColor: '#605D5E',
+                            labelSize: 'fixed',
+                        }}
+                    >
+                        <RelativeSize initialSize={15} />
+                        <RandomizeNodePositions />
+                    </Sigma>
+                ) : (
+                        <h1>Loading</h1>
+                    )}
             </ResponsiveContainer >
         )
     }

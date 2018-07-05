@@ -17,7 +17,7 @@ class Hashtags extends Component {
     return (
       <div className="container__home__element">
         <HashNetwork />
-        <Widget width="45%">
+        <Widget width="95%">
           <HashtagPos_CustomPieChart
             title={'SENTIMENT - POSITIVITY'}
             version="160"
@@ -27,7 +27,7 @@ class Hashtags extends Component {
             indicator="positivity"
           />
         </Widget>
-        <Widget width="45%">
+        <Widget width="95%">
           <HashtagNeg_CustomPieChart
             title={'SENTIMENT - NEGATIVITY'}
             version="160"

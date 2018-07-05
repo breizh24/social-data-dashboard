@@ -17,7 +17,6 @@ import HashNetwork from './HashNetwork'
 
 import Personality_AccountApproval from './Personality_AccountApproval.js'
 import Login from './Login'
-import PersonalityApproval from './PersonalityApproval.js'
 
 class Main extends Component {
   handleScrollToElement(event) {
@@ -71,11 +70,6 @@ class Main extends Component {
                 <Chord_Competitors />
               </div>
             )}
-          />
-          <Route
-            exact
-            path="/user"
-            render={props => <Personality_AccountApproval />}
           />
 
           <Route exact path="/hashtags" render={props => <Hashtags />} />
