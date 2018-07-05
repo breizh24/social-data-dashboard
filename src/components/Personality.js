@@ -9,6 +9,7 @@ import {
 } from 'recharts'
 import BarchartComponent from './BarchartComponent'
 import PersonalityNetwork from './PersonalityNetwork';
+import Personality_AccountApproval from './Personality_AccountApproval';
 
 class Personality extends Component {
   render() {
@@ -31,7 +32,20 @@ class Personality extends Component {
           classColorRange="activity__color__range"
           classColorCompare="activity__color__compare"
         />
-        <p>Qui andrà un linechart</p>
+
+        <Personality_AccountApproval
+          version="160"
+          category="ma"
+          subCategory="trend"
+          social="twitter"
+          indicator="approval"
+          title="Personality approval"
+          width="100%"
+          colour1="#C6004A"
+          colour2="#78B688"
+          classColorRange="approval__color__range"
+        />
+
         <BarchartComponent
           version="160"
           category="ma"
