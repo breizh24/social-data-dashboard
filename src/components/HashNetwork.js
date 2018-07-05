@@ -69,6 +69,8 @@ class HashNetwork extends Component {
               defaultNodeColor: '#EDB63E',
               labelHoverShadowColor: '#605D5E',
               defaultLabelColor: '#605D5E',
+              defaultLabelSize: '18',
+              labelSize: 'fixed',
             }}
           >
             <RelativeSize initialSize={15} />
