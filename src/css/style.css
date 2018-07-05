@@ -649,6 +649,11 @@ svg {
   bottom: 80px;
 }
 
+.legend__checkbox div:last-child {
+  border-radius: 50%;
+  box-shadow: none;
+}
+
 .login__privacy span {
   text-decoration: underline;
 }
