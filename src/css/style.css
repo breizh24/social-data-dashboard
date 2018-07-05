@@ -266,7 +266,7 @@ svg {
   text-align: center;
   line-height: 45px;
   margin-right: 10px;
-  box-shadow: 3px 3px 2px 0px rgba(0, 0, 0, 0.75);
+  /* box-shadow: 3px 3px 2px 0px rgba(0, 0, 0, 0.75); */
 }
 
 .logoLogin .stretch {
@@ -650,20 +650,20 @@ svg {
 
 /* Login */
 
-  .Login {
-    display: flex;
-    flex-flow: column;
-    text-align: center;
-  }
+.Login {
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+}
 
-  .Login form {
-    border: solid 3px #d9d9d9;
-    padding: 10px 10px;
-    margin: 0 auto;
-    display: grid;
-    grid-gap: 15px;
-  }
+.Login form {
+  border: solid 3px #d9d9d9;
+  padding: 10px 10px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 15px;
+}
 
-  .form-group.form-group-lg {
-    display: grid;
+.form-group.form-group-lg {
+  display: grid;
 }
