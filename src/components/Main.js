@@ -4,6 +4,7 @@ import Personalita from './Personalita.js'
 import Competitors from './Competitors.js'
 import Accounts from './Accounts.js'
 import { Route, Switch } from 'react-router-dom'
+import ReactDOM from 'react-dom'
 import NotFound from './NotFound.js'
 import BarchartComponent from './BarchartComponent'
 import Widget from './Widget.js'
@@ -13,19 +14,39 @@ import Home_Piechart from './Home__PieChart'
 import Personality_AccountApproval from './Personality_AccountApproval.js'
 import Login from './Login'
 import PersonalityApproval from './PersonalityApproval.js'
-import ChordCharts from './Chord__Accounts'
 
 class Main extends Component {
+  handleScrollToElement(event) {
+    const tesNode = ReactDOM.findDOMNode(this.refs.test)
+    console.log(tesNode)
+    // switch (testNode) {
+    // case ('AccActy'):
+    // window.scrollTo(0, tesNode.offsetTop);
+    // break;
+    // case ('HashActy'):
+    // window.scrollTo(1, tesNode.offsetTop);
+    // break;
+  }
+
   render() {
     return (
-      <div className="main__container">
+      <div onScroll={this.handleScrollToElement} className="main__container">
         <Switch>
+          <Route
+            exact
+            path="/login"
+            render={() => (
+              <div className="container__home__element">
+                <h1>La sig.na Sodi MargoT sarà subito da lei</h1>
+              </div>
+            )}
+          />
           <Route
             exact
             path="/"
             render={() => (
               <div className="container__home__element">
-                <Widget width="45%">
+                <Widget ref="AccActy" width="45%">
                   <Home__CustomPieChart
                     title={'ACCOUNT ACTIVITY'}
                     version="155"
@@ -35,7 +56,7 @@ class Main extends Component {
                     indicator="activity"
                   />
                 </Widget>
-                <Widget width="45%">
+                <Widget ref="HashActy" width="45%">
                   <Home__CustomPieChart
                     title={'HASHTAG ACTIVITY'}
                     version="156"
@@ -50,7 +71,7 @@ class Main extends Component {
           />
           <Route
             exact
-            path="/login"
+            path="/user"
             render={props => <Personality_AccountApproval />}
           />
 
