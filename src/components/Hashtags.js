@@ -9,17 +9,19 @@ class Hashtags extends Component {
   render() {
     return (
       <React.Fragment>
-        <NetworkchartComponent
-          version="158"
-          category="ht"
-          subCategory="network"
-          social="twitter"
-          indicator="/"
-          limit="100"
-          title="Hashtag Network"
-          ref="hashtagNetwork"
-        />
-        <HashHierarchy />
+        <div className="links">
+          <NetworkchartComponent
+            version="158"
+            category="ht"
+            subCategory="network"
+            social="twitter"
+            indicator="/"
+            limit="100"
+            title="Hashtag Network"
+            ref="hashtagNetwork"
+          />
+          <HashHierarchy />
+        </div>
         <Widget width="95%">
           <HashtagPos_CustomPieChart
             title={'SENTIMENT - POSITIVITY'}
