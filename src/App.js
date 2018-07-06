@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <div className="app__container">
-        <Route component={Header} />
+        <Header user={this.props.user} />
         <Sidebar />
         <Main />
       </div>

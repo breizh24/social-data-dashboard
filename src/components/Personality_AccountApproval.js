@@ -322,19 +322,6 @@ class Personality_AccountApproval extends Component {
                       }
                       checked={this.state.apiData[idx].checked}
                     />
-
-                    {/* <input
-                      type="checkbox"
-                      defaultChecked={this.state.apiData[idx].checked}
-                      onClick={() =>
-                        this.onClickCheckbox(idx, this.state.apiData)
-                      }
-                      style={{
-                        backgroundColor: 'red',
-                        border: obj.color,
-                        borderRadius: '15px',
-                      }}
-                    /> */}
                   </span>
                   <span>{obj.entity}</span>
                 </li>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import Logo from './Logo'
+import Login from './Login'
 
 class Header extends Component {
   constructor(props) {
@@ -8,6 +9,7 @@ class Header extends Component {
     this.state = {
       title: '',
       currentLocation: this.props.location.pathname,
+      user: [this.props.user],
     }
   }
 
@@ -30,6 +32,7 @@ class Header extends Component {
 
   render() {
     const title = this.showTitle()
+
     return (
       <div className="header__container">
         <div className="header__logo__container">
@@ -45,11 +48,13 @@ class Header extends Component {
         <div className="logoLogin">
           <div className="userQuadrato">
             <h3>F</h3>
+            {/* {this.state.user[0]}*/}
           </div>
 
           <span className="userProp">
             <Link className="userAlign" to="/login">
-              Federica Binomi
+              Federica Bottura
+              {/* {this.state.user} */}
             </Link>
           </span>
         </div>

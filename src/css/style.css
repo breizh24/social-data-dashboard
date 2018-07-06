@@ -43,7 +43,7 @@ svg {
 }
 
 .header__logo {
-  width: 65%;
+  width: 55%;
   display: flex;
   align-content: center;
 }
@@ -347,11 +347,13 @@ svg {
   -ms-animation: appear 1s ease 0s 1 normal;
   animation: appear 1s ease 0s 1 normal;
   margin-top: 25px;
+  margin-left: 20px;
 }
 
 .subtitle__piechart {
   font-size: 15px;
   margin-right: 10px;
+  margin-left: 20px;
   padding-bottom: 5px;
   border-bottom: 2px solid #9e9d9d;
   -webkit-animation: appear 1s ease 0s 1 normal;
@@ -438,6 +440,7 @@ svg {
   letter-spacing: 1px;
   outline: none;
   padding-left: 10px;
+  margin-left: 20px;
   /* margin-right: 80px; */
 }
 
@@ -475,6 +478,7 @@ svg {
   letter-spacing: 1px;
   outline: none;
   padding-left: 10px;
+  margin-left: 20px;
   /* margin-right: 80px; */
 }
 
@@ -561,7 +565,30 @@ svg {
 
 /* //login// */
 
-.login__container {
+.Login input {
+  border-radius: none;
+  border-bottom: 3px solid #605d5e;
+  border-top: none;
+  border-left: none;
+}
+.Login input:focus {
+}
+
+.Login {
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+}
+
+.Login form {
+  border: solid 3px #d9d9d9;
+  padding: 10px 10px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 15px;
+}
+
+/* .login__container {
   background-size: cover;
   height: 100vh;
   padding: 30px;
@@ -634,14 +661,14 @@ svg {
 
 .login__button:active {
   background: var(--darkGreyActive);
-}
+} 
 
 .button__container {
   display: flex;
   align-content: center;
   cursor: pointer;
 }
-
+*/
 .login__privacy {
   letter-spacing: 1px;
   font-size: 14px;
@@ -652,6 +679,136 @@ svg {
 .legend__checkbox div:last-child {
   border-radius: 50%;
   box-shadow: none;
+}
+
+.aECB02E div:last-child {
+  border: none;
+  background-color: white;
+}
+
+.aECB02E div:last-child span {
+  background-color: #ecb02e !important;
+  border: 1px solid #ecb02e !important;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+}
+
+.a6BAF7D div:last-child {
+  border: none;
+  background-color: white;
+}
+
+.a6BAF7D div:last-child span {
+  background-color: #6baf7d !important;
+  border: 1px solid #6baf7d !important;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+}
+
+.aD786A3 div:last-child {
+  border: none;
+  background-color: white;
+}
+
+.aD786A3 div:last-child span {
+  background-color: #d786a3 !important;
+  border: 1px solid #d786a3 !important;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+}
+
+.aC6004A div:last-child {
+  border: none;
+  background-color: white;
+}
+
+.aC6004A div:last-child span {
+  background-color: #c6004a !important;
+  border: 1px solid #c6004a !important;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+}
+
+.a7971ea div:last-child {
+  border: none;
+  background-color: white;
+}
+
+.a7971ea div:last-child span {
+  background-color: #7971ea !important;
+  border: 1px solid #7971ea !important;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+}
+
+.afab2ac div:last-child {
+  border: none;
+  background-color: white;
+}
+
+.afab2ac div:last-child span {
+  background-color: #fab2ac !important;
+  border: 1px solid #fab2ac !important;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+}
+
+.a6D7AB2 div:last-child {
+  border: none;
+  background-color: white;
+}
+
+.a6D7AB2 div:last-child span {
+  background-color: #6d7ab2 !important;
+  border: 1px solid #6d7ab2 !important;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+}
+
+.aA4C46B div:last-child {
+  border: none;
+  background-color: white;
+}
+
+.aA4C46B div:last-child span {
+  background-color: #a4c46b !important;
+  border: 1px solid #a4c46b !important;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+}
+
+.aD83A00 div:last-child {
+  border: none;
+  background-color: white;
+}
+
+.aD83A00 div:last-child span {
+  background-color: #d83a00 !important;
+  border: 1px solid #d83a00 !important;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+}
+
+.a74dbef div:last-child {
+  border: none;
+  background-color: white;
+}
+
+.a74dbef div:last-child span {
+  background-color: #74dbef !important;
+  border: 1px solid #74dbef !important;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
 }
 
 .login__privacy span {
@@ -686,22 +843,14 @@ svg {
   stroke: #d62728;
 }
 
-/* Login */
-
-.Login {
-  display: flex;
-  flex-flow: column;
-  text-align: center;
-}
-
-.Login form {
-  border: solid 3px #d9d9d9;
-  padding: 10px 10px;
-  margin: 0 auto;
-  display: grid;
-  grid-gap: 15px;
-}
-
 .form-group.form-group-lg {
   display: grid;
+}
+
+.input[type='checkbox']:checked {
+  background-color: red;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: red;
 }
