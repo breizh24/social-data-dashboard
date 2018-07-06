@@ -78,7 +78,7 @@ class HashHierarchy extends Component {
         <div className="hierarchy__container">
           {this.state.apiData ? (
             <Tree
-              orientation="vertical"
+              orientation="horizontal"
               data={this.state.apiData}
               initialDepth={10000}
               depthFactor=""
