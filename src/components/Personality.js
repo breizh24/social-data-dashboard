@@ -26,7 +26,7 @@ class Personality extends Component {
           title="Personality activity"
           width="100%"
           colour1="#C6004A"
-          colour2="#78B688"
+          colour2="#6D7AB2"
           classColorRange="activity__color__range"
           classColorCompare="activity__color__compare"
         />
@@ -52,7 +52,7 @@ class Personality extends Component {
           indicator="involvement"
           title="Personality involvement"
           width="100%"
-          colour1="#6D7AB2"
+          colour1="#78B688"
           colour2="#d786a3"
           classColorRange="involvement__color__range"
           classColorCompare="involvement__color__compare"
