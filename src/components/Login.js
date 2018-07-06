@@ -22,7 +22,6 @@ class Login extends Component {
   onPasswordChange = e => {
     const newState = { ...this.state.infoPersona }
     newState.password = e.target.value
-    console.log(newState)
     if (
       newState.password.length < 6 ||
       (newState.email && !isEmail(newState.email))
@@ -84,7 +83,7 @@ class Login extends Component {
                 name="nomeutente"
                 className="intro__input"
                 value={this.state.user}
-                // onChange={this.onEmailChange}
+              // onChange={this.onEmailChange}
               />
               <span className="intro__input__messaggio__errore">
                 {this.state.emailErrorMessage}
@@ -103,9 +102,9 @@ class Login extends Component {
                 Accedi
               </button>
               {this.state.password !== '' &&
-              this.state.disabledButton === false ? (
-                <Redirect to="/home" />
-              ) : null}
+                this.state.disabledButton === false ? (
+                  <Redirect to="/home" />
+                ) : null}
             </div>
           </form>
         </div>

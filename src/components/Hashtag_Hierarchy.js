@@ -13,10 +13,7 @@ class HashHierarchy extends Component {
     }
   }
   componentDidMount() {
-    fetch('http://165.227.158.131/dp/api/v160/hierarchy/twitter/ma/100')
-      // fetch('http://165.227.158.131/dp/api/v155/hierarchy/twitter/ma/100')
-      // fetch('http://165.227.158.131/dp/api/v158/hierarchy/twitter/ma/100')
-      // fetch('http://165.227.158.131/dp/api/v159/hierarchy/twitter_hashtag/ht/100')
+    fetch('http://165.227.158.131/dp/api/v159/hierarchy/twitter_hashtag/ht/100')
       .then(response => response.json())
       .then(response => {
         let apiData = response.apiData.hierarchy.data
@@ -49,7 +46,7 @@ class HashHierarchy extends Component {
         }
         j++
       } else if (parse[i].length === 2) {
-        let sndresult = parse[i][1];
+        // let sndresult = parse[i][1];
         if (parse[1][0] === result[0][0]) {
 
           // if (parse[i][1] === sndresult[i]) {

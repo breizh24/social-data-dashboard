@@ -13,7 +13,7 @@ import Login from './Login'
 class Main extends Component {
   handleScrollToElement(event) {
     const tesNode = ReactDOM.findDOMNode(this.refs.test)
-    console.log(tesNode)
+    // console.log(tesNode)
     // switch (testNode) {
     // case ('AccActy'):
     // window.scrollTo(0, tesNode.offsetTop);
