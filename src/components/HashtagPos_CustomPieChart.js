@@ -9,7 +9,7 @@ import {
 
 const style = {
   top: 0,
-  left: 100,
+  left: 0,
   lineHeight: '20px',
 }
 
@@ -160,6 +160,8 @@ class HashtagPos_CustomPieChart extends Component {
         <h3 className="subtitle__piechart">Last 30 days</h3>
         <ResponsiveContainer width="100%" height={300} id="target">
           <RadialBarChart
+            startAngle={180}
+            endAngle={0}
             width={1000}
             height={700}
             // cx={150}
@@ -191,6 +193,8 @@ class HashtagPos_CustomPieChart extends Component {
         </ResponsiveContainer>
         <ResponsiveContainer width="100%" height={300}>
           <RadialBarChart
+            startAngle={180}
+            endAngle={0}
             width={1000}
             height={700}
             // cx={150}
@@ -222,6 +226,8 @@ class HashtagPos_CustomPieChart extends Component {
         </ResponsiveContainer>
         <ResponsiveContainer width="100%" height={300}>
           <RadialBarChart
+            startAngle={180}
+            endAngle={0}
             width={1000}
             height={700}
             // cx={150}
@@ -253,6 +259,8 @@ class HashtagPos_CustomPieChart extends Component {
         </ResponsiveContainer>
         <ResponsiveContainer width="100%" height={300}>
           <RadialBarChart
+            startAngle={180}
+            endAngle={0}
             width={1000}
             height={700}
             // cx={150}

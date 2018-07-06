@@ -142,7 +142,7 @@ class ChordchartComponent extends React.Component {
     console.log(this.state.names)
 
     return (
-      <Widget width={this.props.width}>
+      <Widget width="45%">
         <div className="graph__chord__container">
           <div className="graph__barchart__header">
             <h2 className="title__piechart">{this.props.title}</h2>
@@ -151,8 +151,15 @@ class ChordchartComponent extends React.Component {
           <div className="chord__chart__container">
             <div className="chord__chart">
               <ChordDiagram
+<<<<<<< HEAD
                 innerRadius={100}
                 outerRadius={160}
+=======
+                innerRadius={120}
+                outerRadius={150}
+                width={550}
+                height={550}
+>>>>>>> 54a94a7cd2f1283f4c73a1074b64f5a51b1ba0b7
                 matrix={this.matrix}
                 componentId={1}
                 style={{ fontSize: '12px' }}
