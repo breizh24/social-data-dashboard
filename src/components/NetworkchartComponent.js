@@ -63,7 +63,7 @@ class NetworkchartComponent extends Component {
 
   render() {
     return (
-      <Widget width="100%">
+      <Widget width="50%">
         <div className="graph__barchart__header">
           <h2 className="title__piechart">{this.props.title}</h2>
           <h3 className="subtitle__piechart" />
