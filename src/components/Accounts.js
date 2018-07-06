@@ -9,16 +9,29 @@ class Accounts extends Component {
   render() {
     return (
       <React.Fragment>
-        <NetworkchartComponent
-          version="155"
-          category="ma"
-          subCategory="network"
-          social="twitter"
-          indicator="/"
-          limit="100"
-          title="Accounts Network"
-          ref="AccountNetwork"
-        />
+        <div className="links">
+          <ChordchartComponent
+            ref="ChorChart"
+            version="155"
+            category="ma"
+            subCategory="chord"
+            social="twitter"
+            indicator="/"
+            limit="100"
+            yar
+            title="Accounts chord"
+          />
+          <NetworkchartComponent
+            version="155"
+            category="ma"
+            subCategory="network"
+            social="twitter"
+            indicator="/"
+            limit="100"
+            title="Accounts Network"
+            ref="AccountNetwork"
+          />
+        </div>
         <AccHierarcy />
         <BarchartComponent
           ref="AccActy"
@@ -30,7 +43,7 @@ class Accounts extends Component {
           title="Account activity"
           width="100%"
           colour1="#C6004A"
-          colour2="#78B688"
+          colour2="#6D7AB2"
           classColorRange="activity__color__range"
           classColorCompare="activity__color__compare"
         />
@@ -43,20 +56,10 @@ class Accounts extends Component {
           indicator="involvement"
           title="Account involvement"
           width="100%"
-          colour1="#6D7AB2"
+          colour1="#78B688"
           colour2="#d786a3"
           classColorRange="involvement__color__range"
           classColorCompare="involvement__color__compare"
-        />
-        <ChordchartComponent
-          ref="ChorChart"
-          version="155"
-          category="ma"
-          subCategory="chord"
-          social="twitter"
-          indicator="/"
-          limit="100"
-          title="Accounts chord"
         />
       </React.Fragment>
     )
