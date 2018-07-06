@@ -6,17 +6,29 @@ class Competitors extends Component {
   render() {
     return (
       <React.Fragment>
-        <NetworkchartComponent
-          version="158"
-          category="ma"
-          subCategory="network"
-          social="twitter"
-          indicator="/"
-          limit="100"
-          title="Competitors Network"
-          ref="CompetitorsNetwork"
-        />
-
+        <div className="links">
+          <ChordchartComponent
+            ref="ChorChart"
+            version="158"
+            category="ma"
+            subCategory="chord"
+            social="twitter"
+            indicator="/"
+            limit="100"
+            title="Competitors chord"
+            width="50%"
+          />
+          <NetworkchartComponent
+            version="158"
+            category="ma"
+            subCategory="network"
+            social="twitter"
+            indicator="/"
+            limit="100"
+            title="Competitors Network"
+            ref="CompetitorsNetwork"
+          />
+        </div>
         <BarchartComponent
           version="158"
           category="ma"
@@ -42,16 +54,6 @@ class Competitors extends Component {
           colour2="#d786a3"
           classColorRange="involvement__color__range"
           classColorCompare="involvement__color__compare"
-        />
-        <ChordchartComponent
-          ref="ChorChart"
-          version="158"
-          category="ma"
-          subCategory="chord"
-          social="twitter"
-          indicator="/"
-          limit="100"
-          title="Competitors chord"
         />
       </React.Fragment>
     )

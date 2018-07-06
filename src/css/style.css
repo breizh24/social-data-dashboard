@@ -232,9 +232,12 @@ svg {
   border-radius: 10px; */
   padding: 5px;
   position: relative;
-
   margin-top: 20px;
   color: #605d5e;
+}
+
+.recharts-responsive-container {
+  margin-top: 20px;
 }
 
 .titleMain {
@@ -255,7 +258,6 @@ svg {
 }
 
 .chord__chart {
-  width: 700px;
 }
 /* login */
 
@@ -270,14 +272,14 @@ svg {
 }
 
 .userQuadrato {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 10px;
   background-color: transparent;
   border: 3px solid #605d5e;
   color: #605d5e;
   text-align: center;
-  line-height: 45px;
+  line-height: 35px;
   margin-right: 10px;
   font-size: 20px;
   align-items: center;
@@ -824,7 +826,7 @@ svg {
   padding-bottom: 100%;
   overflow: hidden;
 }
-svg {
+.header__container svg {
   position: relative;
   width: 100%;
 }
@@ -849,4 +851,9 @@ svg {
 
 .container:hover input ~ .checkmark {
   background-color: red;
+}
+
+.links {
+  display: flex;
+  flex-wrap: nowrap;
 }

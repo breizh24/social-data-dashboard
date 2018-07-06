@@ -8,17 +8,28 @@ class Personality extends Component {
   render() {
     return (
       <React.Fragment>
-        <NetworkchartComponent
-          version="160"
-          category="ma"
-          subCategory="network"
-          social="twitter"
-          indicator="/"
-          limit="100"
-          title="Personality Network"
-          ref="PersonalityNetwork"
-        />
-
+        <div className="links">
+          <ChordchartComponent
+            ref="ChorChart"
+            version="160"
+            category="ma"
+            subCategory="chord"
+            social="twitter"
+            indicator="/"
+            limit="100"
+            title="Personality Chord"
+          />
+          <NetworkchartComponent
+            version="160"
+            category="ma"
+            subCategory="network"
+            social="twitter"
+            indicator="/"
+            limit="100"
+            title="Personality Network"
+            ref="PersonalityNetwork"
+          />
+        </div>
         <BarchartComponent
           version="160"
           category="ma"
@@ -58,16 +69,6 @@ class Personality extends Component {
           colour2="#d786a3"
           classColorRange="involvement__color__range"
           classColorCompare="involvement__color__compare"
-        />
-        <ChordchartComponent
-          ref="ChorChart"
-          version="160"
-          category="ma"
-          subCategory="chord"
-          social="twitter"
-          indicator="/"
-          limit="100"
-          title="Personality Chord"
         />
       </React.Fragment>
     )
