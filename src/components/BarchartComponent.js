@@ -6,7 +6,6 @@ import {
   YAxis,
   Bar,
   ResponsiveContainer,
-  Tooltip,
 } from 'recharts'
 import { Fetcher } from '../components/Fetch'
 import { Calendar } from 'primereact/components/calendar/Calendar'

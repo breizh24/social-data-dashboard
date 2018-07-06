@@ -1,13 +1,6 @@
 import React, { Component } from 'react'
 import { Fetcher } from './Fetch'
-import {
-  PieChart,
-  Pie,
-  Sector,
-  ResponsiveContainer,
-  Tooltip,
-  Cell,
-} from 'recharts'
+import { PieChart, Pie, Sector, ResponsiveContainer, Cell } from 'recharts'
 
 class Home__CustomPieChart extends Component {
   constructor(props) {

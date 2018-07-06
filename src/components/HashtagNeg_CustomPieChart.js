@@ -1,17 +1,16 @@
 import React, { Component } from 'react'
-import { Fetcher } from './Fetch'
 import {
-  PieChart, Pie, Sector,
+  RadialBarChart,
+  RadialBar,
+  Legend,
   ResponsiveContainer,
-  Tooltip, Cell
 } from 'recharts'
-import { RadialBarChart, RadialBar, Legend } from 'recharts';
 
 const style = {
   top: 0,
   left: 50,
-  lineHeight: '20px'
-};
+  lineHeight: '20px',
+}
 
 class HashtagNeg_CustomPieChart extends Component {
   constructor(props) {
@@ -84,42 +83,42 @@ class HashtagNeg_CustomPieChart extends Component {
   //   );
   // }
   getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
+    var letters = '0123456789ABCDEF'
+    var color = '#'
     for (var i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
+      color += letters[Math.floor(Math.random() * 16)]
     }
-    return color;
+    return color
   }
 
   parseData(arr) {
-    let workarr = [];
+    let workarr = []
     for (let i = 0; i < arr.length; i++) {
       workarr[i] = {
         name: arr[i].hashtag_name,
         pv: arr[i].activity,
         uv: parseFloat(arr[i].negativity.toFixed(3)),
-        fill: this.getRandomColor()
-      };
+        fill: this.getRandomColor(),
+      }
     }
     return workarr
   }
 
   parseGrap(arr) {
-    let workarr = [];
-    let workarr1 = [];
-    let workarr2 = [];
-    let workarr3 = [];
-    let workarr4 = [];
+    let workarr = []
+    let workarr1 = []
+    let workarr2 = []
+    let workarr3 = []
+    let workarr4 = []
     for (let i = 0; i < arr.length; i++) {
       if (i <= 24) {
-        workarr1[i] = arr[i];
+        workarr1[i] = arr[i]
       } else if (i <= 49) {
-        workarr2[i - 25] = arr[i];
+        workarr2[i - 25] = arr[i]
       } else if (i <= 74) {
-        workarr3[i - 50] = arr[i];
+        workarr3[i - 50] = arr[i]
       } else if (i <= 100) {
-        workarr4[i - 75] = arr[i];
+        workarr4[i - 75] = arr[i]
       }
     }
     workarr = [workarr1, workarr2, workarr3, workarr4]
@@ -127,11 +126,13 @@ class HashtagNeg_CustomPieChart extends Component {
   }
 
   componentDidMount() {
-    fetch('http://165.227.158.131/dp/api/v160/sentiment/twitter/order/negativity/100')
+    fetch(
+      'http://165.227.158.131/dp/api/v160/sentiment/twitter/order/negativity/100',
+    )
       .then(response => response.json())
       .then(response => {
         let apiData = response.apiData.data
-        apiData = this.parseData(apiData);
+        apiData = this.parseData(apiData)
         let complex = this.parseGrap(apiData)
         this.setState({
           apiData: complex,
@@ -157,7 +158,6 @@ class HashtagNeg_CustomPieChart extends Component {
         <h2 className="title__piechart">{this.props.title}</h2>
         <h3 className="subtitle__piechart">Last 30 days</h3>
         <ResponsiveContainer width="100%" height={300}>
-
           <RadialBarChart
             width={1000}
             height={700}
@@ -172,18 +172,18 @@ class HashtagNeg_CustomPieChart extends Component {
               minAngle={15}
               label={{
                 position: 'insideStart',
-                fill: '#fff'
+                fill: '#fff',
               }}
               background
               clockWise={true}
-              dataKey='uv'
+              dataKey="uv"
             />
             <Legend
               iconSize={10}
               width={30}
               height={30}
-              layout='vertical'
-              verticalAlign='top'
+              layout="vertical"
+              verticalAlign="top"
               wrapperStyle={style}
             />
           </RadialBarChart>
@@ -203,18 +203,18 @@ class HashtagNeg_CustomPieChart extends Component {
               minAngle={15}
               label={{
                 position: 'insideStart',
-                fill: '#fff'
+                fill: '#fff',
               }}
               background
               clockWise={true}
-              dataKey='uv'
+              dataKey="uv"
             />
             <Legend
               iconSize={10}
               width={30}
               height={30}
-              layout='vertical'
-              verticalAlign='top'
+              layout="vertical"
+              verticalAlign="top"
               wrapperStyle={style}
             />
           </RadialBarChart>
@@ -234,18 +234,18 @@ class HashtagNeg_CustomPieChart extends Component {
               minAngle={15}
               label={{
                 position: 'insideStart',
-                fill: '#fff'
+                fill: '#fff',
               }}
               background
               clockWise={true}
-              dataKey='uv'
+              dataKey="uv"
             />
             <Legend
               iconSize={10}
               width={30}
               height={30}
-              layout='vertical'
-              verticalAlign='top'
+              layout="vertical"
+              verticalAlign="top"
               wrapperStyle={style}
             />
           </RadialBarChart>
@@ -265,18 +265,18 @@ class HashtagNeg_CustomPieChart extends Component {
               minAngle={15}
               label={{
                 position: 'insideStart',
-                fill: '#fff'
+                fill: '#fff',
               }}
               background
               clockWise={true}
-              dataKey='uv'
+              dataKey="uv"
             />
             <Legend
               iconSize={10}
               width={30}
               height={30}
-              layout='vertical'
-              verticalAlign='top'
+              layout="vertical"
+              verticalAlign="top"
               wrapperStyle={style}
             />
           </RadialBarChart>
@@ -302,7 +302,7 @@ class HashtagNeg_CustomPieChart extends Component {
             </Pie>
             </PieChart>*/}
         </ResponsiveContainer>
-      </React.Fragment >
+      </React.Fragment>
     )
   }
 }
