@@ -1,12 +1,4 @@
 import React, { Component } from 'react'
-import {
-  BarChart,
-  CartesianGrid,
-  XAxis,
-  YAxis,
-  Bar,
-  ResponsiveContainer,
-} from 'recharts'
 import Widget from './Widget.js'
 import NetworkchartComponent from './NetworkchartComponent'
 import HashtagPos_CustomPieChart from './HashtagPos_CustomPieChart'

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import Logo from './Logo'
-import Login from './Login'
 
 class Header extends Component {
   constructor(props) {
