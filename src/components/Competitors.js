@@ -9,7 +9,7 @@ import {
 } from 'recharts'
 import BarchartComponent from './BarchartComponent'
 import NetworkchartComponent from './NetworkchartComponent'
-
+import ChordchartComponent from './ChordchartComponent'
 class Competitors extends Component {
   render() {
     return (
@@ -50,6 +50,16 @@ class Competitors extends Component {
           colour2="#d786a3"
           classColorRange="involvement__color__range"
           classColorCompare="involvement__color__compare"
+        />
+        <ChordchartComponent
+          ref="ChorChart"
+          version="158"
+          category="ma"
+          subCategory="chord"
+          social="twitter"
+          indicator="/"
+          limit="100"
+          title="Competitors chord"
         />
       </React.Fragment>
     )
