@@ -3,7 +3,7 @@ import { ResponsiveContainer } from 'recharts'
 import Tree from 'react-d3-tree';
 import Widget from "./Widget";
 
-class HashHierarcy extends Component {
+class CompHierarcy extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -11,7 +11,7 @@ class HashHierarcy extends Component {
     }
   }
   componentDidMount() {
-    fetch('http://165.227.158.131/dp/api/v159/hierarchy/twitter_hashtag/ht/100')
+    fetch('http://165.227.158.131/dp/api/v158/hierarchy/twitter/ma/100') //competitors
       .then(response => response.json())
       .then(response => {
         let apiData = response.apiData.hierarchy.data;
@@ -66,7 +66,6 @@ class HashHierarcy extends Component {
       }
     }
     workarr[0] = main
-    console.log(workarr)
     return workarr
   }
 
@@ -81,4 +80,4 @@ class HashHierarcy extends Component {
   }
 }
 
-export default HashHierarcy
+export default CompHierarcy
