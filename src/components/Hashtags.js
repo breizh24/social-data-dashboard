@@ -3,7 +3,7 @@ import Widget from './Widget.js'
 import NetworkchartComponent from './NetworkchartComponent'
 import HashtagPos_CustomPieChart from './HashtagPos_CustomPieChart'
 import HashtagNeg_CustomPieChart from './HashtagNeg_CustomPieChart'
-import HashHierarcy from './Hashtag_Hierarchy.js';
+import HashHierarchy from './Hashtag_Hierarchy.js'
 
 class Hashtags extends Component {
   render() {
@@ -19,7 +19,7 @@ class Hashtags extends Component {
           title="Hashtag Network"
           ref="hashtagNetwork"
         />
-        <HashHierarcy />
+        <HashHierarchy />
         <Widget width="95%">
           <HashtagPos_CustomPieChart
             title={'SENTIMENT - POSITIVITY'}
