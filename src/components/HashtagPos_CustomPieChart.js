@@ -98,13 +98,11 @@ class HashtagPos_CustomPieChart extends Component {
     for (let i = 0; i < arr.length; i++) {
       workarr[i] = {
         name: arr[i].hashtag_name,
-        // id: i,
         pv: arr[i].activity,
         uv: parseFloat(arr[i].negativity.toFixed(3)),
         fill: this.getRandomColor(),
       }
     }
-    console.log(workarr)
     return workarr
   }
 

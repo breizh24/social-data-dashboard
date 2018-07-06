@@ -197,7 +197,7 @@ class LinechartComponent extends Component {
       })
     }
 
-    myData.sort(function(b, a) {
+    myData.sort(function (b, a) {
       return a.days.length - b.days.length
     })
 
@@ -224,7 +224,7 @@ class LinechartComponent extends Component {
       }
     }
     myData.forEach(el =>
-      el.days.sort(function(b, a) {
+      el.days.sort(function (b, a) {
         return new Date(b.day) - new Date(a.day)
       }),
     )
@@ -289,7 +289,6 @@ class LinechartComponent extends Component {
 
   render() {
     let dataLineChart = this.state.dataLineChart
-    console.log(this.state.apiData)
 
     return (
       <Widget width="100%">
