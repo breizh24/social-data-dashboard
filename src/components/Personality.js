@@ -8,16 +8,14 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 import BarchartComponent from './BarchartComponent'
-import PersonalityNetwork from './PersonalityNetwork';
-import Personality_AccountApproval from './Personality_AccountApproval';
+import PersonalityNetwork from './PersonalityNetwork'
+import LinechartComponent from './LinechartComponent'
 
 class Personality extends Component {
   render() {
     return (
       <React.Fragment>
-        <PersonalityNetwork
-          ref="PersonalityNetwork"
-        />
+        <PersonalityNetwork ref="PersonalityNetwork" />
 
         <BarchartComponent
           version="160"
@@ -33,7 +31,7 @@ class Personality extends Component {
           classColorCompare="activity__color__compare"
         />
 
-        <Personality_AccountApproval
+        <LinechartComponent
           version="160"
           category="ma"
           subCategory="trend"
