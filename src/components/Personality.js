@@ -8,14 +8,24 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 import BarchartComponent from './BarchartComponent'
-import PersonalityNetwork from './PersonalityNetwork'
+import NetworkchartComponent from './NetworkchartComponent'
 import LinechartComponent from './LinechartComponent'
+import ChordchartComponent from './ChordchartComponent'
 
 class Personality extends Component {
   render() {
     return (
       <React.Fragment>
-        <PersonalityNetwork ref="PersonalityNetwork" />
+        <NetworkchartComponent
+          version="160"
+          category="ma"
+          subCategory="network"
+          social="twitter"
+          indicator="/"
+          limit="100"
+          title="Personality Network"
+          ref="PersonalityNetwork"
+        />
 
         <BarchartComponent
           version="160"
@@ -56,6 +66,16 @@ class Personality extends Component {
           colour2="#d786a3"
           classColorRange="involvement__color__range"
           classColorCompare="involvement__color__compare"
+        />
+        <ChordchartComponent
+          ref="ChorChart"
+          version="160"
+          category="ma"
+          subCategory="chord"
+          social="twitter"
+          indicator="/"
+          limit="100"
+          title="Personality Chord"
         />
       </React.Fragment>
     )

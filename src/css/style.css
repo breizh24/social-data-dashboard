@@ -249,19 +249,13 @@ svg {
   text-align: center;
   width: 65%;
 }
-
-.graph_chord {
+.chord__chart__container {
   display: flex;
   justify-content: center;
-  flex-direction: column;
-}
-.graph__chord__header {
-  justify-self: flex-start;
 }
 
-.chord {
-  position: relative;
-  align-self: center;
+.chord__chart {
+  width: 700px;
 }
 /* login */
 
