@@ -8,15 +8,23 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 import BarchartComponent from './BarchartComponent'
-import CompetitorsNetwork from './CompetitorsNetwork';
-
+import NetworkchartComponent from './NetworkchartComponent'
+import ChordchartComponent from './ChordchartComponent'
 class Competitors extends Component {
   render() {
     return (
       <React.Fragment>
-        <CompetitorsNetwork
+        <NetworkchartComponent
+          version="158"
+          category="ma"
+          subCategory="network"
+          social="twitter"
+          indicator="/"
+          limit="100"
+          title="Competitors Network"
           ref="CompetitorsNetwork"
         />
+
         <BarchartComponent
           version="158"
           category="ma"
@@ -42,6 +50,16 @@ class Competitors extends Component {
           colour2="#d786a3"
           classColorRange="involvement__color__range"
           classColorCompare="involvement__color__compare"
+        />
+        <ChordchartComponent
+          ref="ChorChart"
+          version="158"
+          category="ma"
+          subCategory="chord"
+          social="twitter"
+          indicator="/"
+          limit="100"
+          title="Competitors chord"
         />
       </React.Fragment>
     )

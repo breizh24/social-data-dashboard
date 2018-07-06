@@ -9,12 +9,6 @@ import NotFound from './NotFound.js'
 import BarchartComponent from './BarchartComponent'
 import Widget from './Widget.js'
 import Home__CustomPieChart from './Home_CustomPieChart'
-import Home_Piechart from './Home__PieChart'
-import Chord_Account from './Chord_Account'
-import Chord_Personality from './Chord_Personality'
-import Chord_Competitors from './Chord_Competitors'
-import HashNetwork from './HashNetwork'
-
 import Login from './Login'
 
 class Main extends Component {
@@ -60,9 +54,6 @@ class Main extends Component {
                     indicator="activity"
                   />
                 </Widget>
-                <Chord_Account />
-                <Chord_Personality />
-                <Chord_Competitors />
               </div>
             )}
           />
