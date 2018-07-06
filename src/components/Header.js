@@ -8,6 +8,7 @@ class Header extends Component {
     this.state = {
       title: '',
       currentLocation: this.props.location.pathname,
+      user: [this.props.user],
     }
   }
 
@@ -30,15 +31,31 @@ class Header extends Component {
 
   render() {
     const title = this.showTitle()
+
     return (
       <div className="header__container">
         <div className="header__logo__container">
-          <Link to="/">
-            <Logo />
-          </Link>
+          <div className="header__logo">
+            <Link to="/">
+              <Logo />
+            </Link>
+          </div>
         </div>
         <div className="title__container">
           <h1 className="titleMain"> {title} </h1>
+        </div>
+        <div className="logoLogin">
+          <div className="userQuadrato">
+            <h3>F</h3>
+            {/* {this.state.user[0]}*/}
+          </div>
+
+          <span className="userProp">
+            <Link className="userAlign" to="/login">
+              Federica Bottura
+              {/* {this.state.user} */}
+            </Link>
+          </span>
         </div>
       </div>
     )

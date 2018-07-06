@@ -1,20 +1,21 @@
 import React, { Component } from 'react'
-import {
-  BarChart,
-  CartesianGrid,
-  XAxis,
-  YAxis,
-  Bar,
-  ResponsiveContainer,
-} from 'recharts'
 import BarchartComponent from './BarchartComponent'
-import PersonalityNetwork from './PersonalityNetwork';
+import NetworkchartComponent from './NetworkchartComponent'
+import LinechartComponent from './LinechartComponent'
+import ChordchartComponent from './ChordchartComponent'
 
 class Personality extends Component {
   render() {
     return (
       <React.Fragment>
-        <PersonalityNetwork
+        <NetworkchartComponent
+          version="160"
+          category="ma"
+          subCategory="network"
+          social="twitter"
+          indicator="/"
+          limit="100"
+          title="Personality Network"
           ref="PersonalityNetwork"
         />
 
@@ -31,7 +32,20 @@ class Personality extends Component {
           classColorRange="activity__color__range"
           classColorCompare="activity__color__compare"
         />
-        <p>Qui andrà un linechart</p>
+
+        <LinechartComponent
+          version="160"
+          category="ma"
+          subCategory="trend"
+          social="twitter"
+          indicator="approval"
+          title="Personality approval"
+          width="100%"
+          colour1="#C6004A"
+          colour2="#78B688"
+          classColorRange="approval__color__range"
+        />
+
         <BarchartComponent
           version="160"
           category="ma"
@@ -44,6 +58,16 @@ class Personality extends Component {
           colour2="#d786a3"
           classColorRange="involvement__color__range"
           classColorCompare="involvement__color__compare"
+        />
+        <ChordchartComponent
+          ref="ChorChart"
+          version="160"
+          category="ma"
+          subCategory="chord"
+          social="twitter"
+          indicator="/"
+          limit="100"
+          title="Personality Chord"
         />
       </React.Fragment>
     )

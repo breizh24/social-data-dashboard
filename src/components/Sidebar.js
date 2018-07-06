@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { NavLink, Link } from 'react-router-dom'
-import ReactDOM from 'react-dom'
+import { NavLink } from 'react-router-dom'
 
 class Sidebar extends Component {
   constructor(props) {
@@ -62,7 +61,7 @@ class Sidebar extends Component {
       <div className="sidebar__container">
         {/* <div className="fotoUser">{this.props.username[0]}</div>
          <h2>{this.props.username}</h2> */}
-        <div className="logoLogin">
+        {/* <div className="logoLogin">
           <div className="userQuadrato">
             <h3>F</h3>
           </div>
@@ -72,7 +71,7 @@ class Sidebar extends Component {
               Federica Binomi
             </Link>
           </span>
-        </div>
+        </div> */}
 
         <ul>
           <li>

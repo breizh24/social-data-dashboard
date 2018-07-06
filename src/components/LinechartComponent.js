@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import {
-  BarChart,
   LineChart,
   Line,
   CartesianGrid,
@@ -8,14 +7,14 @@ import {
   YAxis,
   ResponsiveContainer,
   Tooltip,
-  Legend,
 } from 'recharts'
 import moment from 'moment'
 import Widget from './Widget'
 import { Calendar } from 'primereact/components/calendar/Calendar'
 import { Fetcher } from '../components/Fetch'
+import { Checkbox } from 'primereact/components/checkbox/Checkbox'
 
-class Personality_AccountApproval extends Component {
+class LinechartComponent extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -29,16 +28,16 @@ class Personality_AccountApproval extends Component {
     }
     this.nameColor = []
     this.color = [
-      'red',
-      'yellow',
-      'green',
-      'blue',
-      '#ccc',
-      '#585858',
-      '#d786e3',
-      '#c6004a',
-      '#7480b5',
-      '#75b586',
+      '#D83A00',
+      '#6D7AB2',
+      '#6BAF7D',
+      '#7971ea',
+      '#ECB02E',
+      '#C6004A',
+      '#D786A3',
+      '#A4C46B',
+      '#74dbef',
+      '#fab2ac',
     ]
   }
 
@@ -49,43 +48,49 @@ class Personality_AccountApproval extends Component {
   getData = () => {
     let minDate = this.state.dateForFetch.minDate
     let maxDate = this.state.dateForFetch.maxDate
-    Fetcher(160, 'ma', 'trend', 'twitter', minDate, maxDate, 'approval').then(
-      response => {
-        let apiData = response.apiData.data
-        if (this.state.apiData.length < 1) {
-          this.setState(
-            {
-              apiData: apiData,
-            },
-            () => this.handleApiData(this.state.apiData),
-          )
-        } else {
-          let oldData = this.state.apiData.map((el, idx) => {
-            const newObj = el.days.map(element => {
-              const obj = { ...element }
-              return obj
-            })
-            const result = { ...el }
-            return result
+    Fetcher(
+      this.props.version,
+      this.props.category,
+      this.props.subCategory,
+      this.props.social,
+      minDate,
+      maxDate,
+      this.props.indicator,
+    ).then(response => {
+      let apiData = response.apiData.data
+      if (this.state.apiData.length < 1) {
+        this.setState(
+          {
+            apiData: apiData,
+          },
+          () => this.handleApiData(this.state.apiData),
+        )
+      } else {
+        let oldData = this.state.apiData.map((el, idx) => {
+          const newObj = el.days.map(element => {
+            const obj = { ...element }
+            return obj
           })
+          const result = { ...el }
+          return result
+        })
 
-          for (let i = 0; i < apiData.length; i++) {
-            for (let j = 0; j < oldData.length; j++) {
-              if (apiData[i].entity === oldData[j].entity) {
-                apiData[i].checked = oldData[j].checked
-                apiData[i].color = oldData[j].color
-              }
+        for (let i = 0; i < apiData.length; i++) {
+          for (let j = 0; j < oldData.length; j++) {
+            if (apiData[i].entity === oldData[j].entity) {
+              apiData[i].checked = oldData[j].checked
+              apiData[i].color = oldData[j].color
             }
           }
-          this.setState(
-            {
-              apiData: apiData,
-            },
-            () => this.handleApiData(this.state.apiData),
-          )
         }
-      },
-    )
+        this.setState(
+          {
+            apiData: apiData,
+          },
+          () => this.handleApiData(this.state.apiData),
+        )
+      }
+    })
   }
 
   getDateFromCalendar = e => {
@@ -137,6 +142,7 @@ class Personality_AccountApproval extends Component {
 
   giveColor = entity => {
     let color
+
     for (let i = 0; i < this.nameColor.length; i++) {
       if (this.nameColor[i].entity === entity) {
         color = this.nameColor[i].color
@@ -144,6 +150,17 @@ class Personality_AccountApproval extends Component {
       }
     }
     return color
+  }
+
+  giveClass = entity => {
+    let cName
+    for (let i = 0; i < this.nameColor.length; i++) {
+      if (this.nameColor[i].entity === entity) {
+        cName = this.nameColor[i].cName
+        break
+      }
+    }
+    return cName
   }
 
   handleApiData = data => {
@@ -163,12 +180,20 @@ class Personality_AccountApproval extends Component {
           typeof this.state.apiData[idx].checked === 'undefined'
             ? true
             : this.state.apiData[idx].checked,
+        cName:
+          this.nameColor.length < 1
+            ? this.color[idx].replace('#', 'a')
+            : this.giveClass(el.entity),
       }
       return result
     })
     if (this.nameColor.length < 1) {
       myData.forEach(el => {
-        this.nameColor.push({ entity: el.entity, color: el.color })
+        this.nameColor.push({
+          entity: el.entity,
+          color: el.color,
+          cName: el.cName,
+        })
       })
     }
 
@@ -268,7 +293,32 @@ class Personality_AccountApproval extends Component {
 
     return (
       <Widget width="100%">
+        <div className="graph__barchart__header">
+          <h2 className="title__piechart">{this.props.title}</h2>
+          <h3 className="subtitle__piechart">
+            {`Range: ${moment(this.state.dateForFetch.minDate).format(
+              'DD/MM/YYYY',
+            )} to ${moment(this.state.dateForFetch.maxDate).format(
+              'DD/MM/YYYY',
+            )}`}
+          </h3>
+        </div>
+
         <div className="linechart__container">
+          <div className="calendar__container calendar__container-left">
+            <div className={`calendar__range ${this.props.classColorRange}`}>
+              <Calendar
+                minDate={new Date('2018-04-01')}
+                maxDate={new Date('2018-05-24')}
+                defaultDate={new Date('2018-04-01')}
+                dateFormat="dd/mm/yy"
+                selectionMode="range"
+                placeholder="Range di date"
+                value={this.state.dateFromCalendar}
+                onChange={e => this.getDateFromCalendar(e)}
+              />
+            </div>
+          </div>
           <ResponsiveContainer width="100%" height={600}>
             <LineChart data={dataLineChart}>
               <CartesianGrid strokeDasharray="3 3" />
@@ -293,12 +343,13 @@ class Personality_AccountApproval extends Component {
               {this.state.apiData.map((obj, idx) => (
                 <li key={idx}>
                   <span>
-                    <input
-                      type="checkbox"
-                      defaultChecked={this.state.apiData[idx].checked}
-                      onClick={() =>
+                    <Checkbox
+                      className={`legend__checkbox ${obj.cName}`}
+                      // style={{ border: `2px solid ${obj.color}` }}
+                      onChange={() =>
                         this.onClickCheckbox(idx, this.state.apiData)
                       }
+                      checked={this.state.apiData[idx].checked}
                     />
                   </span>
                   <span>{obj.entity}</span>
@@ -306,23 +357,10 @@ class Personality_AccountApproval extends Component {
               ))}
             </ul>
           </div>
-
-          <div className={`calendar__range ${this.props.classColorRange}`}>
-            <Calendar
-              minDate={new Date('2018-04-01')}
-              maxDate={new Date('2018-05-24')}
-              defaultDate={new Date('2018-04-01')}
-              dateFormat="dd/mm/yy"
-              selectionMode="range"
-              placeholder="Range di date"
-              value={this.state.dateFromCalendar}
-              onChange={e => this.getDateFromCalendar(e)}
-            />
-          </div>
         </div>
       </Widget>
     )
   }
 }
 
-export default Personality_AccountApproval
+export default LinechartComponent

@@ -1,47 +1,48 @@
 import React, { Component } from 'react'
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap'
 
 class Login extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
-      email: "",
-      password: ""
-    };
+      user: '',
+      password: '',
+    }
   }
 
   onClickLogin = () => {
     // if (this.props.username.length > 0) {
-    if (this.state.email.length > 0 && this.state.password.length > 0) {
+    if (this.state.user.length > 0 && this.state.password.length > 0) {
       this.props.history.push('/')
     }
   }
 
   validateForm() {
-    return this.state.email.length > 0 && this.state.password.length > 0;
+    return this.state.user.length > 0 && this.state.password.length > 0
   }
 
   handleChange = event => {
     this.setState({
-      [event.target.id]: event.target.value
-    });
+      [event.target.id]: event.target.value,
+    })
   }
 
   handleSubmit = event => {
-    event.preventDefault();
+    event.preventDefault()
   }
 
   render() {
     return (
       <div className="Login">
         <form onSubmit={this.handleSubmit}>
-          <FormGroup controlId="email" bsSize="large">
-            <ControlLabel>Email</ControlLabel>
+          <FormGroup controlId="user" bsSize="large">
+            <ControlLabel>Username</ControlLabel>
             <FormControl
+              className=""
               autoFocus
-              type="email"
-              value={this.state.email}
+              type="user"
+              value={this.state.user}
               onChange={this.handleChange}
             />
           </FormGroup>
@@ -61,10 +62,10 @@ class Login extends Component {
             onClick={this.onClickLogin}
           >
             Login
-                </Button>
+          </Button>
         </form>
       </div>
-    );
+    )
   }
 }
 

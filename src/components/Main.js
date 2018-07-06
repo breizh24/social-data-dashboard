@@ -6,18 +6,9 @@ import Accounts from './Accounts.js'
 import { Route, Switch } from 'react-router-dom'
 import ReactDOM from 'react-dom'
 import NotFound from './NotFound.js'
-import BarchartComponent from './BarchartComponent'
 import Widget from './Widget.js'
 import Home__CustomPieChart from './Home_CustomPieChart'
-import Home_Piechart from './Home__PieChart'
-import Chord_Account from './Chord_Account'
-import Chord_Personality from './Chord_Personality'
-import Chord_Competitors from './Chord_Competitors'
-import HashNetwork from './HashNetwork'
-
-import Personality_AccountApproval from './Personality_AccountApproval.js'
 import Login from './Login'
-import PersonalityApproval from './PersonalityApproval.js'
 
 class Main extends Component {
   handleScrollToElement(event) {
@@ -36,11 +27,7 @@ class Main extends Component {
     return (
       <div onScroll={this.handleScrollToElement} className="main__container">
         <Switch>
-          <Route
-            exact
-            path="/login"
-            component={Login}
-          />
+          <Route exact path="/login" component={Login} />
           <Route
             exact
             path="/"
@@ -66,16 +53,8 @@ class Main extends Component {
                     indicator="activity"
                   />
                 </Widget>
-                <Chord_Account />
-                <Chord_Personality />
-                <Chord_Competitors />
               </div>
             )}
-          />
-          <Route
-            exact
-            path="/user"
-            render={props => <Personality_AccountApproval />}
           />
 
           <Route exact path="/hashtags" render={props => <Hashtags />} />
