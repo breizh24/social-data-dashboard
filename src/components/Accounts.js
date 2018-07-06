@@ -1,14 +1,22 @@
 import React, { Component } from 'react'
 import BarchartComponent from './BarchartComponent'
 import ChordCharts from './Chord_Account'
-import AccountNetwork from './AccountNetwork'
+
+import NetworkchartComponent from './NetworkchartComponent'
 
 class Accounts extends Component {
   render() {
     return (
       <div>
         <React.Fragment>
-          <AccountNetwork
+          <NetworkchartComponent
+            version="155"
+            category="ma"
+            subCategory="network"
+            social="twitter"
+            indicator="/"
+            limit="100"
+            title="Accounts Network"
             ref="AccountNetwork"
           />
           <BarchartComponent
@@ -39,12 +47,9 @@ class Accounts extends Component {
             classColorRange="involvement__color__range"
             classColorCompare="involvement__color__compare"
           />
-          <ChordCharts
-            ref="ChorChart"
-          />
-
+          <ChordCharts ref="ChorChart" />
         </React.Fragment>
-      </div >
+      </div>
     )
   }
 }

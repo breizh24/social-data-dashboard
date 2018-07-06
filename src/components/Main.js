@@ -13,7 +13,6 @@ import Home_Piechart from './Home__PieChart'
 import Chord_Account from './Chord_Account'
 import Chord_Personality from './Chord_Personality'
 import Chord_Competitors from './Chord_Competitors'
-import HashNetwork from './HashNetwork'
 
 import Login from './Login'
 
