@@ -62,7 +62,6 @@ class NetworkchartComponent extends Component {
   }
 
   render() {
-    console.log(this.state.apiData)
     return (
       <Widget width="50%">
         <div className="graph__barchart__header">
@@ -86,8 +85,8 @@ class NetworkchartComponent extends Component {
               <RandomizeNodePositions />
             </Sigma>
           ) : (
-            <h2>Loading</h2>
-          )}
+              <h2>Loading</h2>
+            )}
         </ResponsiveContainer>
       </Widget>
     )

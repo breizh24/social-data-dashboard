@@ -5,13 +5,21 @@ import Widget from "./Widget";
 
 const myTreeData = [
   {
-    name: 'Top Level',
+    name: ['Top Level'],
     children: [
       {
-        name: 'Level 2: A',
+        name: ['Level 2: A'],
+        children: [
+          { name: ['ciao'] },
+          {
+            name: ['Bomber'],
+            children: [{ name: ['prova'] }]
+          }
+        ]
       },
       {
-        name: 'Level 2: B',
+        name: ['Level 2: B'],
+        children: []
       },
     ],
   },
@@ -25,23 +33,22 @@ class HashHierarcy extends Component {
     }
   }
   componentDidMount() {
-    fetch('http://165.227.158.131/dp/api/v160/hierarchy/twitter/ma/100')
+    // fetch('http://165.227.158.131/dp/api/v160/hierarchy/twitter/ma/100')
+    // fetch('http://165.227.158.131/dp/api/v155/hierarchy/twitter/ma/100')
+    // fetch('http://165.227.158.131/dp/api/v158/hierarchy/twitter/ma/100')
+    fetch('http://165.227.158.131/dp/api/v159/hierarchy/twitter_hashtag/ht/100')
       .then(response => response.json())
       .then(response => {
         let apiData = response.apiData.hierarchy.data;
         let parsArr = this.parseString(apiData)
-        // let edges = this.parseEdge(response)
-        // let apiData = { nodes, edges }
-        console.log(parsArr)
         this.setState({
-          //   apiData: apiData,
           apiData: parsArr
         })
       })
   }
 
   parseString(arr) {
-    let workarr = {};
+    let workarr = [];
     let main = {};
     let parents = [];
     let fchild = [];
@@ -58,7 +65,7 @@ class HashHierarcy extends Component {
         parents[j] = parse[i];
         main = {
           name: parse[i],
-          children: {}
+          children: []
         }
         j++
       } else if (parse[i].length === 2) {
@@ -67,14 +74,6 @@ class HashHierarcy extends Component {
           let semiworksndtag = fchild
           main.children[i - 1] = { name: semiworksndtag, children: [] };
         }
-        // j=0
-        // while (j<result.length){
-        //   for (i=0, i < arr.length; i++) {
-        //     if(result[j]===parse[i]) {
-        //       s
-        //     }
-        //   }
-        // }
       } else if (parse[i].length === 3) {
         if (parse[1][0] === result[0][0]) {
           let double = parse[i];
@@ -88,17 +87,15 @@ class HashHierarcy extends Component {
         }
       }
     }
-    workarr = main
+    workarr[0] = main
     return workarr
   }
 
   render() {
-    console.log(this.state.apiData)
     return (
       <ResponsiveContainer>
         <Widget width="90%">
-          <Tree data={myTreeData} />
-          {/* <Tree data={[this.state.apiData]} /> */}
+          {this.state.apiData ? <Tree orientation="vertical" data={this.state.apiData} /> : <h1>Loading...</h1>}
         </Widget>
       </ResponsiveContainer >
     )
