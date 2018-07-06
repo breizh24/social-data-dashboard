@@ -27,10 +27,10 @@ class Main extends Component {
     return (
       <div onScroll={this.handleScrollToElement} className="main__container">
         <Switch>
-          <Route exact path="/login" component={Login} />
+          <Route exact path="/" component={Login} />
           <Route
             exact
-            path="/"
+            path="/home"
             render={() => (
               <div className="container__home__element">
                 <Widget ref="AccActy" width="45%">
