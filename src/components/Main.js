@@ -15,7 +15,6 @@ import Chord_Personality from './Chord_Personality'
 import Chord_Competitors from './Chord_Competitors'
 import HashNetwork from './HashNetwork'
 
-import Personality_AccountApproval from './Personality_AccountApproval.js'
 import Login from './Login'
 
 class Main extends Component {
@@ -35,11 +34,7 @@ class Main extends Component {
     return (
       <div onScroll={this.handleScrollToElement} className="main__container">
         <Switch>
-          <Route
-            exact
-            path="/login"
-            component={Login}
-          />
+          <Route exact path="/login" component={Login} />
           <Route
             exact
             path="/"

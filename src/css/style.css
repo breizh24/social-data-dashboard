@@ -374,6 +374,10 @@ svg {
   margin-bottom: 20px;
 }
 
+.calendar__container-left {
+  align-self: flex-start;
+}
+
 @keyframes appear {
   0% {
     opacity: 0;
@@ -570,8 +574,6 @@ svg {
   border-bottom: 3px solid #605d5e;
   border-top: none;
   border-left: none;
-}
-.Login input:focus {
 }
 
 .Login {
