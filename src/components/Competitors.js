@@ -1,12 +1,4 @@
 import React, { Component } from 'react'
-import {
-  BarChart,
-  CartesianGrid,
-  XAxis,
-  YAxis,
-  Bar,
-  ResponsiveContainer,
-} from 'recharts'
 import BarchartComponent from './BarchartComponent'
 import NetworkchartComponent from './NetworkchartComponent'
 import ChordchartComponent from './ChordchartComponent'

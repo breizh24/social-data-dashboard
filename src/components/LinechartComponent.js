@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import {
-  BarChart,
   LineChart,
   Line,
   CartesianGrid,
@@ -8,7 +7,6 @@ import {
   YAxis,
   ResponsiveContainer,
   Tooltip,
-  Legend,
 } from 'recharts'
 import moment from 'moment'
 import Widget from './Widget'
