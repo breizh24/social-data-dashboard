@@ -3,28 +3,6 @@ import { ResponsiveContainer } from 'recharts'
 import Tree from 'react-d3-tree';
 import Widget from "./Widget";
 
-const myTreeData = [
-  {
-    name: ['Top Level'],
-    children: [
-      {
-        name: ['Level 2: A'],
-        children: [
-          { name: ['ciao'] },
-          {
-            name: ['Bomber'],
-            children: [{ name: ['prova'] }]
-          }
-        ]
-      },
-      {
-        name: ['Level 2: B'],
-        children: []
-      },
-    ],
-  },
-];
-
 class HashHierarcy extends Component {
   constructor(props) {
     super(props)
@@ -33,10 +11,10 @@ class HashHierarcy extends Component {
     }
   }
   componentDidMount() {
-    // fetch('http://165.227.158.131/dp/api/v160/hierarchy/twitter/ma/100')
-    // fetch('http://165.227.158.131/dp/api/v155/hierarchy/twitter/ma/100')
-    // fetch('http://165.227.158.131/dp/api/v158/hierarchy/twitter/ma/100')
-    fetch('http://165.227.158.131/dp/api/v159/hierarchy/twitter_hashtag/ht/100')
+    fetch('http://165.227.158.131/dp/api/v160/hierarchy/twitter/ma/100')
+      // fetch('http://165.227.158.131/dp/api/v155/hierarchy/twitter/ma/100')
+      // fetch('http://165.227.158.131/dp/api/v158/hierarchy/twitter/ma/100')
+      // fetch('http://165.227.158.131/dp/api/v159/hierarchy/twitter_hashtag/ht/100')
       .then(response => response.json())
       .then(response => {
         let apiData = response.apiData.hierarchy.data;
@@ -69,10 +47,13 @@ class HashHierarcy extends Component {
         }
         j++
       } else if (parse[i].length === 2) {
+        let sndresult = parse[i][1];
         if (parse[1][0] === result[0][0]) {
+          // if (parse[i][1] === sndresult[i]) {
           fchild = parse[i].splice(1, 1);
           let semiworksndtag = fchild
           main.children[i - 1] = { name: semiworksndtag, children: [] };
+          // }
         }
       } else if (parse[i].length === 3) {
         if (parse[1][0] === result[0][0]) {
@@ -88,6 +69,7 @@ class HashHierarcy extends Component {
       }
     }
     workarr[0] = main
+    console.log(workarr)
     return workarr
   }
 
