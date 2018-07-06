@@ -3,7 +3,7 @@ import { ResponsiveContainer } from 'recharts'
 import Tree from 'react-d3-tree'
 import Widget from './Widget'
 
-class HashHierarchy extends Component {
+class PersHierarcy extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -11,7 +11,8 @@ class HashHierarchy extends Component {
     }
   }
   componentDidMount() {
-    fetch('http://165.227.158.131/dp/api/v159/hierarchy/twitter_hashtag/ht/100')
+    fetch('http://165.227.158.131/dp/api/v160/hierarchy/twitter/ma/100')
+      // fetch('http://165.227.158.131/dp/api/v158/hierarchy/twitter/ma/100') //competitors
       .then(response => response.json())
       .then(response => {
         let apiData = response.apiData.hierarchy.data
@@ -69,13 +70,12 @@ class HashHierarchy extends Component {
       }
     }
     workarr[0] = main
-    console.log(workarr)
     return workarr
   }
 
   render() {
     return (
-      <Widget width="45%">
+      <Widget width="90%">
         <div className="graph__barchart__header">
           <h2 className="title__piechart">{this.props.title}</h2>
           <h3 className="subtitle__piechart" />
@@ -83,7 +83,7 @@ class HashHierarchy extends Component {
         <div className="hierarchy__container">
           {this.state.apiData ? (
             <Tree
-              orientation="horizontal"
+              orientation="vertical"
               data={this.state.apiData}
               initialDepth={10000}
               depthFactor=""
@@ -108,4 +108,4 @@ class HashHierarchy extends Component {
   }
 }
 
-export default HashHierarchy
+export default PersHierarcy

@@ -3,6 +3,7 @@ import BarchartComponent from './BarchartComponent'
 
 import ChordchartComponent from './ChordchartComponent'
 import NetworkchartComponent from './NetworkchartComponent'
+import AccHierarcy from './Account_Hierarchy'
 
 class Accounts extends Component {
   render() {
@@ -31,6 +32,7 @@ class Accounts extends Component {
             ref="AccountNetwork"
           />
         </div>
+        <AccHierarcy title="Account Hierarchy" />
         <BarchartComponent
           ref="AccActy"
           version="155"

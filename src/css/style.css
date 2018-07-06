@@ -257,8 +257,6 @@ svg {
   justify-content: center;
 }
 
-.chord__chart {
-}
 /* login */
 
 .logoLogin {
@@ -862,4 +860,8 @@ svg {
   flex-wrap: wrap;
   justify-content: flex-end;
   /* transform: translate(500, 10); */
+}
+
+.hierarchy__container {
+  height: 100vh;
 }
