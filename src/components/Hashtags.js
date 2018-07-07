@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import Widget from './Widget.js'
 import BarchartComponent from './BarchartComponent'
 import NetworkchartComponent from './NetworkchartComponent'
-import HashtagPos_CustomPieChart from './HashtagPos_CustomPieChart'
-import HashtagNeg_CustomPieChart from './HashtagNeg_CustomPieChart'
 import HierarchychartComponent from './HierarchychartComponent'
 
 class Hashtags extends Component {
@@ -61,26 +59,6 @@ class Hashtags extends Component {
           classColorRange="involvement__color__range"
           classColorCompare="involvement__color__compare"
         />
-        {/* <Widget width="95%">
-          <HashtagPos_CustomPieChart
-            title={'SENTIMENT - POSITIVITY'}
-            version="160"
-            category="sent"
-            subCategory="sentiment"
-            social="twitter"
-            indicator="positivity"
-          />
-        </Widget>
-        <Widget width="95%">
-          <HashtagNeg_CustomPieChart
-            title={'SENTIMENT - NEGATIVITY'}
-            version="160"
-            category="sent"
-            subCategory="sentiment"
-            social="twitter"
-            indicator="negativity"
-          />
-        </Widget> */}
       </React.Fragment>
     )
   }
