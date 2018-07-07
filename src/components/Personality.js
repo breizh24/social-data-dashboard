@@ -11,7 +11,7 @@ class Personality extends Component {
       <React.Fragment>
         <div className="links">
           <ChordchartComponent
-            ref="ChorChart"
+            id="ChorPers"
             version="160"
             category="ma"
             subCategory="chord"
@@ -30,7 +30,7 @@ class Personality extends Component {
             limit="100"
             title="Personality Network"
             width="50%"
-            ref="PersonalityNetwork"
+            id="NetwPers"
           />
         </div>
         <HierarchychartComponent
@@ -41,8 +41,10 @@ class Personality extends Component {
           indicator="/"
           limit="100"
           title="Personality Hierarchy"
+          id="HierPers"
         />
         <BarchartComponent
+          id="PersActy"
           version="160"
           category="ma"
           subCategory="trend"
@@ -57,6 +59,7 @@ class Personality extends Component {
         />
 
         <LinechartComponent
+          id="PersApp"
           version="160"
           category="ma"
           subCategory="trend"
@@ -70,6 +73,7 @@ class Personality extends Component {
         />
 
         <BarchartComponent
+          id="PersInv"
           version="160"
           category="ma"
           subCategory="trend"

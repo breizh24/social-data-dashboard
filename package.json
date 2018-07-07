@@ -16,6 +16,7 @@
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.0-next.3e165448",
+    "react-scroll-to-element": "^0.2.0",
     "react-sigma": "^1.2.30",
     "react-transition-group": "^2.2.1",
     "recharts": "^1.0.0-beta.10",

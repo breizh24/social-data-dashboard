@@ -6,6 +6,7 @@ class Widget extends Component {
       <div
         className="widget__graphs"
         style={{ width: this.props.width, flexBasis: 'auto' }}
+        id={this.props.id}
       >
         {this.props.children}
       </div>

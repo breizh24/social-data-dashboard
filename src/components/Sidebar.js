@@ -1,44 +1,13 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
+import Scroll from 'react-scroll-to-element'
 
 class Sidebar extends Component {
   constructor(props) {
     super(props)
-    // this.hashLinks = React.createRef()
-    // this.hashActy = React.createRef()
-    // this.hashInvolv = React.createRef()
-    // this.accLinks = React.createRef()
-    // this.accActy = React.createRef()
-    // this.accInvolv = React.createRef()
-    // this.persLinks = React.createRef()
-    // this.persActy = React.createRef()
-    // this.persAppr = React.createRef()
-    // this.persInvolv = React.createRef()
-    // this.compLinks = React.createRef()
-    // this.compActy = React.createRef()
-    // this.compInvolv = React.createRef()
     this.state = {
       showDropDown: [false, false, false, false],
     }
-  }
-  handleScrollToElement() {
-    console.log('Clicca')
-    // let tesNode = ReactDOM.findDOMNode(this.myRef)
-    // let tesNode = this.myRef.current
-    // console.log(tesNode)
-    // switch (tesNode) {
-    //   case ('AccActy'):
-    //     window.scrollTo(0, tesNode.offsetTop);
-    //     break;
-    //   case ('HashActy'):
-    //     window.scrollTo(1, tesNode.offsetTop);
-    //     break;
-    //   case ('ChorChart'):
-    //     window.scrollTo(2, tesNode.offsetTop);
-    //     break;
-    //   default:
-    //     console.log('non funziono');
-    // }
   }
 
   dropDownMenu = number => {
@@ -80,15 +49,18 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-                <li onClick={this.handleScrollToElement} ref={this.hashLinks}>
-                  Links
-                </li>
-                <li onClick={this.handleScrollToElement} ref={this.hashActy}>
-                  Activity
-                </li>
-                <li onClick={this.handleScrollToElement} ref={this.hashInvolv}>
-                  Involvement
-                </li>
+                <Scroll type="id" element="HashNetw" offset={-60}>
+                  <li>Network</li>
+                </Scroll>
+                <Scroll type="id" element="HashHier" offset={-60}>
+                  <li>Hierarchy</li>
+                </Scroll>
+                <Scroll type="id" element="HashAct" offset={-60}>
+                  <li>Activity</li>
+                </Scroll>
+                <Scroll type="id" element="HashInv" offset={-60}>
+                  <li>Involvement</li>
+                </Scroll>
               </ul>
             ) : null}
           </li>
@@ -113,15 +85,21 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-                <li onClick={this.handleScrollToElement} ref={this.accLinks}>
-                  Links
-                </li>
-                <li onClick={this.handleScrollToElement} ref={this.accActy}>
-                  Activity
-                </li>
-                <li onClick={this.handleScrollToElement} ref={this.accInvolv}>
-                  Involvement
-                </li>
+                <Scroll type="id" element="ChorAcc" offset={-60}>
+                  <li>Chord</li>
+                </Scroll>
+                <Scroll type="id" element="NetwAcc" offset={-60}>
+                  <li>Network</li>
+                </Scroll>
+                <Scroll type="id" element="AccHier" offset={-60}>
+                  <li>Hierarchy</li>
+                </Scroll>
+                <Scroll type="id" element="AccActy" offset={-60}>
+                  <li>Activity</li>
+                </Scroll>
+                <Scroll type="id" element="AccInv" offset={-60}>
+                  <li>Involvement</li>
+                </Scroll>
               </ul>
             ) : null}
           </li>
@@ -146,18 +124,24 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-                <li onClick={this.handleScrollToElement} ref={this.persLinks}>
-                  Links
-                </li>
-                <li onClick={this.handleScrollToElement} ref={this.persActy}>
-                  Activity
-                </li>
-                <li onClick={this.handleScrollToElement} ref={this.persAppr}>
-                  Approval
-                </li>
-                <li onClick={this.handleScrollToElement} ref={this.persInvolv}>
-                  Involvement
-                </li>
+                <Scroll type="id" element="ChorPers" offset={-60}>
+                  <li>Chord</li>
+                </Scroll>
+                <Scroll type="id" element="NetwPers" offset={-60}>
+                  <li>Network</li>
+                </Scroll>
+                <Scroll type="id" element="HierPers" offset={-60}>
+                  <li>Hierarchy</li>
+                </Scroll>
+                <Scroll type="id" element="PersActy" offset={-60}>
+                  <li>Activity</li>
+                </Scroll>
+                <Scroll type="id" element="PersApp" offset={-60}>
+                  <li>Approval</li>
+                </Scroll>
+                <Scroll type="id" element="PersInv" offset={-60}>
+                  <li>Involvement</li>
+                </Scroll>
               </ul>
             ) : null}
           </li>
@@ -182,15 +166,21 @@ class Sidebar extends Component {
                     : 'dropdown sidebar__dropdown__hide'
                 }
               >
-                <li onClick={this.handleScrollToElement} ref={this.compLinks}>
-                  Links
-                </li>
-                <li onClick={this.handleScrollToElement} ref={this.compActy}>
-                  Activity
-                </li>
-                <li onClick={this.handleScrollToElement} ref={this.compInvolv}>
-                  Involvement
-                </li>
+                <Scroll type="id" element="ChorComp" offset={-60}>
+                  <li>Chord</li>
+                </Scroll>
+                <Scroll type="id" element="NetwComp" offset={-60}>
+                  <li>Network</li>
+                </Scroll>
+                <Scroll type="id" element="CompHier" offset={-60}>
+                  <li>Hierarchy</li>
+                </Scroll>
+                <Scroll type="id" element="CompActy" offset={-60}>
+                  <li>Activity</li>
+                </Scroll>
+                <Scroll type="id" element="CompInv" offset={-60}>
+                  <li>Involvement</li>
+                </Scroll>
               </ul>
             ) : null}
           </li>

@@ -87,7 +87,7 @@ class HierarchychartComponent extends Component {
 
   render() {
     return (
-      <Widget width={this.props.width}>
+      <Widget width={this.props.width} id={this.props.id}>
         <div className="graph__barchart__header">
           <h2 className="title__piechart">{this.props.title}</h2>
           <h3 className="subtitle__piechart">
