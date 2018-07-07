@@ -6,6 +6,7 @@ import {
   YAxis,
   Bar,
   ResponsiveContainer,
+  Tooltip,
 } from 'recharts'
 import { Fetcher } from '../components/Fetch'
 import { Calendar } from 'primereact/components/calendar/Calendar'
@@ -210,9 +211,16 @@ class BarchartComponent extends Component {
       for (let i = 0; i < textNode.length; i++) {
         if (textNode[i].textContent === longerString) {
           let element = textNode[i].getBoundingClientRect()
-          margin = parseInt(element.height + 10, 10).toString() + 'px'
+          margin = element.height + 10
           break
+        } else {
+          let element = textNode[i].getBoundingClientRect()
+          let height = element.height
+          if (height > margin) {
+            margin = height + 10
+          }
         }
+        margin = parseInt(margin + 10, 10).toString() + 'px'
       }
       this.setState({
         marginBottom: margin,
@@ -301,6 +309,7 @@ class BarchartComponent extends Component {
               {this.state.apiDataCompare < 1 ? null : (
                 <Bar dataKey="frequencyCompare" fill={this.props.colour2} />
               )}
+              <Tooltip />
             </BarChart>
           </ResponsiveContainer>
         </div>

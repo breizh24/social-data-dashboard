@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import { Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap'
-import { Link, Redirect } from 'react-router-dom'
-
+import { Redirect } from 'react-router-dom'
 import isEmail from 'validator/lib/isEmail'
 
 class Login extends Component {
