@@ -61,7 +61,7 @@ class Hashtags extends Component {
           classColorRange="involvement__color__range"
           classColorCompare="involvement__color__compare"
         />
-        <Widget width="95%">
+        {/* <Widget width="95%">
           <HashtagPos_CustomPieChart
             title={'SENTIMENT - POSITIVITY'}
             version="160"
@@ -80,7 +80,7 @@ class Hashtags extends Component {
             social="twitter"
             indicator="negativity"
           />
-        </Widget>
+        </Widget> */}
       </React.Fragment>
     )
   }

@@ -152,7 +152,6 @@ class ChordchartComponent extends React.Component {
     if (this.state.apiData.length < 1) {
       return 'Loading'
     }
-    console.log(this.state.names)
 
     return (
       <Widget width={this.state.width <= 1200 ? '100%' : this.props.width}>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Fetcher } from './Fetch'
 import { PieChart, Pie, Sector, ResponsiveContainer, Cell } from 'recharts'
+import Widget from './Widget'
 
 class Home__CustomPieChart extends Component {
   constructor(props) {
@@ -12,7 +13,19 @@ class Home__CustomPieChart extends Component {
         minDate: '2018-04-24',
         maxDate: '2018-05-24',
       },
+      width: 1300,
     }
+  }
+
+  getWidth = () => {
+    let width = window.innerWidth
+    this.setState({
+      width: width,
+    })
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.getWidth)
   }
 
   onPieEnter(newData, e) {
@@ -102,6 +115,7 @@ class Home__CustomPieChart extends Component {
   }
 
   componentDidMount() {
+    window.addEventListener('resize', this.getWidth)
     let minDate = this.state.dateForFetch.minDate
     let maxDate = this.state.dateForFetch.maxDate
     Fetcher(
@@ -134,7 +148,7 @@ class Home__CustomPieChart extends Component {
       '#edc2d3',
     ]
     return (
-      <React.Fragment>
+      <Widget width={this.state.width <= 1200 ? '100%' : this.props.width}>
         <h2 className="title__piechart">{this.props.title}</h2>
         <h3 className="subtitle__piechart">Last 30 days</h3>
         <ResponsiveContainer width="100%" height={300}>
@@ -160,7 +174,7 @@ class Home__CustomPieChart extends Component {
             {/* <Tooltip /> */}
           </PieChart>
         </ResponsiveContainer>
-      </React.Fragment>
+      </Widget>
     )
   }
 }
