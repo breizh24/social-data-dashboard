@@ -12,7 +12,7 @@ class ChordchartComponent extends React.Component {
         minDate: '2018-04-01',
         maxDate: '2018-05-24',
       },
-      width: null,
+      width: 1300,
     }
     this.matrix = []
   }
