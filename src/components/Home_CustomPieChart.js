@@ -14,7 +14,7 @@ class HomeCustomPieChart extends Component {
         minDate: '2018-04-24',
         maxDate: '2018-05-24',
       },
-      width: 1300,
+      width: window.innerWidth,
     }
   }
 
