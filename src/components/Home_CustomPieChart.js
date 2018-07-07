@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import { Fetcher } from './Fetch'
 import { PieChart, Pie, Sector, ResponsiveContainer, Cell } from 'recharts'
 import Widget from './Widget'
+import moment from 'moment'
 
-class Home__CustomPieChart extends Component {
+class HomeCustomPieChart extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -148,9 +149,15 @@ class Home__CustomPieChart extends Component {
       '#edc2d3',
     ]
     return (
-      <Widget width={this.state.width <= 1200 ? '100%' : this.props.width}>
+      <Widget flexBasis={this.state.width <= 1200 ? '100%' : this.props.width}>
         <h2 className="title__piechart">{this.props.title}</h2>
-        <h3 className="subtitle__piechart">Last 30 days</h3>
+        <h3 className="subtitle__piechart">
+          {`Range: ${moment(this.state.dateForFetch.minDate).format(
+            'DD/MM/YYYY',
+          )} to ${moment(this.state.dateForFetch.maxDate).format(
+            'DD/MM/YYYY',
+          )}`}
+        </h3>
         <ResponsiveContainer width="100%" height={300}>
           <PieChart>
             <Pie
@@ -179,4 +186,4 @@ class Home__CustomPieChart extends Component {
   }
 }
 
-export default Home__CustomPieChart
+export default HomeCustomPieChart

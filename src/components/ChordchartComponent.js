@@ -2,6 +2,7 @@ import React from 'react'
 import ChordDiagram from 'react-chord-diagram'
 import Widget from './Widget'
 import { Fetcher } from '../components/Fetch'
+import moment from 'moment'
 
 class ChordchartComponent extends React.Component {
   constructor(props) {
@@ -158,7 +159,13 @@ class ChordchartComponent extends React.Component {
         <div className="graph__chord__container">
           <div className="graph__barchart__header">
             <h2 className="title__piechart">{this.props.title}</h2>
-            <h3 className="subtitle__piechart" />
+            <h3 className="subtitle__piechart">
+              {`Range: ${moment(this.state.dateForFetch.minDate).format(
+                'DD/MM/YYYY',
+              )} to ${moment(this.state.dateForFetch.maxDate).format(
+                'DD/MM/YYYY',
+              )}`}
+            </h3>
           </div>
           <div className="chord__chart__container">
             <div className="chord__chart">
