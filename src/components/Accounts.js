@@ -17,7 +17,7 @@ class Accounts extends Component {
             social="twitter"
             indicator="/"
             limit="100"
-            title="Accounts chord"
+            title="Accounts Chord"
             width="50%"
           />
           <NetworkchartComponent
@@ -63,7 +63,7 @@ class Accounts extends Component {
           subCategory="trend"
           social="twitter"
           indicator="involvement"
-          title="Account involvement"
+          title="Accounts Involvement"
           width="100%"
           colour1="#78B688"
           colour2="#d786a3"

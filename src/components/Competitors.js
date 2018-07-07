@@ -17,7 +17,7 @@ class Competitors extends Component {
             social="twitter"
             indicator="/"
             limit="100"
-            title="Competitors chord"
+            title="Competitors Chord"
             width="50%"
           />
           <NetworkchartComponent
@@ -47,7 +47,7 @@ class Competitors extends Component {
           subCategory="trend"
           social="twitter"
           indicator="activity"
-          title="Competitor activity"
+          title="Competitor Activity"
           width="100%"
           colour1="#C6004A"
           colour2="#6D7AB2"
@@ -60,7 +60,7 @@ class Competitors extends Component {
           subCategory="trend"
           social="twitter"
           indicator="involvement"
-          title="Competitor involvement"
+          title="Competitor Involvement"
           width="100%"
           colour1="#78B688"
           colour2="#d786a3"
