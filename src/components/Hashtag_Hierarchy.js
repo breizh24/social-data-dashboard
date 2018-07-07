@@ -3,9 +3,7 @@ import { ResponsiveContainer } from 'recharts'
 import Tree from 'react-d3-tree'
 import Widget from './Widget'
 
-
 class HashHierarchy extends Component {
-
   constructor(props) {
     super(props)
     this.state = {
@@ -48,13 +46,11 @@ class HashHierarchy extends Component {
       } else if (parse[i].length === 2) {
         // let sndresult = parse[i][1];
         if (parse[1][0] === result[0][0]) {
-
           // if (parse[i][1] === sndresult[i]) {
-          fchild = parse[i].splice(1, 1);
+          fchild = parse[i].splice(1, 1)
           let semiworksndtag = fchild
-          main.children[i - 1] = { name: semiworksndtag, children: [] };
+          main.children[i - 1] = { name: semiworksndtag, children: [] }
           // }
-
         }
       } else if (parse[i].length === 3) {
         if (parse[1][0] === result[0][0]) {
@@ -79,7 +75,11 @@ class HashHierarchy extends Component {
 
   render() {
     return (
-      <Widget width="95%">
+      <Widget width="45%">
+        <div className="graph__barchart__header">
+          <h2 className="title__piechart">{this.props.title}</h2>
+          <h3 className="subtitle__piechart" />
+        </div>
         <div className="hierarchy__container">
           {this.state.apiData ? (
             <Tree
@@ -87,16 +87,17 @@ class HashHierarchy extends Component {
               data={this.state.apiData}
               initialDepth={10000}
               depthFactor=""
-              zoom={0.7}
+              zoom={0.5}
               separation={{ siblings: 0.4, nonSiblings: 0.25 }}
               pathFun="elbow"
-              nodeSize={{ x: 100, y: 160 }}
+              nodeSize={{ x: 400, y: 260 }}
               textLayout={{
                 textAnchor: 'end',
                 x: -10,
                 y: 15,
                 transform: 'rotate(-45)',
               }}
+              height="200px"
             />
           ) : (
             <h1>Loading...</h1>
