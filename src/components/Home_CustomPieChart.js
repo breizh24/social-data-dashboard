@@ -149,7 +149,7 @@ class HomeCustomPieChart extends Component {
       '#edc2d3',
     ]
     return (
-      <Widget flexBasis={this.state.width <= 1200 ? '100%' : this.props.width}>
+      <Widget width={this.state.width <= 1200 ? '100%' : this.props.width}>
         <h2 className="title__piechart">{this.props.title}</h2>
         <h3 className="subtitle__piechart">
           {`Range: ${moment(this.state.dateForFetch.minDate).format(
