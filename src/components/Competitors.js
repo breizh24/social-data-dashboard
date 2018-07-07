@@ -29,6 +29,7 @@ class Competitors extends Component {
             limit="100"
             title="Competitors Network"
             ref="CompetitorsNetwork"
+            width="50%"
           />
         </div>
         <HierarchychartComponent

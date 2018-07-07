@@ -63,7 +63,7 @@ class NetworkchartComponent extends Component {
 
   render() {
     return (
-      <Widget width="50%">
+      <Widget width={this.props.width}>
         <div className="graph__barchart__header">
           <h2 className="title__piechart">{this.props.title}</h2>
           <h3 className="subtitle__piechart" />
@@ -85,8 +85,8 @@ class NetworkchartComponent extends Component {
               <RandomizeNodePositions />
             </Sigma>
           ) : (
-              <h2>Loading</h2>
-            )}
+            <h2>Loading</h2>
+          )}
         </ResponsiveContainer>
       </Widget>
     )
