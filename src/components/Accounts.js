@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import BarchartComponent from './BarchartComponent'
-
 import ChordchartComponent from './ChordchartComponent'
 import NetworkchartComponent from './NetworkchartComponent'
-import AccHierarcy from './Account_Hierarchy'
+import HierarchychartComponent from './HierarchychartComponent'
 
 class Accounts extends Component {
   render() {
@@ -18,7 +17,6 @@ class Accounts extends Component {
             social="twitter"
             indicator="/"
             limit="100"
-            yar
             title="Accounts chord"
           />
           <NetworkchartComponent
@@ -32,7 +30,16 @@ class Accounts extends Component {
             ref="AccountNetwork"
           />
         </div>
-        <AccHierarcy title="Account Hierarchy" />
+        <HierarchychartComponent
+          title="Account Hierarchy"
+          version="155"
+          category="ma"
+          subCategory="hierarchy"
+          social="twitter"
+          indicator="/"
+          limit="100"
+          width="100%"
+        />
         <BarchartComponent
           ref="AccActy"
           version="155"

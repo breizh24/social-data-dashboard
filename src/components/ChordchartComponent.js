@@ -2,7 +2,6 @@ import React from 'react'
 import ChordDiagram from 'react-chord-diagram'
 import Widget from './Widget'
 import { Fetcher } from '../components/Fetch'
-import { ResponsiveContainer } from 'recharts'
 
 class ChordchartComponent extends React.Component {
   constructor(props) {
@@ -100,10 +99,47 @@ class ChordchartComponent extends React.Component {
     })
   }
 
+  getLongerString = () => {
+    let apiData = this.state.apiData.slice()
+    let longerString = ''
+    for (let i = 0; i < apiData.length; i++) {
+      if (apiData[i].entity.length > longerString.length) {
+        longerString = apiData[i].entity
+      }
+      if (this.state.apiDataCompare.length > 0) {
+        let apiDataCompare = this.state.apiDataCompare.slice()
+        for (let i = 0; i < apiDataCompare.length; i++) {
+          if (apiDataCompare[i].entity.length > longerString.length) {
+            longerString = apiDataCompare[i].entity
+          }
+        }
+      }
+    }
+    this.getHeightForMargin(longerString)
+  }
+
+  getHeightForMargin = longerString => {
+    setTimeout(() => {
+      let textNode = document.getElementsByTagName('text')
+      let margin = ''
+      for (let i = 0; i < textNode.length; i++) {
+        if (textNode[i].textContent === longerString) {
+          let element = textNode[i].getBoundingClientRect()
+          margin = parseInt(element.height + 10, 10).toString() + 'px'
+          break
+        }
+      }
+      this.setState({
+        marginBottom: margin,
+      })
+    }, 1)
+  }
+
   render() {
     if (this.state.apiData.length < 1) {
       return 'Loading'
     }
+    console.log(this.state.names)
 
     return (
       <Widget width="45%">

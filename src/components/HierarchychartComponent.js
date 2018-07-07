@@ -1,25 +1,49 @@
 import React, { Component } from 'react'
-import { ResponsiveContainer } from 'recharts'
 import Tree from 'react-d3-tree'
 import Widget from './Widget'
+import { Fetcher } from './Fetch'
 
-class HashHierarchy extends Component {
+class HierarchychartComponent extends Component {
   constructor(props) {
     super(props)
     this.state = {
       apiData: false,
+      dateForFetch: {
+        minDate: '2018-04-01',
+        maxDate: '2018-05-24',
+      },
     }
   }
   componentDidMount() {
-    fetch('http://165.227.158.131/dp/api/v159/hierarchy/twitter_hashtag/ht/100')
-      .then(response => response.json())
-      .then(response => {
-        let apiData = response.apiData.hierarchy.data
-        let parsArr = this.parseString(apiData)
-        this.setState({
-          apiData: parsArr,
-        })
+    let minDate = this.state.dateForFetch.minDate
+    let maxDate = this.state.dateForFetch.maxDate
+    Fetcher(
+      this.props.version,
+      this.props.category,
+      this.props.subCategory,
+      this.props.social,
+      minDate,
+      maxDate,
+      this.props.indicator,
+      this.props.limit,
+    ).then(response => {
+      let apiData = response.apiData.hierarchy.data
+      let parsArr = this.parseString(apiData)
+      this.setState({
+        apiData: parsArr,
       })
+    })
+    //   //fetch('http://165.227.158.131/dp/api/v160/hierarchy/twitter/ma/100') //personality
+    //   // fetch('http://165.227.158.131/dp/api/v158/hierarchy/twitter/ma/100') //competitors
+    //   fetch('http://165.227.158.131/dp/api/v155/hierarchy/twitter/ma/100')
+    //     .then(response => response.json())
+    //     .then(response => {
+    //       let apiData = response.apiData.hierarchy.data
+    //       let parsArr = this.parseString(apiData)
+    //       this.setState({
+    //         apiData: parsArr,
+    //       })
+    //     })
   }
 
   parseString(arr) {
@@ -69,13 +93,12 @@ class HashHierarchy extends Component {
       }
     }
     workarr[0] = main
-    console.log(workarr)
     return workarr
   }
 
   render() {
     return (
-      <Widget width="45%">
+      <Widget width={this.props.width}>
         <div className="graph__barchart__header">
           <h2 className="title__piechart">{this.props.title}</h2>
           <h3 className="subtitle__piechart" />
@@ -83,10 +106,9 @@ class HashHierarchy extends Component {
         <div className="hierarchy__container">
           {this.state.apiData ? (
             <Tree
-              orientation="horizontal"
+              orientation="vertical"
               data={this.state.apiData}
               initialDepth={10000}
-              depthFactor=""
               zoom={0.5}
               separation={{ siblings: 0.4, nonSiblings: 0.25 }}
               pathFun="elbow"
@@ -97,10 +119,9 @@ class HashHierarchy extends Component {
                 y: 15,
                 transform: 'rotate(-45)',
               }}
-              height="200px"
             />
           ) : (
-            <h1>Loading...</h1>
+            <h2>Loading...</h2>
           )}
         </div>
       </Widget>
@@ -108,4 +129,4 @@ class HashHierarchy extends Component {
   }
 }
 
-export default HashHierarchy
+export default HierarchychartComponent
