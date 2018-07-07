@@ -4,7 +4,7 @@ import BarchartComponent from './BarchartComponent'
 import NetworkchartComponent from './NetworkchartComponent'
 import HashtagPos_CustomPieChart from './HashtagPos_CustomPieChart'
 import HashtagNeg_CustomPieChart from './HashtagNeg_CustomPieChart'
-import HashHierarchy from './Hashtag_Hierarchy.js'
+import HierarchychartComponent from './HierarchychartComponent'
 
 class Hashtags extends Component {
   render() {
@@ -20,9 +20,19 @@ class Hashtags extends Component {
             limit="100"
             title="Hashtag Network"
             ref="hashtagNetwork"
+            width="100%"
           />
-          <HashHierarchy title="Hashtag Hierarchy" />
         </div>
+        <HierarchychartComponent
+          title="Hashtag Hierarchy"
+          version="158"
+          category="ht"
+          subCategory="hierarchy"
+          social="twitter"
+          indicator="/"
+          limit="100"
+          width="100%"
+        />
         <BarchartComponent
           ref="HashActy"
           version="155"
