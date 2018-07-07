@@ -84,56 +84,6 @@ class HierarchychartComponent extends Component {
     this.setState({ widthContainer: element })
   }
 
-  parseString(arr) {
-    let workarr = []
-    let main = {}
-    let parents = []
-    let fchild = []
-    let schild = []
-    let parse = []
-    let result = []
-    let j = 0
-    let k = 0
-
-    for (let i = 0; i < arr.length; i++) {
-      parse[i] = arr[i].id.split(';')
-      if (parse[i].length === 1) {
-        result[j] = parse[i]
-        parents[j] = parse[i]
-        main = {
-          name: parse[i],
-          children: [],
-        }
-        j++
-      } else if (parse[i].length === 2) {
-        // let sndresult = parse[i][1];
-        if (parse[1][0] === result[0][0]) {
-          // if (parse[i][1] === sndresult[i]) {
-          fchild = parse[i].splice(1, 1)
-          let semiworksndtag = fchild
-          main.children[i - 1] = { name: semiworksndtag, children: [] }
-          // }
-        }
-      } else if (parse[i].length === 3) {
-        if (parse[1][0] === result[0][0]) {
-          let double = parse[i]
-          fchild = parse[i].splice(1, 1)
-          let semiworksndtag = fchild
-          main.children[i - 1] = { name: semiworksndtag, children: [] }
-          schild = double.splice(parse[i].length - 1, 1)
-          let semiworktrdtag = schild
-          main.children[i - 1].children[k] = {
-            name: semiworktrdtag,
-            children: [],
-          }
-          // k++;
-        }
-      }
-    }
-    workarr[0] = main
-    return workarr
-  }
-
   render() {
     return (
       <Widget width={this.props.width}>
