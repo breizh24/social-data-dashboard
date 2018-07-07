@@ -855,9 +855,13 @@ svg {
 .hierarchy__container svg {
   overflow: hidden;
   /* transform: scale(0.8); */
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
   /* transform: translate(500, 10); */
+}
+
+.hierarchy__container {
+  height: 100vh;
 }

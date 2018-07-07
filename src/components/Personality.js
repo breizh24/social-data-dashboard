@@ -3,7 +3,7 @@ import BarchartComponent from './BarchartComponent'
 import NetworkchartComponent from './NetworkchartComponent'
 import LinechartComponent from './LinechartComponent'
 import ChordchartComponent from './ChordchartComponent'
-import PersHierarcy from './Personality_Hierarchy';
+import PersHierarcy from './Personality_Hierarchy'
 
 class Personality extends Component {
   render() {
@@ -31,7 +31,7 @@ class Personality extends Component {
             ref="PersonalityNetwork"
           />
         </div>
-        <PersHierarcy />
+        <PersHierarcy title="Personality Hierarchy" />
         <BarchartComponent
           version="160"
           category="ma"

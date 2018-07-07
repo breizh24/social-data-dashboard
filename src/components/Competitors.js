@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import BarchartComponent from './BarchartComponent'
 import NetworkchartComponent from './NetworkchartComponent'
 import ChordchartComponent from './ChordchartComponent'
-import CompHierarcy from './Competitors_Hierarchy';
+import CompHierarcy from './Competitors_Hierarchy'
 class Competitors extends Component {
   render() {
     return (
@@ -30,7 +30,7 @@ class Competitors extends Component {
             ref="CompetitorsNetwork"
           />
         </div>
-        <CompHierarcy />
+        <CompHierarcy title="Competitors Hierarchy" />
         <BarchartComponent
           version="158"
           category="ma"

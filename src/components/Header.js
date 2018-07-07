@@ -36,7 +36,7 @@ class Header extends Component {
       <div className="header__container">
         <div className="header__logo__container">
           <div className="header__logo">
-            <Link to="/">
+            <Link to="/home">
               <Logo />
             </Link>
           </div>
