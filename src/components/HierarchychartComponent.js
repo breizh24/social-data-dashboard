@@ -36,7 +36,9 @@ class HierarchychartComponent extends Component {
       this.props.limit,
     ).then(response => {
       let apiData = response.apiData.hierarchy.data
-      let parsArr = this.parseString(apiData)
+      console.log(apiData)
+      let parsArr = this.hierarchyData(apiData)
+      console.log(parsArr)
       this.setState(
         {
           apiData: parsArr,
@@ -44,6 +46,37 @@ class HierarchychartComponent extends Component {
         this.getWidth(),
       )
     })
+  }
+
+  hierarchyData = data => {
+    let tree = []
+    let list = data.map(el => el.id.split(';'))
+    let childrenList = null
+    list.forEach(element => {
+      childrenList = findChildrenList(element)
+      let name = element.slice(-1)[0]
+      addChildren(childrenList, name)
+    })
+
+    function findChildrenList(element) {
+      let path = element.slice(0, -1)
+      let subtree = tree
+
+      for (let i = 0; i < path.length; i++) {
+        for (let j = 0; j < subtree.length; j++) {
+          if (subtree[j].name == path[i]) {
+            subtree = subtree[j].children
+            break
+          }
+        }
+      }
+      return subtree
+    }
+
+    function addChildren(childrenList, element) {
+      childrenList.push({ name: element, children: [] })
+    }
+    return tree
   }
 
   getWidth = () => {
