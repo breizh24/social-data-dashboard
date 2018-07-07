@@ -4,19 +4,19 @@ import { NavLink } from 'react-router-dom'
 class Sidebar extends Component {
   constructor(props) {
     super(props)
-    this.hashLinks = React.createRef()
-    this.hashActy = React.createRef()
-    this.hashInvolv = React.createRef()
-    this.accLinks = React.createRef()
-    this.accActy = React.createRef()
-    this.accInvolv = React.createRef()
-    this.persLinks = React.createRef()
-    this.persActy = React.createRef()
-    this.persAppr = React.createRef()
-    this.persInvolv = React.createRef()
-    this.compLinks = React.createRef()
-    this.compActy = React.createRef()
-    this.compInvolv = React.createRef()
+    // this.hashLinks = React.createRef()
+    // this.hashActy = React.createRef()
+    // this.hashInvolv = React.createRef()
+    // this.accLinks = React.createRef()
+    // this.accActy = React.createRef()
+    // this.accInvolv = React.createRef()
+    // this.persLinks = React.createRef()
+    // this.persActy = React.createRef()
+    // this.persAppr = React.createRef()
+    // this.persInvolv = React.createRef()
+    // this.compLinks = React.createRef()
+    // this.compActy = React.createRef()
+    // this.compInvolv = React.createRef()
     this.state = {
       showDropDown: [false, false, false, false],
     }
@@ -59,20 +59,6 @@ class Sidebar extends Component {
     let ArrPos = this.state.showDropDown
     return (
       <div className="sidebar__container">
-        {/* <div className="fotoUser">{this.props.username[0]}</div>
-         <h2>{this.props.username}</h2> */}
-        {/* <div className="logoLogin">
-          <div className="userQuadrato">
-            <h3>F</h3>
-          </div>
-
-          <span className="userProp">
-            <Link className="userAlign" to="/login">
-              Federica Binomi
-            </Link>
-          </span>
-        </div> */}
-
         <ul>
           <li>
             <NavLink
