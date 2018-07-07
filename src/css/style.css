@@ -231,13 +231,11 @@ svg {
   border-width: 2px;
   border-radius: 10px; */
   padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
   position: relative;
   margin-top: 20px;
   color: #605d5e;
-}
-
-.recharts-responsive-container {
-  margin-top: 20px;
 }
 
 .titleMain {
@@ -341,13 +339,11 @@ svg {
   -ms-animation: appear 1s ease 0s 1 normal;
   animation: appear 1s ease 0s 1 normal;
   margin-top: 25px;
-  margin-left: 20px;
+  /* margin-left: 20px; */
 }
 
 .subtitle__piechart {
   font-size: 15px;
-  margin-right: 10px;
-  margin-left: 20px;
   padding-bottom: 5px;
   border-bottom: 2px solid #9e9d9d;
   -webkit-animation: appear 1s ease 0s 1 normal;
@@ -438,8 +434,6 @@ svg {
   letter-spacing: 1px;
   outline: none;
   padding-left: 10px;
-  margin-left: 20px;
-  /* margin-right: 80px; */
 }
 
 .calendar__range input:focus {
@@ -476,7 +470,7 @@ svg {
   letter-spacing: 1px;
   outline: none;
   padding-left: 10px;
-  margin-left: 20px;
+
   /* margin-right: 80px; */
 }
 
@@ -537,7 +531,6 @@ svg {
 
 /* //Linechart// */
 .linechart__container {
-  padding: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;

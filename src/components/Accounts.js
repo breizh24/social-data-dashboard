@@ -18,6 +18,7 @@ class Accounts extends Component {
             indicator="/"
             limit="100"
             title="Accounts chord"
+            width="50%"
           />
           <NetworkchartComponent
             version="155"
@@ -28,6 +29,7 @@ class Accounts extends Component {
             limit="100"
             title="Accounts Network"
             ref="AccountNetwork"
+            width="50%"
           />
         </div>
         <HierarchychartComponent

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ResponsiveContainer } from 'recharts'
+
 import { Sigma, RandomizeNodePositions, RelativeSize } from 'react-sigma'
 import { Fetcher } from '../components/Fetch'
 import Widget from './Widget'
@@ -63,31 +63,30 @@ class NetworkchartComponent extends Component {
 
   render() {
     return (
-      <Widget width="50%">
+      <Widget width={this.props.width}>
         <div className="graph__barchart__header">
           <h2 className="title__piechart">{this.props.title}</h2>
           <h3 className="subtitle__piechart" />
         </div>
-        <ResponsiveContainer>
-          {this.state.apiData !== false ? (
-            <Sigma
-              graph={this.state.apiData}
-              settings={{
-                drawEdges: true,
-                clone: false,
-                defaultNodeColor: '#EDB63E',
-                labelHoverShadowColor: '#605D5E',
-                defaultLabelColor: '#605D5E',
-                labelSize: 'fixed',
-              }}
-            >
-              <RelativeSize initialSize={15} />
-              <RandomizeNodePositions />
-            </Sigma>
-          ) : (
-              <h2>Loading</h2>
-            )}
-        </ResponsiveContainer>
+
+        {this.state.apiData !== false ? (
+          <Sigma
+            graph={this.state.apiData}
+            settings={{
+              drawEdges: true,
+              clone: false,
+              defaultNodeColor: '#EDB63E',
+              labelHoverShadowColor: '#605D5E',
+              defaultLabelColor: '#605D5E',
+              labelSize: 'fixed',
+            }}
+          >
+            <RelativeSize initialSize={15} />
+            <RandomizeNodePositions />
+          </Sigma>
+        ) : (
+          <h2>Loading</h2>
+        )}
       </Widget>
     )
   }

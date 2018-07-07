@@ -19,6 +19,7 @@ class Personality extends Component {
             indicator="/"
             limit="100"
             title="Personality Chord"
+            width="50%"
           />
           <NetworkchartComponent
             version="160"
@@ -28,6 +29,7 @@ class Personality extends Component {
             indicator="/"
             limit="100"
             title="Personality Network"
+            width="50%"
             ref="PersonalityNetwork"
           />
         </div>

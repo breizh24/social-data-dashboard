@@ -8,7 +8,6 @@ class Header extends Component {
     this.state = {
       title: '',
       currentLocation: this.props.location.pathname,
-      user: [this.props.user],
     }
   }
 
@@ -53,7 +52,7 @@ class Header extends Component {
           <span className="userProp">
             <Link className="userAlign" to="/login">
               Federica Bottura
-              {/* {this.state.user} */}
+              {this.props.user}
             </Link>
           </span>
         </div>
