@@ -864,3 +864,9 @@ svg {
     flex-direction: column;
   }
 }
+
+@media only screen and (max-width: 900px) {
+  .userQuadrato {
+    display: none;
+  }
+}
