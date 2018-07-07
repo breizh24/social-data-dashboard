@@ -13,7 +13,7 @@ class ChordchartComponent extends React.Component {
         minDate: '2018-04-01',
         maxDate: '2018-05-24',
       },
-      width: 1300,
+      width: window.innerWidth,
     }
     this.matrix = []
   }
@@ -155,7 +155,10 @@ class ChordchartComponent extends React.Component {
     }
 
     return (
-      <Widget width={this.state.width <= 1200 ? '100%' : this.props.width}>
+      <Widget
+        width={this.state.width <= 1200 ? '100%' : this.props.width}
+        id={this.props.id}
+      >
         <div className="graph__chord__container">
           <div className="graph__barchart__header">
             <h2 className="title__piechart">{this.props.title}</h2>

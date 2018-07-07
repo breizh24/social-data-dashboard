@@ -10,7 +10,7 @@ class Competitors extends Component {
       <React.Fragment>
         <div className="links">
           <ChordchartComponent
-            ref="ChorChart"
+            id="ChorComp"
             version="158"
             category="ma"
             subCategory="chord"
@@ -28,11 +28,12 @@ class Competitors extends Component {
             indicator="/"
             limit="100"
             title="Competitors Network"
-            ref="CompetitorsNetwork"
+            id="NetwComp"
             width="50%"
           />
         </div>
         <HierarchychartComponent
+          id="CompHier"
           title="Competitors Hierarchy"
           version="158"
           category="ma"
@@ -42,6 +43,7 @@ class Competitors extends Component {
           limit="100"
         />
         <BarchartComponent
+          id="CompActy"
           version="158"
           category="ma"
           subCategory="trend"
@@ -55,6 +57,7 @@ class Competitors extends Component {
           classColorCompare="activity__color__compare"
         />
         <BarchartComponent
+          id="CompInv"
           version="158"
           category="ma"
           subCategory="trend"

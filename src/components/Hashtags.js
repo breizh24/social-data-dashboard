@@ -7,19 +7,18 @@ class Hashtags extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="links">
-          <NetworkchartComponent
-            version="158"
-            category="ht"
-            subCategory="network"
-            social="twitter"
-            indicator="/"
-            limit="100"
-            title="Hashtag Network"
-            ref="hashtagNetwork"
-            width="100%"
-          />
-        </div>
+        <NetworkchartComponent
+          version="158"
+          category="ht"
+          subCategory="network"
+          social="twitter"
+          indicator="/"
+          limit="100"
+          title="Hashtag Network"
+          id="HashNetw"
+          width="100%"
+        />
+
         <HierarchychartComponent
           title="Hashtag Hierarchy"
           version="158"
@@ -29,9 +28,10 @@ class Hashtags extends Component {
           indicator="/"
           limit="100"
           width="100%"
+          id="HashHier"
         />
         <BarchartComponent
-          ref="HashActy"
+          id="HashAct"
           version="155"
           category="ma"
           subCategory="trend"
@@ -45,7 +45,7 @@ class Hashtags extends Component {
           classColorCompare="activity__color__compare"
         />
         <BarchartComponent
-          ref="HashInvolv"
+          id="HashInv"
           version="155"
           category="ma"
           subCategory="trend"

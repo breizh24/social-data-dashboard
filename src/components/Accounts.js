@@ -10,7 +10,7 @@ class Accounts extends Component {
       <React.Fragment>
         <div className="links">
           <ChordchartComponent
-            ref="ChorChart"
+            id="ChorAcc"
             version="155"
             category="ma"
             subCategory="chord"
@@ -28,12 +28,13 @@ class Accounts extends Component {
             indicator="/"
             limit="100"
             title="Accounts Network"
-            ref="AccountNetwork"
+            id="NetwAcc"
             width="50%"
           />
         </div>
         <HierarchychartComponent
           title="Account Hierarchy"
+          id="AccHier"
           version="155"
           category="ma"
           subCategory="hierarchy"
@@ -43,7 +44,7 @@ class Accounts extends Component {
           width="100%"
         />
         <BarchartComponent
-          ref="AccActy"
+          id="AccActy"
           version="155"
           category="ma"
           subCategory="trend"
@@ -57,7 +58,7 @@ class Accounts extends Component {
           classColorCompare="activity__color__compare"
         />
         <BarchartComponent
-          ref="Involv"
+          id="AccInv"
           version="155"
           category="ma"
           subCategory="trend"
