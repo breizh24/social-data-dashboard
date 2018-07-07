@@ -224,7 +224,6 @@ class BarchartComponent extends Component {
     if (this.state.apiData.length === 0) {
       return <h2>Loading...</h2>
     }
-    const color = this.props.color
     return (
       <Widget width={this.props.width}>
         <div className="graph__barchart__header">

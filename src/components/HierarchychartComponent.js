@@ -12,7 +12,9 @@ class HierarchychartComponent extends Component {
         minDate: '2018-04-01',
         maxDate: '2018-05-24',
       },
+      widthContainer: 0,
     }
+    this.myRef = React.createRef()
   }
   componentDidMount() {
     let minDate = this.state.dateForFetch.minDate
@@ -29,21 +31,18 @@ class HierarchychartComponent extends Component {
     ).then(response => {
       let apiData = response.apiData.hierarchy.data
       let parsArr = this.parseString(apiData)
-      this.setState({
-        apiData: parsArr,
-      })
+      this.setState(
+        {
+          apiData: parsArr,
+        },
+        this.getWidth(),
+      )
     })
-    //   //fetch('http://165.227.158.131/dp/api/v160/hierarchy/twitter/ma/100') //personality
-    //   // fetch('http://165.227.158.131/dp/api/v158/hierarchy/twitter/ma/100') //competitors
-    //   fetch('http://165.227.158.131/dp/api/v155/hierarchy/twitter/ma/100')
-    //     .then(response => response.json())
-    //     .then(response => {
-    //       let apiData = response.apiData.hierarchy.data
-    //       let parsArr = this.parseString(apiData)
-    //       this.setState({
-    //         apiData: parsArr,
-    //       })
-    //     })
+  }
+
+  getWidth = () => {
+    const element = this.myRef.current.getBoundingClientRect().width / 2
+    this.setState({ widthContainer: element })
   }
 
   parseString(arr) {
@@ -103,24 +102,39 @@ class HierarchychartComponent extends Component {
           <h2 className="title__piechart">{this.props.title}</h2>
           <h3 className="subtitle__piechart" />
         </div>
-        <div className="hierarchy__container">
+        <div className="hierarchy__container" ref={this.myRef}>
           {this.state.apiData ? (
             <Tree
-              orientation="vertical"
               data={this.state.apiData}
-              initialDepth={10000}
-              zoom={0.5}
               separation={{ siblings: 0.4, nonSiblings: 0.25 }}
+              zoom={0.7}
               pathFun="elbow"
-              nodeSize={{ x: 400, y: 260 }}
+              translate={{ x: this.state.widthContainer, y: 50 }}
+              nodeSize={{ x: 100, y: 160 }}
               textLayout={{
                 textAnchor: 'end',
                 x: -10,
                 y: 15,
                 transform: 'rotate(-45)',
               }}
+              orientation="vertical"
             />
           ) : (
+            // <Tree
+            //   orientation="vertical"
+            //   data={this.state.apiData}
+            //   initialDepth={10000}
+            //   zoom={0.5}
+            //   separation={{ siblings: 0.4, nonSiblings: 0.25 }}
+            //   pathFun="elbow"
+            //   nodeSize={{ x: 400, y: 260 }}
+            //   textLayout={{
+            //     textAnchor: 'end',
+            //     x: -10,
+            //     y: 15,
+            //     transform: 'rotate(-45)',
+            //   }}
+            // />
             <h2>Loading...</h2>
           )}
         </div>
