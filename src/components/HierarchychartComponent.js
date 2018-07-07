@@ -120,21 +120,6 @@ class HierarchychartComponent extends Component {
               orientation="vertical"
             />
           ) : (
-            // <Tree
-            //   orientation="vertical"
-            //   data={this.state.apiData}
-            //   initialDepth={10000}
-            //   zoom={0.5}
-            //   separation={{ siblings: 0.4, nonSiblings: 0.25 }}
-            //   pathFun="elbow"
-            //   nodeSize={{ x: 400, y: 260 }}
-            //   textLayout={{
-            //     textAnchor: 'end',
-            //     x: -10,
-            //     y: 15,
-            //     transform: 'rotate(-45)',
-            //   }}
-            // />
             <h2>Loading...</h2>
           )}
         </div>
