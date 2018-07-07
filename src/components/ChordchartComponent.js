@@ -12,11 +12,24 @@ class ChordchartComponent extends React.Component {
         minDate: '2018-04-01',
         maxDate: '2018-05-24',
       },
+      width: null,
     }
     this.matrix = []
   }
 
+  getWidth = () => {
+    let width = window.innerWidth
+    this.setState({
+      width: width,
+    })
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.getWidth)
+  }
+
   componentDidMount() {
+    window.addEventListener('resize', this.getWidth)
     let minDate = this.state.dateForFetch.minDate
     let maxDate = this.state.dateForFetch.maxDate
     Fetcher(
@@ -142,7 +155,7 @@ class ChordchartComponent extends React.Component {
     console.log(this.state.names)
 
     return (
-      <Widget width={this.props.width}>
+      <Widget width={this.state.width <= 1200 ? '100%' : this.props.width}>
         <div className="graph__chord__container">
           <div className="graph__barchart__header">
             <h2 className="title__piechart">{this.props.title}</h2>
