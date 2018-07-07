@@ -16,7 +16,13 @@ class HierarchychartComponent extends Component {
     }
     this.myRef = React.createRef()
   }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.getWidth)
+  }
+
   componentDidMount() {
+    window.addEventListener('resize', this.getWidth)
     let minDate = this.state.dateForFetch.minDate
     let maxDate = this.state.dateForFetch.maxDate
     Fetcher(
