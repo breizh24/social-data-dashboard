@@ -178,7 +178,9 @@ class LinechartComponent extends Component {
             : this.giveColor(el.entity),
         checked:
           typeof this.state.apiData[idx].checked === 'undefined'
-            ? true
+            ? idx < 5
+              ? true
+              : false
             : this.state.apiData[idx].checked,
         cName:
           this.nameColor.length < 1
@@ -197,7 +199,7 @@ class LinechartComponent extends Component {
       })
     }
 
-    myData.sort(function (b, a) {
+    myData.sort(function(b, a) {
       return a.days.length - b.days.length
     })
 
@@ -224,7 +226,7 @@ class LinechartComponent extends Component {
       }
     }
     myData.forEach(el =>
-      el.days.sort(function (b, a) {
+      el.days.sort(function(b, a) {
         return new Date(b.day) - new Date(a.day)
       }),
     )
