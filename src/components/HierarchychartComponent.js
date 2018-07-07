@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Tree from 'react-d3-tree'
 import Widget from './Widget'
 import { Fetcher } from './Fetch'
+import moment from 'moment'
 
 class HierarchychartComponent extends Component {
   constructor(props) {
@@ -64,7 +65,7 @@ class HierarchychartComponent extends Component {
 
       for (let i = 0; i < path.length; i++) {
         for (let j = 0; j < subtree.length; j++) {
-          if (subtree[j].name == path[i]) {
+          if (subtree[j].name === path[i]) {
             subtree = subtree[j].children
             break
           }
@@ -89,7 +90,13 @@ class HierarchychartComponent extends Component {
       <Widget width={this.props.width}>
         <div className="graph__barchart__header">
           <h2 className="title__piechart">{this.props.title}</h2>
-          <h3 className="subtitle__piechart" />
+          <h3 className="subtitle__piechart">
+            {`Range: ${moment(this.state.dateForFetch.minDate).format(
+              'DD/MM/YYYY',
+            )} to ${moment(this.state.dateForFetch.maxDate).format(
+              'DD/MM/YYYY',
+            )}`}
+          </h3>
         </div>
         <div className="hierarchy__container" ref={this.myRef}>
           {this.state.apiData ? (

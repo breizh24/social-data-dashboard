@@ -4,15 +4,14 @@ import Personality from './Personality.js'
 import Competitors from './Competitors.js'
 import Accounts from './Accounts.js'
 import { Route, Switch } from 'react-router-dom'
-import ReactDOM from 'react-dom'
 import NotFound from './NotFound.js'
-import Home__CustomPieChart from './Home_CustomPieChart'
+import HomeCustomPieChart from './Home_CustomPieChart'
 import Login from './Login'
 import ChordchartComponent from './ChordchartComponent'
 
 class Main extends Component {
   handleScrollToElement(event) {
-    const tesNode = ReactDOM.findDOMNode(this.refs.test)
+    // const tesNode = ReactDOM.findDOMNode(this.refs.test)
     // console.log(tesNode)
     // switch (testNode) {
     // case ('AccActy'):
@@ -33,24 +32,24 @@ class Main extends Component {
             path="/home"
             render={() => (
               <div className="container__home__element">
-                <Home__CustomPieChart
+                <HomeCustomPieChart
                   title={'ACCOUNT ACTIVITY'}
                   version="155"
                   category="ma"
                   subCategory="trend"
                   social="twitter"
                   indicator="activity"
-                  width="50%"
+                  width="45%"
                 />
 
-                <Home__CustomPieChart
+                <HomeCustomPieChart
                   title={'HASHTAG ACTIVITY'}
                   version="156"
                   category="ht"
                   subCategory="trend"
                   social="twitter_hashtag"
                   indicator="activity"
-                  width="50%"
+                  width="45%"
                 />
 
                 <ChordchartComponent

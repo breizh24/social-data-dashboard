@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Widget from './Widget.js'
 import BarchartComponent from './BarchartComponent'
 import NetworkchartComponent from './NetworkchartComponent'
 import HierarchychartComponent from './HierarchychartComponent'
