@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import moment from 'moment'
 import { Sigma, RandomizeNodePositions, RelativeSize } from 'react-sigma'
 import { Fetcher } from '../components/Fetch'
 import Widget from './Widget'
@@ -80,7 +80,13 @@ class NetworkchartComponent extends Component {
       <Widget width={this.state.width <= 1200 ? '100%' : this.props.width}>
         <div className="graph__barchart__header">
           <h2 className="title__piechart">{this.props.title}</h2>
-          <h3 className="subtitle__piechart" />
+          <h3 className="subtitle__piechart">
+            {`Range: ${moment(this.state.dateForFetch.minDate).format(
+              'DD/MM/YYYY',
+            )} to ${moment(this.state.dateForFetch.maxDate).format(
+              'DD/MM/YYYY',
+            )}`}
+          </h3>
         </div>
 
         {this.state.apiData !== false ? (
