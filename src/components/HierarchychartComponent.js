@@ -36,7 +36,9 @@ class HierarchychartComponent extends Component {
       this.props.limit,
     ).then(response => {
       let apiData = response.apiData.hierarchy.data
-      let parsArr = this.parseString(apiData)
+      console.log(apiData)
+      let parsArr = this.hierarchyData(apiData)
+      console.log(parsArr)
       this.setState(
         {
           apiData: parsArr,
@@ -46,59 +48,40 @@ class HierarchychartComponent extends Component {
     })
   }
 
+  hierarchyData = data => {
+    let tree = []
+    let list = data.map(el => el.id.split(';'))
+    let childrenList = null
+    list.forEach(element => {
+      childrenList = findChildrenList(element)
+      let name = element.slice(-1)[0]
+      addChildren(childrenList, name)
+    })
+
+    function findChildrenList(element) {
+      let path = element.slice(0, -1)
+      let subtree = tree
+
+      for (let i = 0; i < path.length; i++) {
+        for (let j = 0; j < subtree.length; j++) {
+          if (subtree[j].name == path[i]) {
+            subtree = subtree[j].children
+            break
+          }
+        }
+      }
+      return subtree
+    }
+
+    function addChildren(childrenList, element) {
+      childrenList.push({ name: element, children: [] })
+    }
+    return tree
+  }
+
   getWidth = () => {
     const element = this.myRef.current.getBoundingClientRect().width / 2
     this.setState({ widthContainer: element })
-  }
-
-  parseString(arr) {
-    let workarr = []
-    let main = {}
-    let parents = []
-    let fchild = []
-    let schild = []
-    let parse = []
-    let result = []
-    let j = 0
-    let k = 0
-
-    for (let i = 0; i < arr.length; i++) {
-      parse[i] = arr[i].id.split(';')
-      if (parse[i].length === 1) {
-        result[j] = parse[i]
-        parents[j] = parse[i]
-        main = {
-          name: parse[i],
-          children: [],
-        }
-        j++
-      } else if (parse[i].length === 2) {
-        // let sndresult = parse[i][1];
-        if (parse[1][0] === result[0][0]) {
-          // if (parse[i][1] === sndresult[i]) {
-          fchild = parse[i].splice(1, 1)
-          let semiworksndtag = fchild
-          main.children[i - 1] = { name: semiworksndtag, children: [] }
-          // }
-        }
-      } else if (parse[i].length === 3) {
-        if (parse[1][0] === result[0][0]) {
-          let double = parse[i]
-          fchild = parse[i].splice(1, 1)
-          let semiworksndtag = fchild
-          main.children[i - 1] = { name: semiworksndtag, children: [] }
-          schild = double.splice(parse[i].length - 1, 1)
-          let semiworktrdtag = schild
-          main.children[i - 1].children[k] = {
-            name: semiworktrdtag,
-            children: [],
-          }
-          // k++;
-        }
-      }
-    }
-    workarr[0] = main
-    return workarr
   }
 
   render() {
